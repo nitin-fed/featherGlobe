@@ -1,0 +1,81 @@
+.appNav {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  display: block;
+  z-index: 200;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.appNav li {
+  display: inline-block;
+}
+.appNav li a {
+  padding: 3px 8px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.appNav li a:hover {
+  text-decoration: none;
+  color: #0096ff;
+  font-weight: bold;
+}
+
+.active {
+  color: #0096ff !important;
+}
+
+.subNavContainer {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .appNav {
+    display: none;
+  }
+  .appNav li {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.appNav li a {
+  color: #e7e7e7;
+}
+.Backdrop {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bodyContents {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 78px);
+}
+.home {
+  background-image: url("../../App/Photography/photos/goldflinch.JPG");
+}

@@ -1,0 +1,10 @@
+export const FETCH_POSTS_FAILS = 'FETCH_POSTS_FAILS';
+export const FETCH_POSTS = 'FETCH_POSTS';
+export const ADD = 'ADD';
+export const DELETE_POST = 'DELETE_POST'
+export const SELECTED_POST_ID = 'SELECTED_POST_ID'
+export const LOAD_POST_DESCRIPTION = 'LOAD_POST_DESCRIPTION'
+export const ADD_POST = 'ADD_POST'
+export const CANCEL_POST = 'CANCEL_POST'
+export const SUBMIT_POST = 'SUBMIT_POST'
+export const EDIT_POST = 'EDIT_POST'

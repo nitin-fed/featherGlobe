@@ -3,20 +3,23 @@
   src: url("./App/assets/Fonts/Nanum_Gothic/NanumGothic-Regular.ttf");
 }
 
+
 body * {
   font-family: NanumGothic-Regular;
   color: #595e65;
   font-size: 14px;
+
 }
 
 html, body {
   height: 100%;
   margin: 0;
 }
-.wrapper {
-  min-height: 100%;
-  margin-bottom: -30px;
-  border: 2px solid red;
+hr  {
+  margin: 5px !important;
+}
+.mainWrapper {
+  text-align: center;
 }
 .footer {
   height: 30px;
@@ -32,11 +35,27 @@ html, body {
 }
 
 .appName {
-  font-size: 24px;
+  font-size: 30px;
+  letter-spacing: 4px;
 }
 .scrollableContainer {
   overflow: hidden;
   overflow-y: scroll;
   height: 400px;
 }
+
+.commonBodyContainer {
+  background: yellow;
+  padding: 10px;
+}
+
+.leftAlign{
+  text-align: left;
+}
+
+.logo {
+  height: 100px;
+  padding-top: 8px;
+}
+
 

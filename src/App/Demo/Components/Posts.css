@@ -36,4 +36,12 @@ form {
 input, textarea {
     width: 100%;
 }
+.postDescription {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: white;
+    z-index: 1000;
+}
 

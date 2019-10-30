@@ -60,6 +60,7 @@ class Navigation extends Component {
             </NavLink>
           </li>
         </ul>
+        <hr />
 
         <div className="hamburger" onClick={this.hamburgerHandler}>
           <button>X</button>

@@ -13,11 +13,7 @@ const ProfileNav = (props) => {
   return (
     <div>
       <div className="navigation">
-        <ul><li>
-          <NavLink activeClassName="active" exact to="/">
-            Home
-          </NavLink>
-        </li>
+        <ul>
         <li>
           <NavLink activeClassName="active"  to={`${props.localPath}/about`}>
             About

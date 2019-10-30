@@ -1,5 +1,6 @@
-import axios from "axios";
+
 import * as actionType from "./actionType";
+
 
 export const fetchPosts = posts => {
 
@@ -15,9 +16,42 @@ export const fetchPostsFails = error => {
   };
 };
 
+export const loadLargeImage = (e) => {
+  
+  return {
+    type: actionType.LOAD_LARGE_IMAGE,
+    payload: {currentId: e.target.id}
+  }
+}
+
+export const deletePost = (id) => {
+  
+  return {
+    type: actionType.DELETE_POST,
+    payload: {id: id}
+  }
+}
+
+export const previousClicked = () => {
+  return {
+    type: actionType.PREVIOUS_CLICKED
+  }
+}
+
+export const nextClicked = () => {
+  return {
+    type: actionType.NEXT_CLICKED
+  }
+}
+
+export const backdropClicked = () => {
+  return {
+    type: actionType.BACKDROP_CLICKED
+  }
+}
 
 export const loadPostDescription = (selectedPostId) => {
-  console.log(selectedPostId)
+
   return {
     type: actionType.LOAD_POST_DESCRIPTION,
     id: selectedPostId
@@ -47,25 +81,4 @@ export const submitPost = () => {
     type: actionType.SUBMIT_POST
   }
 }
-
-
-export const initPosts = () => {
-  
- // console.log('counter')
-  return dispatch => {
-    const url = `http://jsonplaceholder.typicode.com/posts`;
-    //const url = 'http://react-practice-2bc39.firebaseio.com/Posts'
-    axios
-      .get(url)
-      .then(response => {
-        dispatch(fetchPosts(response.data));
-      })
-      .catch(error => {
-        //dispatch(fetchPosts(postData));
-        dispatch(fetchPostsFails(error));
-      });
-  };
-};
-
-
 

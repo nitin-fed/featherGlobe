@@ -1,12 +1,13 @@
-import {} from "../../Demo/Action/demoActions";
+
 import * as actionType from "../Actions/actionType";
 
 export const initialState = {
   posts: [],
-  postBody: 'string',
   postId: 0,
   isAddPostVisible: false,
-  isEditing: false
+  isEditing: false,
+  showBackdrop: false, 
+  selectedPost: { }
 };
 
 export function postReducer(state = initialState, action) {
@@ -17,13 +18,22 @@ export function postReducer(state = initialState, action) {
         ...state
       };
     }
-    case actionType.LOAD_POST_DESCRIPTION: {
-     
-     //console.log(action.id)
+
+    case actionType.DELETE_POST :{
       return {
         ...state,
-        postBody: state.posts[action.id-1].body,
-        postId: state.posts[action.id-1].id
+        posts: state.posts.filter( (post) => post.id !== action.payload.id)
+        
+      }
+    }
+    case actionType.LOAD_POST_DESCRIPTION: {
+
+      const selectedPost = state.posts.filter( (post) => post.id === action.id)[0]
+      return {
+        ...state,
+        showBackdrop: true,
+        postId: action.id,
+        selectedPost: selectedPost
       };
     }
     case actionType.FETCH_POSTS_FAILS: {      
@@ -41,10 +51,11 @@ export function postReducer(state = initialState, action) {
       };
     }
 
-    case actionType.ADD_POST: {      
+    case actionType.ADD_POST: {     
+     
       return {
         ...state,
-        isAddPostVisible: true,
+        showBackdrop: true,
         isEditing: false
       };
     }
@@ -69,6 +80,12 @@ export function postReducer(state = initialState, action) {
         isAddPostVisible: false
       };
     }
+
+    case actionType.BACKDROP_CLICKED:
+      return {
+        ...state,
+        showBackdrop: false
+      }
     
     default: {
       return state;

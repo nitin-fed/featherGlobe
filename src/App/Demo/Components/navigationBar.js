@@ -1,15 +1,14 @@
 import React from "react";
 import { NavLink, Route } from "react-router-dom";
-
-import OldPosts from "../Container/posts";
-import Posts from "../Containers/Posts";
+import Posts from '../Container/Posts'
 import Home from "../../Home/home";
 import Counters from "../Container/counters";
 import Profile from "../Container/Profile";
 import Gallery from "../Container/Gallery";
-import RegisterUser from "../Container/Register";
+// import RegisterUser from "../Container/Register";
 import Todos from "../Container/todos";
 import {Test} from '../Components/Test'
+import  Users from '../Container/Users'
 
 
 const NavigationBar = props => {
@@ -51,14 +50,12 @@ const NavigationBar = props => {
       </div>
 
       <div>
-        <Route path={`${props.localPath}/home`} component={Home} />
-        <Route path={`${props.localPath}/posts`} component={OldPosts} />
+        <Route path={`${props.localPath}/home`} component={Home} /> 
         <Route path={`${props.localPath}/newPosts`} component={Posts} />
-
         <Route path="/demo/Counters" component={Counters} />
         <Route path="/demo/Profile" component={Profile} />
         <Route path="/demo/Gallery" component={Gallery} />
-        <Route path="/demo/RegisgerUser" component={RegisterUser} />
+        <Route path="/demo/RegisgerUser" component={Users} />
         <Route path="/demo/Todos" component={Todos} />
         <Route path="/demo/Test" component={Test} />
       </div>

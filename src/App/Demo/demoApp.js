@@ -1,6 +1,5 @@
 import React from "react";
 import NavigationBar from "./Components/navigationBar";
-import "./App.css";
 
 const App = ({ match }) => {
   return (

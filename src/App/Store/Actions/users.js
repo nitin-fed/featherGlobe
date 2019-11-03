@@ -1,13 +1,5 @@
 import * as actionType from "./actionType";
 
-
-// export const fetchPosts = posts => {
-//     return {
-//       type: actionType.FETCH_POSTS,
-//       posts: posts
-//     };
-//   };
-
 export function fetchUsers(data){
     return {
         data: data,
@@ -23,9 +15,14 @@ export function fetchSelectedUser(data) {
 }
 
 export function fetchUsersFailed(){
-    
     return {
         data: 'FAILED',
         type: actionType.FETCH_USERS_FAILED
     }
+}
+
+export function backdropClicked(){
+    return {
+        type: actionType.BACKDROP_CLICKED
+    }   
 }

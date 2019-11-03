@@ -45,6 +45,7 @@ export const nextClicked = () => {
 }
 
 export const backdropClicked = () => {
+  debugger
   return {
     type: actionType.BACKDROP_CLICKED
   }

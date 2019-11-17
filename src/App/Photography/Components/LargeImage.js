@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Backdrop from '../../Components/Backdrop/Backdrop'
+import Backdrop from '../../Components/Backdrop'
 import * as actions from '../../Store/Actions/actions'
 
 const LargeImage = (props) => {

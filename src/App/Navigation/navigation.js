@@ -7,7 +7,7 @@ import Profile from "../Profile/profile";
 import Photography from "../Photography/photography";
 import Demo from "../Demo/demoApp";
 import "./navbar.css";
-import Backdrop from "../Components/Backdrop/Backdrop";
+import Backdrop from "../Components/Backdrop";
 
 class Navigation extends Component {
   constructor() {

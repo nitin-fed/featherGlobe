@@ -2,7 +2,7 @@ import React from 'react'
 import { Tile } from './Tile';
 import './users.css'
 
-import Backdrop from '../../Components/Backdrop/Backdrop'
+import Backdrop from '../../Components/Backdrop'
 import { UserPanel } from './UserPanel';
 import { SearchBar } from './SearchBar';
 

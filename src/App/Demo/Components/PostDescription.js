@@ -1,5 +1,5 @@
 import React, {useEffect } from 'react'
-import Backdrop from '../../Components/Backdrop/Backdrop';
+import Backdrop from '../../Components/Backdrop';
 
 export function PostDescription({show, onBackdropClicked, selectedPost}){    
     useEffect(() => {

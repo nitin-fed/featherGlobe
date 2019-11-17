@@ -18,7 +18,7 @@ class Navigation extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     if (window.innerWidth > 768) {
       this.setState({ ...this.state, isMenuOpen: true });
     }

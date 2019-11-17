@@ -26,11 +26,7 @@ export function UserPanel(props) {
                         <div className="modal-body">
                             <div className="container">
                                 {dataArr.map((item) => {
-                                    console.log(dataArr)
-                                    //console.log(item.key)
-                                    debugger
                                     if (typeof (item.val) != 'object') {
-
                                         return (
                                             <div className="row" key={item.key}>
                                                 <div className="col-md-4">{item.key}</div>

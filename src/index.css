@@ -57,5 +57,9 @@ hr  {
   height: 100px;
   padding-top: 8px;
 }
-
+pre {
+  color: red !important;
+  text-decoration:  underline;
+  font-style: italic
+}
 

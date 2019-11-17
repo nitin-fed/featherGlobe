@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Should render Render 1`] = `
+<div
+  className="mainWrapper"
+>
+  <div
+    className="logo"
+  >
+    <img
+      alt="FeatherGlobe"
+      className="logo"
+      src="../images/globe.gif"
+    />
+  </div>
+  <div>
+    <ul
+      className="appNav show"
+    >
+      <li>
+        <a
+          aria-current="page"
+          className="active"
+          href="/"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          aria-current={null}
+          href="/profile"
+          onClick={[Function]}
+        >
+          Profile
+        </a>
+      </li>
+      <li>
+        <a
+          aria-current={null}
+          href="/photography"
+          onClick={[Function]}
+        >
+          Photography
+        </a>
+      </li>
+      <li>
+        <a
+          aria-current={null}
+          href="/demo"
+          onClick={[Function]}
+        >
+          Demo
+        </a>
+      </li>
+    </ul>
+    <hr />
+    <div
+      className="hamburger"
+      onClick={[Function]}
+    >
+      <button>
+        X
+      </button>
+    </div>
+    <div>
+      <div
+        className="bodyContents home"
+      />
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    www.featherglobe.com
+  </footer>
+</div>
+`;

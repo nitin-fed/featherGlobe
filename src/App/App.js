@@ -3,7 +3,7 @@ import Navigation from "./Navigation/navigation";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import {store} from './Store/createStore';
-import Logo from "./Logo";
+import Logo from "./Components/Logo";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {

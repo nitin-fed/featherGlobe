@@ -14,6 +14,9 @@ export function PostDescription({show, onBackdropClicked, selectedPost}){
                     <h1>{selectedPost.id}</h1>
                     <h3>{selectedPost.title}</h3>
                     <p>{selectedPost.body}</p>
+                    <button>Delete
+                        
+                    </button>
                 </div>                
             </div>
         )

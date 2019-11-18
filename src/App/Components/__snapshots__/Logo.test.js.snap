@@ -1,21 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Logo Should render logo 1`] = `
-<div>
-  <div
+<div
+  className="logo"
+>
+  <img
+    alt="FeatherGlobe"
     className="logo"
-  >
-    <div
-      className="appName"
-      id="header"
-    >
-      Featherglobe
-    </div>
-    <div
-      className="tagline"
-    >
-      {DECODED FROM NATURE}
-    </div>
-  </div>
+    src="../images/globe.gif"
+  />
 </div>
 `;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Should render 1`] = `
+<div
+  className="App-header"
+>
+  Application Header
+  <span>
+    Counter: 
+    1
+  </span>
+</div>
+`;

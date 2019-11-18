@@ -1,7 +1,13 @@
 import React from 'react'
 
-export function AddPost({ isVisible, cancelHandler, submitHandler, isEditing, posts, postId }) {
-
+export function AddPost({ 
+  isVisible, 
+  cancelHandler, 
+  submitHandler, 
+  isEditing, 
+  posts, 
+  postId 
+}) {
 
   let formElements = null;
   if (isEditing) {

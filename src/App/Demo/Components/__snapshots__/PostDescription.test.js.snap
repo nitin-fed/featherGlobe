@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post Description Should render 1`] = `
+<div>
+  <div
+    className="Backdrop"
+    onClick={[MockFunction]}
+  />
+  <div
+    className="postDescription"
+    style={
+      Object {
+        "top": "200px",
+      }
+    }
+  >
+    <h1 />
+    <h3 />
+    <p />
+    <button>
+      Delete
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Post Description Should render if show === false 1`] = `null`;

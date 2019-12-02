@@ -1,3 +1,5 @@
+This project has been created to learn and practice react, redux and jest. Project consisting latest and advanced concepts of react including hooks, contextAPI.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

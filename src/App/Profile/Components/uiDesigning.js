@@ -1,12 +1,8 @@
-import React from "react";
-import "../profile.css";
+import React from 'react';
+import '../profile.css';
 
 const uiDesigning = () => {
-  return (
-      <div>
-          uiDesigning
-      </div>
-  )
-}
+  return <div>uiDesigning</div>;
+};
 
 export default uiDesigning;

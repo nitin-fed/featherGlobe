@@ -1,5 +1,3 @@
-
-
 .main {
   vertical-align: middle;
 }
@@ -9,7 +7,7 @@
   border-radius: 75px;
   border: 1px solid gray;
   margin: 0 auto;
-  background-image: url("../assets/appImages/profilePic.jpg");
+  background-image: url('../assets/appImages/profilePic.jpg');
   background-repeat: no-repeat;
   background-size: 150px;
 }

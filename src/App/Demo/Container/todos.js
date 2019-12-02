@@ -1,27 +1,27 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Item from "../Components/todoItem";
+import Item from '../Components/todoItem';
 
 class Todos extends Component {
   state = {
-    task: "",
-    id: "",
-    status: ""
+    task: '',
+    id: '',
+    status: ''
   };
 
   onChangeHandler(event) {
-    this.setState({ task: event.target.value, status: "active" });
+    this.setState({ task: event.target.value, status: 'active' });
   }
 
   handleKeyPress = event => {
-    if (this.state.task !== "") {
-      if (event.charCode === 13 || event.target.textContent === "Add") {
+    if (this.state.task !== '') {
+      if (event.charCode === 13 || event.target.textContent === 'Add') {
         this.props.onAddTaskHandler(this.state);
-        this.setState({ task: "", status: "", id: "" });
+        this.setState({ task: '', status: '', id: '' });
       }
     } else {
-      console.log("Show Erorrr");
+      console.log('Show Erorrr');
     }
   };
   render() {
@@ -33,7 +33,7 @@ class Todos extends Component {
           type="text"
           value={this.state.task}
           onChange={e => this.onChangeHandler(e)}
-        />{" "}
+        />{' '}
         &nbsp;
         <button onClick={e => this.handleKeyPress(e)}>Add</button>
         <hr />
@@ -65,25 +65,22 @@ const mapDispatchToProp = dispatch => {
   return {
     onAddTaskHandler: data =>
       dispatch({
-        type: "ADD",
+        type: 'ADD',
         payload: { task: data.task, id: new Date(), status: data.status }
       }),
 
     onDeleteHandler: index =>
       dispatch({
-        type: "DELETE",
+        type: 'DELETE',
         id: index
       }),
 
     onStatusChangeHandler: index =>
       dispatch({
-        type: "UPDATE_STATUS",
+        type: 'UPDATE_STATUS',
         id: index
       })
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProp
-)(Todos);
+export default connect(mapStateToProps, mapDispatchToProp)(Todos);

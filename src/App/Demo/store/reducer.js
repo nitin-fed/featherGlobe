@@ -1,12 +1,12 @@
-import * as actionType from "./actionType";
+import * as actionType from './actionType';
 
 const initialState = {
   counter: 10,
   Posts: [
-    { id: 3, title: "Testing from reducer, my id is 3" },
-    { id: 4, title: "Testing second post from reducer, my id is 4" },
-    { id: 1, title: "Testing from reducer" },
-    { id: 2, title: "Second post from reducer" }
+    { id: 3, title: 'Testing from reducer, my id is 3' },
+    { id: 4, title: 'Testing second post from reducer, my id is 4' },
+    { id: 1, title: 'Testing from reducer' },
+    { id: 2, title: 'Second post from reducer' }
   ],
   displayBlocker: false,
   displayForm: false,
@@ -20,10 +20,10 @@ const reducer = (state = initialState, action) => {
     case actionType.STORE_COUNTER:
       return {
         ...state,
-        results: state.results.concat({id: new Date(), value: state.counter})
+        results: state.results.concat({ id: new Date(), value: state.counter })
       };
 
-     case actionType.ADD:
+    case actionType.ADD:
       return {
         ...state,
         counter: state.counter + 1
@@ -58,26 +58,25 @@ const reducer = (state = initialState, action) => {
       };
 
     case actionType.CANCEL_ADDPOST:
-      
       return {
         ...state,
         displayBlocker: !state.displayBlocker
       };
 
     case actionType.ADD_POST:
-      
       return {
         ...state,
         displayBlocker: true
       };
 
-      case actionType.DELETE_RESULT:
-      const updatedResult = state.results.filter( (item) => item.id !== action.value)
-      return{
+    case actionType.DELETE_RESULT:
+      const updatedResult = state.results.filter(
+        item => item.id !== action.value
+      );
+      return {
         ...state,
         results: updatedResult
-
-      }
+      };
 
     default:
       return state;

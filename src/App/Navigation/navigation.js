@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { Route, NavLink } from "react-router-dom";
+import { Route, NavLink } from 'react-router-dom';
 
-import Home from "../Home/home";
-import Profile from "../Profile/profile";
-import Photography from "../Photography/photography";
-import Demo from "../Demo/demoApp";
-import "./navbar.css";
-import Backdrop from "../Components/Backdrop";
+import Home from '../Home/home';
+import Profile from '../Profile/profile';
+import Photography from '../Photography/photography';
+import Demo from '../Demo/demoApp';
+import './navbar.css';
+import Backdrop from '../Components/Backdrop';
 
 class Navigation extends Component {
   constructor() {
@@ -29,11 +29,11 @@ class Navigation extends Component {
   };
 
   render() {
-    let attachedCSS = "appNav";
+    let attachedCSS = 'appNav';
     if (this.state.isMenuOpen) {
-      attachedCSS = "appNav show";
+      attachedCSS = 'appNav show';
     } else {
-      attachedCSS = "appNav hide";
+      attachedCSS = 'appNav hide';
     }
 
     return (

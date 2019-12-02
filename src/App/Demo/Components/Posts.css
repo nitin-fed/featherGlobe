@@ -1,47 +1,47 @@
 .posts {
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
 }
 .posts li {
-    border-bottom: 1px solid rgb(209, 209, 209);
-    padding: 5px 0
- }
-li div{
-    display: inline-block;
-    
+  border-bottom: 1px solid rgb(209, 209, 209);
+  padding: 5px 0;
 }
-.postId, .postDescBtn {
-    width: 15px;
+li div {
+  display: inline-block;
+}
+.postId,
+.postDescBtn {
+  width: 15px;
 }
 .alignRight {
-    float: right
+  float: right;
 }
 
 .addPostForm {
-    border: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
 }
 .addPostForm label {
-    width: 80px;
+  width: 80px;
 }
 .postTitle {
-    background: #e0e0e0;
-    padding: 5px;
-    margin: 2px;
+  background: #e0e0e0;
+  padding: 5px;
+  margin: 2px;
 }
 
 form {
-    padding: 8px;
+  padding: 8px;
 }
 
-input, textarea {
-    width: 100%;
+input,
+textarea {
+  width: 100%;
 }
 .postDescription {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    background: white;
-    z-index: 1000;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: white;
+  z-index: 1000;
 }
-

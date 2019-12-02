@@ -1,4 +1,4 @@
-import * as actionType from "./actionType";
+import * as actionType from './actionType';
 
 const initialState = {
   counter: 10,
@@ -11,7 +11,7 @@ const initialState = {
   //   displayBlocker: false,
   //   displayForm: false,
   results: [],
-  username: "Nitin"
+  username: 'Nitin'
 };
 
 const reducer = (state = initialState, action) => {

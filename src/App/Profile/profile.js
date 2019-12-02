@@ -1,6 +1,6 @@
-import React from "react";
-import "./profile.css";
-import ProfileNav from "./Components/ProfileNav";
+import React from 'react';
+import './profile.css';
+import ProfileNav from './Components/ProfileNav';
 
 const Profile = ({ match }) => {
   return (

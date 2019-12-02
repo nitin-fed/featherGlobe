@@ -1,12 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const NavItem = (props) => {
+const NavItem = props => {
   return (
     <div>
-      <NavLink to={props.address}>
-          {props.title}
-        </NavLink>
+      <NavLink to={props.address}>{props.title}</NavLink>
     </div>
   );
 };

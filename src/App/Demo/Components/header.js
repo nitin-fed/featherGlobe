@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Counter from "./counter";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import Counter from './counter';
+import { connect } from 'react-redux';
 
 const Header = () => {
   const ctr = 1;
@@ -10,7 +10,6 @@ const Header = () => {
       <Counter counter={ctr} />
     </div>
   );
-}
-
+};
 
 export default Header;

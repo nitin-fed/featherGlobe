@@ -1,12 +1,8 @@
-import React from "react";
-import "../profile.css";
+import React from 'react';
+import '../profile.css';
 
 const Home = () => {
-  return (
-      <div>
-         Home
-      </div>
-  )
-}
+  return <div>Home</div>;
+};
 
 export default Home;

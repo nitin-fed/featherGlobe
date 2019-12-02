@@ -1,5 +1,4 @@
-
-import * as actionType from "../Actions/actionType";
+import * as actionType from '../Actions/actionType';
 
 export const initialState = {
   posts: [],
@@ -11,9 +10,8 @@ export const initialState = {
 };
 
 export function postReducer(state = initialState, action) {
-
   switch (action.type) {
-    case "ADD": {
+    case 'ADD': {
       return {
         ...state
       };
@@ -22,13 +20,11 @@ export function postReducer(state = initialState, action) {
     case actionType.DELETE_POST: {
       return {
         ...state,
-        posts: state.posts.filter((post) => post.id !== action.payload.id)
-
-      }
+        posts: state.posts.filter(post => post.id !== action.payload.id)
+      };
     }
     case actionType.LOAD_POST_DESCRIPTION: {
-
-      const selectedPost = state.posts.filter((post) => post.id === action.id)[0]
+      const selectedPost = state.posts.filter(post => post.id === action.id)[0];
       return {
         ...state,
         showBackdrop: true,
@@ -37,7 +33,7 @@ export function postReducer(state = initialState, action) {
       };
     }
     case actionType.FETCH_POSTS_FAILS: {
-      alert('error')
+      alert('error');
       return {
         ...state,
         posts: action.posts
@@ -52,7 +48,6 @@ export function postReducer(state = initialState, action) {
     }
 
     case actionType.ADD_POST: {
-
       return {
         ...state,
         showBackdrop: true,
@@ -85,7 +80,7 @@ export function postReducer(state = initialState, action) {
       return {
         ...state,
         showBackdrop: false
-      }
+      };
 
     default: {
       return state;

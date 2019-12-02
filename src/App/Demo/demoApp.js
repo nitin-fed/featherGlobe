@@ -1,5 +1,5 @@
-import React from "react";
-import NavigationBar from "./Components/navigationBar";
+import React from 'react';
+import NavigationBar from './Components/navigationBar';
 
 const App = ({ match }) => {
   return (

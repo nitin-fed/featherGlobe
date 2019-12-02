@@ -1,31 +1,31 @@
 const initialState = {
-  appName: ""
+  appName: ''
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "home":
+    case 'home':
       return {
         ...state,
-        appName: ""
+        appName: ''
       };
 
-    case "profile":
+    case 'profile':
       return {
         ...state,
-        appName: "My Profile"
+        appName: 'My Profile'
       };
 
-    case "photography":
+    case 'photography':
       return {
         ...state,
-        appName: "Photography"
+        appName: 'Photography'
       };
 
-      case "demo":
+    case 'demo':
       return {
         ...state,
-        appName: "Demos"
+        appName: 'Demos'
       };
 
     default:

@@ -1,8 +1,8 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import Photos from "./Photos";
-import Links from './Links'
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import Photos from './Photos';
+import Links from './Links';
 
 const PhotoNav = props => {
   return (
@@ -10,10 +10,7 @@ const PhotoNav = props => {
       <div className="navigation">
         <ul>
           <li>
-            <NavLink
-              activeClassName="active"
-              to={`${props.localPath}/photos`}
-            >
+            <NavLink activeClassName="active" to={`${props.localPath}/photos`}>
               My Photos
             </NavLink>
           </li>
@@ -30,11 +27,13 @@ const PhotoNav = props => {
         </ul>
       </div>
 
-      <Redirect from='/photography' to={`${props.localPath}/photos`} />
+      <Redirect from="/photography" to={`${props.localPath}/photos`} />
       <Route path={`${props.localPath}/photos`} />
       <Route path={`${props.localPath}/photos`} component={Photos} />
-      {/* <Route path={`${props.localPath}`+'/about'} component={About} />*/
-      <Route path={`${props.localPath}/links`} component={Links} /> }
+      {
+        /* <Route path={`${props.localPath}`+'/about'} component={About} />*/
+        <Route path={`${props.localPath}/links`} component={Links} />
+      }
     </div>
   );
 };

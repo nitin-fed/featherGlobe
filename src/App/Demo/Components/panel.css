@@ -1,9 +1,8 @@
 .modal {
-    display: block !important
+  display: block !important;
 }
 .tile {
-    background: red;
-    padding: 10px;
-    margin: 10px;
-    
+  background: red;
+  padding: 10px;
+  margin: 10px;
 }

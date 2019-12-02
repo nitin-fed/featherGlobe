@@ -1,15 +1,14 @@
-import React from "react";
-import { NavLink, Route } from "react-router-dom";
-import Posts from '../Container/Posts'
-import Home from "../../Home/home";
-import Counters from "../Container/counters";
-import Profile from "../Container/Profile";
-import Gallery from "../Container/Gallery";
+import React from 'react';
+import { NavLink, Route } from 'react-router-dom';
+import Posts from '../Container/Posts';
+import Home from '../../Home/home';
+import Counters from '../Container/counters';
+import Profile from '../Container/Profile';
+import Gallery from '../Container/Gallery';
 // import RegisterUser from "../Container/Register";
-import Todos from "../Container/todos";
-import {Test} from '../Components/Test'
-import  Users from '../Container/Users'
-
+import Todos from '../Container/todos';
+import { Test } from '../Components/Test';
+import Users from '../Container/Users';
 
 const NavigationBar = props => {
   return (
@@ -23,7 +22,7 @@ const NavigationBar = props => {
           </li>
 
           <li>
-            <NavLink to="/demo/newPosts" >New Posts</NavLink>
+            <NavLink to="/demo/newPosts">New Posts</NavLink>
           </li>
           <li>
             <NavLink to="/demo/posts">Posts</NavLink>
@@ -50,7 +49,7 @@ const NavigationBar = props => {
       </div>
 
       <div>
-        <Route path={`${props.localPath}/home`} component={Home} /> 
+        <Route path={`${props.localPath}/home`} component={Home} />
         <Route path={`${props.localPath}/newPosts`} component={Posts} />
         <Route path="/demo/Counters" component={Counters} />
         <Route path="/demo/Profile" component={Profile} />

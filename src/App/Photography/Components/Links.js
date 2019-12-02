@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Links = () => {
-    return(
-        <div className='container main'>
-            <a href=''>Your Shots</a>
-        </div>
-    )
-}
+  return (
+    <div className="container main">
+      <a href="">Your Shots</a>
+    </div>
+  );
+};
 
-export default Links
+export default Links;

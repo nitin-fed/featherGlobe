@@ -1,11 +1,8 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from 'react';
 
 export const Test = () => {
-    useEffect( () => {
-        console.log('Api call goes here...');
-    }, [])
-  return (
- 
-  <h1>Nitin</h1>
-  )
+  useEffect(() => {
+    console.log('Api call goes here...');
+  }, []);
+  return <h1>Nitin</h1>;
 };

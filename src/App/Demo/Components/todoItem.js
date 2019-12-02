@@ -1,11 +1,12 @@
-import React from "react";
-import "./todo.css";
+import React from 'react';
+import './todo.css';
 
 const listItem = props => {
-
-  let check = <input type="checkbox" onClick={props.checkboxClickHandler}  />;
-  if (props.status === "completed") {
-    check = <input onClick={props.checkboxClickHandler} type="checkbox" checked />;
+  let check = <input type="checkbox" onClick={props.checkboxClickHandler} />;
+  if (props.status === 'completed') {
+    check = (
+      <input onClick={props.checkboxClickHandler} type="checkbox" checked />
+    );
   }
 
   return (

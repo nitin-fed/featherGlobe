@@ -1,17 +1,14 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as actionType from "../store/actionType";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actionType from '../store/actionType';
 
 class Profile extends Component {
- 
-
   state = {
-    name: "",
-    age: ""
+    name: '',
+    age: ''
   };
 
   nameChangeHandler = event => {
-    
     this.setState({ name: event.target.value });
   };
 
@@ -23,22 +20,20 @@ class Profile extends Component {
     return (
       <div className="bodyContents">
         <pre>Local state to store</pre>
-        Name:{" "}
+        Name:{' '}
         <input
           type="text"
           value={this.name}
           onChange={this.nameChangeHandler}
         />
-        Age:{" "}
+        Age:{' '}
         <input
           type="number"
           value={this.age}
           onChange={this.ageChangeHandler}
         />
         <button
-          onClick={(name, age) =>
-            this.props.onAddPersonHandler(name, age)
-          }
+          onClick={(name, age) => this.props.onAddPersonHandler(name, age)}
         >
           Add Person
         </button>
@@ -53,7 +48,7 @@ class Profile extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
+  console.log(state);
   return {
     name: state.profileReducer.person.name,
     age: state.profileReducer.person.age,
@@ -71,7 +66,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

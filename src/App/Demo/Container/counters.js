@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Counter from "../Components/counter";
-import Buttons from "../Components/button";
+import Counter from "../Components/Counter";
+import Buttons from "../Components/Button";
 import "./counters.css";
 
 import * as actionType from "../store/actionType";

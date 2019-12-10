@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actionType from '../store/actionType';
+import * as actionType from '../../Store/Actions/actionType'
 
 class Profile extends Component {
   state = {

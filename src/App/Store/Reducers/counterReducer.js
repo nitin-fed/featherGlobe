@@ -1,21 +1,13 @@
-import * as actionType from './actionType';
+import * as actionType from '../../Store/Actions/actionType'
 
 const initialState = {
   counter: 10,
-  //   Posts: [
-  //     { id: 3, title: "Testing from reducer, my id is 3" },
-  //     { id: 4, title: "Testing second post from reducer, my id is 4" },
-  //     { id: 1, title: "Testing from reducer" },
-  //     { id: 2, title: "Second post from reducer" }
-  //   ],
-  //   displayBlocker: false,
-  //   displayForm: false,
-  results: [],
-  username: 'Nitin'
+  results: []
 };
 
-const reducer = (state = initialState, action) => {
+export function counterReducer(state = initialState, action) {
   //console.log(action.value);
+  debugger
   switch (action.type) {
     case actionType.STORE_COUNTER:
       return {
@@ -23,13 +15,13 @@ const reducer = (state = initialState, action) => {
         results: state.results.concat({ id: new Date(), value: state.counter })
       };
 
-    case actionType.ADD:
+    case actionType.ADD_CTR:
       return {
         ...state,
         counter: state.counter + 1
       };
 
-    case actionType.SUBTRACT:
+    case actionType.SUBTRACT_CTR:
       return {
         ...state,
         counter: state.counter - 1
@@ -55,10 +47,15 @@ const reducer = (state = initialState, action) => {
         ...state,
         results: updatedResult
       };
+      
+     case actionType.CAL_BUTTON_GROUP: 
+     return {
+       ...state, 
+
+     }
 
     default:
       return state;
   }
 };
 
-export default reducer;

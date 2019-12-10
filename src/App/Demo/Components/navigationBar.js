@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import Posts from '../Container/Posts';
 import Home from '../../Home/home';
-import Counters from '../Container/counters';
+import Counters from '../Container/Counters';
 import Profile from '../Container/Profile';
 import Gallery from '../Container/Gallery';
 // import RegisterUser from "../Container/Register";

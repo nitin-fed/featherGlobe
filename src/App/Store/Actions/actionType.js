@@ -15,3 +15,14 @@ export const NEXT_CLICKED = 'NEXT_CLICKED';
 export const FETCH_USERS = 'FETCH_USERS';
 export const FETCH_USERS_FAILED = 'FETCH_USERS_FAILED';
 export const FETCH_SELECTED_USER = 'FETCH_SELECTED_USER';
+export const CAL_BUTTON_GROUP = 'CAL_BUTTON_GROUP'
+
+export const ADD_CTR = 'ADD_CTR'
+export const SUBTRACT_CTR = 'SUBTRACT_CTR';
+export const ADD10 = 'ADD10';
+export const SUBTRACT10 = 'SUBTRACT10';
+
+export const STORE_COUNTER = 'STORE_COUNTER';
+export const CANCEL_ADDPOST = 'CANCEL_ADDPOST';
+export const DELETE_RESULT = 'DELETE_RESULT';
+export const ADD_PERSON = 'ADD_PERSON';

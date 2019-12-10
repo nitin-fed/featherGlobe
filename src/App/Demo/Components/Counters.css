@@ -1,0 +1,8 @@
+.calculatorContainer {
+    border-radius: 10px;
+    width: 400px !important;
+}
+.calButton {
+    color: red;
+    width: 100%;
+}

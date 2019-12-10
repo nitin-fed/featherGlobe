@@ -76,3 +76,9 @@ export const submitPost = () => {
     type: actionType.SUBMIT_POST
   };
 };
+
+export const buttonGroupClick = () => {
+  return {
+    type: actionType.CAL_BUTTON_GROUP
+  }
+}

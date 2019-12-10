@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { Posts } from '../Components/Posts';
 import * as actions from '../../Store/Actions/actions';
 
+
 import { initPosts } from '../../Services/FetchPosts';
 
 export const mapStateToProps = state => {

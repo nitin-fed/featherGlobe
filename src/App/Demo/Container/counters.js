@@ -1,62 +1,14 @@
 import React, { Component } from 'react';
-import Counter from '../Components/Counter';
-import Buttons from '../Components/Button';
-import './counters.css';
+import { Counters } from '../Components/Counters'
 
-import * as actionType from '../store/actionType';
+import * as actionType from '../../Store/Actions/actionType'
+
+import { storeResult, addCounter, subtractCounter, add10, subtract10 } from '../../Store/Actions/counterActions'
 
 import { connect } from 'react-redux';
-import Post from '../Components/listItem';
 
-class Counters extends Component {
-  render() {
-    return (
-      <div className="container">
-        <h1>Counters </h1>
-        <Counter counter={this.props.ctr} />
-        <br />
-        <Buttons
-          clickHandler={() => this.props.onClickHandler('add')}
-          caption={actionType.ADD}
-        />
-        &nbsp;
-        <Buttons
-          clickHandler={() => this.props.onClickHandler('subtract')}
-          caption={actionType.SUBTRACT}
-        />
-        &nbsp;
-        <Buttons
-          clickHandler={() => this.props.onClickHandler('add10', 10)}
-          caption="ADD 10"
-        />
-        &nbsp;
-        <Buttons
-          clickHandler={() => this.props.onClickHandler('subtract10', 10)}
-          caption="SUBTRACT 10"
-        />
-        <hr />
-        <Buttons
-          clickHandler={this.props.onStoreCounter}
-          caption="Store Counter"
-        />{' '}
-        <small>Result will append after 2 seconds</small>
-        <hr />
-        <ul>
-          {this.props.storeResult.map(strResult => (
-            <Post
-              key={strResult.id}
-              title={strResult.value}
-              clickHandler={() => this.props.onDeleteResult(strResult.id)}
-            />
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     ctr: state.counterReducer.counter,
     storeResult: state.counterReducer.results
@@ -65,12 +17,15 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onClickHandler: (action, value) =>
-      dispatch(actionType.actionCreator(action, value)),
-    onStoreCounter: () => dispatch(actionType.storeResult()),
-    onDeleteResult: value =>
-      dispatch({ type: actionType.DELETE_RESULT, value: value })
+    onStoreCounter: () => dispatch(storeResult()),
+    onAddCounter: () => dispatch(addCounter()),
+    onSubtractCounter: () => dispatch(subtractCounter()),
+    onAdd10: (val) => dispatch(add10(val)),
+    onSubtract10: (val) => dispatch(subtract10(val))
+
   };
 };
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counters);

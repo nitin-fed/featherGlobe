@@ -8,7 +8,6 @@ export const initPosts = () => {
       .get(url)
       .then(response => {
         dispatch(fetchPosts(response.data));
-        console.log(response);
       })
       .catch(error => {
         dispatch(fetchPostsFails(error));

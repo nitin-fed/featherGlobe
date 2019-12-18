@@ -3,7 +3,7 @@ import { Counters } from '../Components/Counters'
 
 import * as actionType from '../../Store/Actions/actionType'
 
-import { storeResult, addCounter, subtractCounter, add10, subtract10 } from '../../Store/Actions/counterActions'
+import { groupClick, storeResult, addCounter, subtractCounter, add10, subtract10 } from '../../Store/Actions/counterActions'
 
 import { connect } from 'react-redux';
 
@@ -11,7 +11,8 @@ import { connect } from 'react-redux';
 const mapStateToProps = state => {
   return {
     ctr: state.counterReducer.counter,
-    storeResult: state.counterReducer.results
+    storeResult: state.counterReducer.results,
+    calScreen: state.counterReducer.calScreen
   };
 };
 
@@ -21,7 +22,8 @@ const mapDispatchToProps = dispatch => {
     onAddCounter: () => dispatch(addCounter()),
     onSubtractCounter: () => dispatch(subtractCounter()),
     onAdd10: (val) => dispatch(add10(val)),
-    onSubtract10: (val) => dispatch(subtract10(val))
+    onSubtract10: (val) => dispatch(subtract10(val)),
+    onGroupClick: (evt) => dispatch(groupClick(evt))
 
   };
 };

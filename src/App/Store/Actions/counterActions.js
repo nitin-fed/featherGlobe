@@ -44,4 +44,15 @@ const saveResultDelay = () => {
       }
   }
 
+  export const groupClick = (evt) => {
+    
+    return {
+      type: actionType.CAL_BUTTON_GROUP,
+      payload: evt.target.attributes["datalabel"].value
+
+    }
+  }
+
+
+
   

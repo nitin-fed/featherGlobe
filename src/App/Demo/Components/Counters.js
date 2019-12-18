@@ -1,6 +1,6 @@
 import React from 'react'
 import Counter from './Counter'
-import Buttons from '../Components/Button'
+import Buttons from './Buttons'
 import * as actionType from '../../Store/Actions/actionType'
 import { CounterRow } from '../Components/CounterRow'
 import './Counters.css'

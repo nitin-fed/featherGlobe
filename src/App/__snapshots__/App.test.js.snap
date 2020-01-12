@@ -7,6 +7,7 @@ exports[`App Should render Render 1`] = `
   <div
     className="logo"
   >
+    <p />
     <img
       alt="FeatherGlobe"
       className="logo"

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 
 import Home from '../Home/home';
 import Profile from '../Profile/profile';
@@ -8,6 +8,8 @@ import Photography from '../Photography/photography';
 import Demo from '../Demo/demoApp';
 import './navbar.css';
 import Backdrop from '../Components/Backdrop';
+import GuessedWordWrapper from '../Demo/Container/GuessedWordWrapper';
+
 
 class Navigation extends Component {
   constructor() {
@@ -16,6 +18,12 @@ class Navigation extends Component {
       isMenuOpen: false,
       isModelOpen: false
     };
+  }
+
+  componentDidMount() {
+    debuggers
+    console.log('mounted');
+    this.props.history.push('/dashboard')
   }
 
   UNSAFE_componentWillMount() {
@@ -59,6 +67,11 @@ class Navigation extends Component {
               Demo
             </NavLink>
           </li>
+          <li>
+            <NavLink activeClassName="active" to="/guessWord">
+              Guess Word
+            </NavLink>
+          </li>
         </ul>
         <hr />
 
@@ -70,10 +83,13 @@ class Navigation extends Component {
           clicked={this.hamburgerHandler}
         />
         <div>
-          <Route exact path="/" component={Home} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/photography" component={Photography} />
-          <Route path="/demo" component={Demo} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/photography" component={Photography} />
+            <Route path="/demo" component={Demo} />
+            <Route path="/guessWord" component={GuessedWordWrapper} />
+          </Switch>
         </div>
       </div>
     );

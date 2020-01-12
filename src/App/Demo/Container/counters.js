@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+
 import { Counters } from '../Components/Counters'
 
 import * as actionType from '../../Store/Actions/actionType'

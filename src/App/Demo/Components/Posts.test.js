@@ -4,6 +4,8 @@ import { Posts } from './Posts';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 
+import { storeFactory } from '../../Utils/testsUtils'
+
 const initialState = {
   postReducer: {
     posts: [],
@@ -14,10 +16,8 @@ const initialState = {
     selectedPost: {}
   }
 };
-const mockStore = configureStore([]);
-let store;
 
-store = mockStore(initialState);
+const store = storeFactory(initialState)
 
 describe('Posts', () => {
   let props = {};
@@ -45,21 +45,23 @@ describe('Posts', () => {
     };
   });
 
-  const renderWithStore = p => {
+  const renderWithStore = (p) => {
     return renderer.create(
       <Provider store={store}>
-        <Posts {...p} />
-      </Provider>
+        <Posts  {...p} />
+        </Provider>
     );
   };
 
-  test('Should render if posts===obj', () => {
+
+
+  it('Should render if posts===obj', () => {
     const component = renderWithStore(props);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  test('Should render if posts===undefined', () => {
+  it('Should render if posts===undefined', () => {
     const newProps = {
       ...props,
       posts: undefined
@@ -75,7 +77,7 @@ describe('Posts', () => {
     const myButton = tree.children.find(item => {
       return item.type === 'button';
     });
-    console.log(myButton.props.onClick);
+
     myButton.props.onClick({
       target: { value: 'blue' }
     });

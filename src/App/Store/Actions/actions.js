@@ -82,3 +82,14 @@ export const buttonGroupClick = () => {
     type: actionType.CAL_BUTTON_GROUP
   }
 }
+
+/* GUESSED WORDS ACTIONS */
+
+export const addGuessedWord =(word) => {
+  return{
+    type: actionType.CHECK_WORD,
+    payload: word
+  }
+
+}
+

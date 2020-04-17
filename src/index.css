@@ -60,3 +60,12 @@ pre {
   text-decoration: underline;
   font-style: italic;
 }
+
+.guessWordInputField{
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: green;
+  padding: 0 10px;
+  font-weight: bold;
+  border: 1px solid green;
+}

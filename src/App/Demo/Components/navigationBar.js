@@ -8,7 +8,7 @@ import Gallery from '../Container/Gallery';
 // import RegisterUser from "../Container/Register";
 import Todos from '../Container/todos';
 import { Test } from '../Components/Test';
-import Users from '../Container/Users';
+import Users from '../Components/Users/UsersContainer';
 
 const NavigationBar = props => {
   return (

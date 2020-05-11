@@ -7,4 +7,5 @@ export const middlewares = [thunk];
 export const createStoreWithMiddleware = composeEnhancer(
   applyMiddleware(...middlewares)
 )(createStore);
+
 export const store = createStoreWithMiddleware(rootReducer);

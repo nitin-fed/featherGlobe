@@ -16,17 +16,44 @@ class Navigation extends Component {
     super();
     this.state = {
       isMenuOpen: false,
-      isModelOpen: false
+      isModelOpen: false,
+      linkArr: ['profile', 'photography', 'demo', 'guessWord'],
+      pageToLoad: '/'
     };
+ 
+    const test = () => {
+      this.setState({ ...this.state, pageToLoad: 'Nitin' });
+      console.log(this.state.linkArr[Math.floor(Math.random() * 5)], 'Nitin')
+    }
+    test();
+    console.log(this.state)
+
+  }
+
+
+  getDerivedStateFromProps() {
+    console.log('getDerivedStateFromProps')
+  }
+  componentWillReceiveProps() {
+    console.log('componentWillReceiveProps')
+  }
+  componentShouldMount() {
+    console.log('componentShouldMount')
+  }
+
+  componentWillMount() {
+    console.log('componentWillMount')
   }
 
   componentDidMount() {
-    debuggers
-    console.log('mounted');
-    this.props.history.push('/dashboard')
+    console.log('componentDidMount');
+    //this.setState({ ...this.state, pageToLoad: 'Nitin' });
+    console.log(this.state)
+    //this.props.history.push('/dashboard')
   }
 
   UNSAFE_componentWillMount() {
+    console.log('componentWillMount  --unsafe ')
     if (window.innerWidth > 768) {
       this.setState({ ...this.state, isMenuOpen: true });
     }
@@ -91,7 +118,11 @@ class Navigation extends Component {
             <Route path="/guessWord" component={GuessedWordWrapper} />
           </Switch>
         </div>
+
+        <Redirect to={this.state.pageToLoad} />
       </div>
+
+
     );
   }
 }

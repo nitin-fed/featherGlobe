@@ -85,11 +85,18 @@ export const buttonGroupClick = () => {
 
 /* GUESSED WORDS ACTIONS */
 
-export const addGuessedWord =(word) => {
+export const addGuessedWord =() => { 
   return{
-    type: actionType.CHECK_WORD,
-    payload: word
+    type: actionType.CHECK_WORD
   }
+}
 
+export const updateGuessWord  = (evt) => {
+    return {
+      type: actionType.UPDATE_GUESSWORD,
+      payload: evt.target.value
+    }
+
+  
 }
 

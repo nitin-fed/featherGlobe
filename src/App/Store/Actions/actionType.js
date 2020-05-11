@@ -28,3 +28,4 @@ export const DELETE_RESULT = 'DELETE_RESULT';
 export const ADD_PERSON = 'ADD_PERSON';
 
 export const CHECK_WORD = 'CHECK_WORD'
+export const UPDATE_GUESSWORD = 'UPDATE_GUESSWORD'

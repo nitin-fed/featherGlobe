@@ -20,11 +20,9 @@ exports[`App Should render Render 1`] = `
     >
       <li>
         <a
-          aria-current="page"
-          className="active"
+          aria-current={null}
           href="/"
           onClick={[Function]}
-          style={Object {}}
         >
           Home
         </a>
@@ -56,6 +54,15 @@ exports[`App Should render Render 1`] = `
           Demo
         </a>
       </li>
+      <li>
+        <a
+          aria-current={null}
+          href="/guessWord"
+          onClick={[Function]}
+        >
+          Guess Word
+        </a>
+      </li>
     </ul>
     <hr />
     <div
@@ -66,11 +73,7 @@ exports[`App Should render Render 1`] = `
         X
       </button>
     </div>
-    <div>
-      <div
-        className="bodyContents home"
-      />
-    </div>
+    <div />
   </div>
   <footer
     className="footer"

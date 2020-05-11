@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Buttons from './button';
+import Buttons from './Buttons';
 
 describe('Button', () => {
   const props = {

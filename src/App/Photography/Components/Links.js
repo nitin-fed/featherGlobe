@@ -3,7 +3,7 @@ import React from 'react';
 const Links = () => {
   return (
     <div className="container main">
-      <a href="">Your Shots</a>
+      test
     </div>
   );
 };

@@ -1,15 +1,19 @@
 import axios from 'axios';
 import { fetchPosts, fetchPostsFails } from '../Store/Actions/actions';
 
-export const initPosts = () => {
-  return dispatch => {
+export const initPosts = () =>
+{
+  return dispatch =>
+  {
     const url = 'http://jsonplaceholder.typicode.com/Posts';
     axios
       .get(url)
-      .then(response => {
+      .then(response =>
+      {
         dispatch(fetchPosts(response.data));
       })
-      .catch(error => {
+      .catch(error =>
+      {
         dispatch(fetchPostsFails(error));
       });
   };

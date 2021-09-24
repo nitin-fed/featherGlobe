@@ -7,7 +7,7 @@ const initialState = {
 };
 
 const numArr = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0]
-let num1 = 0;
+
 let num =0;
 let isTyping = true;
 
@@ -55,7 +55,7 @@ export function counterReducer(state = initialState, action) {
 
     case actionType.CAL_BUTTON_GROUP:
 
-      if (action.payload == '+') {
+      if (action.payload === '+') {
         isTyping = false;
       } else {
         isTyping = true
@@ -65,7 +65,7 @@ export function counterReducer(state = initialState, action) {
       if(isTyping) {
         num = getNumber(action.payload)
       } else {
-        num1 = num
+        //num1 = num
       }
 
      

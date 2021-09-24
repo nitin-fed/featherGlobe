@@ -1,0 +1,89 @@
+.articleContainer {
+  color: rgb(13, 60, 97);
+  background-color: rgb(232, 244, 253);
+  margin-top: 15px;
+  text-align: left;
+  border-radius: 6px;
+}
+
+.articleHeader {
+  background-color: rgb(211, 236, 255);
+  padding: 8px 12px;
+}
+
+.articleBody {
+  padding: 12px;
+}
+
+.articleFooter {
+  padding: 12px;
+  border-top: 1px solid rgb(211, 236, 255);
+  border-radius: 6px;
+}
+
+h4 {
+  display: inline-block;
+  margin: 6px;
+}
+
+.buttonContainer {
+  float: right;
+  padding: 5px;
+  color: white;
+}
+
+.addArticleContainer {
+  z-index: 101;
+  /* position: relative;
+ 
+  background: white;
+  padding: 2px;
+  width: 70%;
+  margin: 0 auto;
+  transition: width 2s; */
+}
+
+.customPrimary {
+  color: white !important;
+}
+
+.modalBody {
+  padding: 20px;
+  text-align: left;
+}
+
+.modalBody label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  width: 100px;
+  vertical-align: top;
+}
+
+.modalBody input[type="text"] {
+  width: 75%;
+}
+
+.modalBody textarea {
+  width: 75%;
+  height: 100px;
+}
+
+.modalTitle {
+  padding: 20px;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modalTitle > div {
+  display: inline;
+}
+.modalTitle > button {
+  float: right;
+}
+
+.modalFooter {
+  background: rgb(184, 184, 184);
+  padding: 20px;
+  text-align: right;
+}

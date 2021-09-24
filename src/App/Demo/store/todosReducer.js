@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const todosReducer = (state = initialState, action) => {
-  console.log(action.type, action.payload);
+  console.log("3");
 
   switch (action.type) {
     case 'ADD':

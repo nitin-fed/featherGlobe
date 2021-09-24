@@ -2,7 +2,7 @@ import Users  from './Users';
 import { connect } from 'react-redux';
 import { initUsers, showUserDetails } from '../../../Services/FetchUsers';
 import { backdropClicked } from '../../../Store/Actions/users';
-import * as actions from '../../../Store/Actions/actions';
+
 
 const mapStateToProps = state => {
   return {

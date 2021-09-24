@@ -1,11 +1,14 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import { postReducer } from './postReducer';
-import appReducer from './appReducer';
-import galleryReducer from './galleryReducer';
-import usersReducer from './usersReducer';
-import { counterReducer } from './counterReducer'
-import {guessedWordsReducer} from './guessedWordReducer'
+import { postReducer } from "./postReducer";
+import appReducer from "./appReducer";
+import galleryReducer from "./galleryReducer";
+import usersReducer from "./usersReducer";
+import { counterReducer } from "./counterReducer";
+import { guessedWordsReducer } from "./guessedWordReducer";
+import { articleReducers } from "../../Demo/Article/ArticleReducer";
+import userReducer from "./userReducer";
+import commonReducer from "./commonReducer";
 
 export default combineReducers({
   appReducer: appReducer,
@@ -13,5 +16,8 @@ export default combineReducers({
   postReducer: postReducer,
   usersReduder: usersReducer,
   counterReducer: counterReducer,
-  guessedWordsReducer: guessedWordsReducer
+  guessedWordsReducer: guessedWordsReducer,
+  articleReducers: articleReducers,
+  userReduder: userReducer,
+  commonReducer: commonReducer
 });

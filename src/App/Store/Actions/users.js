@@ -7,6 +7,13 @@ export function fetchUsers(data) {
   };
 }
 
+export function fetchUser(data) {
+  return {
+    data: data,
+    type: actionType.FETCH_USER
+  };
+}
+
 export function fetchSelectedUser(data) {
   return {
     data: data,

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Backdrop if show == false 1`] = `null`;
-
-exports[`Backdrop if show === true 1`] = `
-<div
-  className="Backdrop"
-/>
-`;

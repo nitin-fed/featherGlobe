@@ -1,21 +1,22 @@
-import * as actionType from './actionType';
+import * as actionType from "./actionType";
 
 const initialState = {
   counter: 10,
   Posts: [
-    { id: 3, title: 'Testing from reducer, my id is 3' },
-    { id: 4, title: 'Testing second post from reducer, my id is 4' },
-    { id: 1, title: 'Testing from reducer' },
-    { id: 2, title: 'Second post from reducer' }
+    { id: 3, title: "Testing from reducer, my id is 3" },
+    { id: 4, title: "Testing second post from reducer, my id is 4" },
+    { id: 1, title: "Testing from reducer" },
+    { id: 2, title: "Second post from reducer" }
   ],
   displayBlocker: false,
   displayForm: false,
   results: [],
-  username: 'Nitin'
+  username: "Nitin",
+  isVisible: false
 };
 
 const reducer = (state = initialState, action) => {
-  console.log(action.value);
+  console.log("2 --- ");
   switch (action.type) {
     case actionType.STORE_COUNTER:
       return {
@@ -66,7 +67,8 @@ const reducer = (state = initialState, action) => {
     case actionType.ADD_POST:
       return {
         ...state,
-        displayBlocker: true
+        displayBlocker: true,
+        isVisible: true
       };
 
     case actionType.DELETE_RESULT:

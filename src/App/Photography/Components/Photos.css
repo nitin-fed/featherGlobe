@@ -17,7 +17,7 @@
 }
 
 .imgNavigator {
-  position: absolute;
+  position: fixed;
   font-weight: bold;
   z-index: 102;
   top: 45%;
@@ -51,7 +51,7 @@
   border: 10px solid white;
 
   margin: 0;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

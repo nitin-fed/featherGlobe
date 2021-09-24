@@ -1,12 +1,27 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Logo from './Logo';
+import React from "react";
+import Logo from "./Logo";
+import { mount } from "enzyme";
+import { store } from "../Store/createStore";
 
-describe('Logo', () => {
-  it('Should render logo', () => {
-    const component = renderer.create(<Logo />);
-    const tree = component.toJSON();
-    console.log(tree);
-    expect(tree).toMatchSnapshot();
+import { Provider } from "react-redux";
+
+// jest.mock("react-redux", () => ({
+//   ...jest.requireActual("react-redux"),
+//   useDispatch: () =>
+//     jest.fn(() =>
+//       Promise.resolve({
+//         data: {
+//           userData: { name: "nitin", lastname: "foo" }
+//         }
+//       })
+//     )
+// }));
+//store.dispatch(loadUser());
+
+describe("Logo", () => {
+  it("Should render logo", () => {
+    const wrapper = mount(<Logo />);
+    console.log(wrapper.debug());
+    expect(wrapper.find(Logo).exists()).toBeTruthy();
   });
 });

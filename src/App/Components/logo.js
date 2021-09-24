@@ -1,30 +1,30 @@
-import React from 'react';
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from "react";
+import Backdrop from "./Backdrop";
+import { Loader } from "./Loader";
+// import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+// import { setCookie, getCookie } from "../Utils/Cookie";
+// import { loadUser } from "../Services/fetchUser";
 
 const Logo = () => {
-
-  const [count, setCount] = useState()
-
-
-  useEffect( () => {
-    const response = axios.get('http://localhost:3001/users');
-    response.then( (res) => {
-      console.log(res.data)
-    })
-  })
+  // const { userData } = useSelector(state => state.userReduder);
+  const { displayLoader } = useSelector(state => state.commonReducer);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   setCookie();
+  //   dispatch(loadUser());
+  // }, [dispatch]);
 
   return (
-    <div className="logo">
-
-      <p></p>
-
-      <img alt="FeatherGlobe" src="../images/globe.gif" className="logo" />
-      {/* <div id="header" className="appName" >
-                Featherglobe 
-            </div>
-            <div className="tagline">{"{DECODED FROM NATURE}"}</div> */}
-    </div>
+    <>
+      {displayLoader && <Loader />}
+      <div className="logo">
+        <div id="header" className="appName">
+          Featherglobe
+        </div>
+        <div className="tagline">{"{DECODED FROM NATURE}"}</div>
+      </div>
+    </>
   );
 };
 

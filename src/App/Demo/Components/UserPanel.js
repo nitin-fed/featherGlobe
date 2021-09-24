@@ -37,7 +37,7 @@ export function UserPanel(props) {
                         <div className="col-md-8">{item.val}</div>
                       </div>
                     );
-                  }
+                  } else return null
                 })}
               </div>
             </div>

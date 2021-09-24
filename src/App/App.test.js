@@ -1,11 +1,13 @@
-import React from 'react';
-import App from './App';
-import renderer from 'react-test-renderer';
+import React from "react";
+import App from "./App";
+import { shallow, mount } from "enzyme";
 
-describe('App Should render', () => {
-  test('Render', () => {
-    const component = renderer.create(<App />);
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+describe("App", () => {
+  test("Render", () => {
+    const wrapper = mount(<App />);
+ 
+    expect(wrapper.find(App).exists()).toBeTruthy();
+    // expect(wrapper.find(Logo).exists()).toBeTruthy();
+    // expect(wrapper.find(Navigation).exists()).toBeTruthy();
   });
 });

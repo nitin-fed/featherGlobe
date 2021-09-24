@@ -1,4 +1,4 @@
-import * as actionType from './actionType';
+import * as actionType from "./actionType";
 
 const initialState = {
   //counter: 10,
@@ -6,11 +6,12 @@ const initialState = {
   displayBlocker: false,
   displayForm: false,
   // results: [],
-  username: 'Nitin'
+  username: "Nitin",
+  isVisible: false
 };
 
 const reducer = (state = initialState, action) => {
-  // console.log(action.value);
+  console.log("1 --- ");
   switch (action.type) {
     case actionType.DELETE_POST:
       const updatedPosts = state.Posts.filter(
@@ -31,11 +32,11 @@ const reducer = (state = initialState, action) => {
     case actionType.ADD_POST:
       return {
         ...state,
-        displayBlocker: true
+        isVisible: true
       };
 
     case actionType.EDIT_POST:
-      console.log('Edit post ' + state.selectedPostId);
+      console.log("Edit post " + state.selectedPostId);
       return {
         ...state
       };

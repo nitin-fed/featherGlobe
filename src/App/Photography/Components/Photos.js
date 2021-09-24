@@ -1,42 +1,40 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPhotos, loadLargeImage } from "../../Store/Actions/actions";
+import "./Photos.css";
+import LargeImage from "./LargeImage";
+import ImageLoad from "./ImageLoad";
 
-import './Photos.css';
-import { connect } from 'react-redux';
-import Photo from './Photo';
-import LargeImage from './LargeImage';
+const Photos = () => {
+  const dispatch = useDispatch();
 
-import * as actions from '../../Store/Actions/actions';
+  useEffect(() => {
+    //dispatch(displayLoader(true));
+    dispatch(fetchPhotos());
+  }, []);
 
-const Photos = props => {
+  const { photos } = useSelector(state => state.galleryReducer);
+  console.log(photos);
   return (
     <div>
       <LargeImage />
       <span className="gallery">
-        {props.photos.map((photo, index) => {
-          return (
-            <Photo
-              clickHandler={event => props.onLoadLargeImage(event)}
-              key={index}
-              imgSrc={photo.src}
-              id={photo.id}
-            />
-          );
-        })}
+        {photos.length > 0 &&
+          photos.map((photo, index) => {
+            return (
+              <ImageLoad
+                clickHandler={event => dispatch(loadLargeImage(event))}
+                src={photo.src}
+                placeholder={photo.placeholder}
+                alt="Decription"
+                id={photo.id}
+                key={index}
+              />
+            );
+          })}
       </span>
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    photos: state.galleryReducer.photos
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    onLoadLargeImage: event => dispatch(actions.loadLargeImage(event))
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Photos);
+export default Photos;

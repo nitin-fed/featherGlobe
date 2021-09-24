@@ -1,4 +1,4 @@
-import * as actionType from '../Actions/actionType';
+import * as actionType from "../Actions/actionType";
 
 export const initialState = {
   posts: [],
@@ -6,12 +6,13 @@ export const initialState = {
   isAddPostVisible: false,
   isEditing: false,
   showBackdrop: false,
-  selectedPost: {}
+  selectedPost: {},
+  isVisible: false
 };
 
 export function postReducer(state = initialState, action) {
   switch (action.type) {
-    case 'ADD': {
+    case "ADD": {
       return {
         ...state
       };
@@ -33,7 +34,7 @@ export function postReducer(state = initialState, action) {
       };
     }
     case actionType.FETCH_POSTS_FAILS: {
-      alert('error');
+      alert("error");
       return {
         ...state,
         posts: action.posts
@@ -51,7 +52,8 @@ export function postReducer(state = initialState, action) {
       return {
         ...state,
         showBackdrop: true,
-        isEditing: false
+        isEditing: false,
+        isVisible: true
       };
     }
     case actionType.EDIT_POST: {

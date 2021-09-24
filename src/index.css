@@ -1,6 +1,6 @@
 @font-face {
   font-family: NanumGothic-Regular;
-  src: url('./App/assets/Fonts/Nanum_Gothic/NanumGothic-Regular.ttf');
+  src: url("./App/assets/Fonts/Nanum_Gothic/NanumGothic-Regular.ttf");
 }
 
 body * {
@@ -14,12 +14,7 @@ body {
   height: 100%;
   margin: 0;
 }
-hr {
-  margin: 5px !important;
-}
-.mainWrapper {
-  text-align: center;
-}
+
 .footer {
   height: 30px;
   background: lightslategray;
@@ -34,7 +29,7 @@ hr {
 
 .appName {
   font-size: 30px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 }
 .scrollableContainer {
   overflow: hidden;
@@ -52,8 +47,7 @@ hr {
 }
 
 .logo {
-  height: 100px;
-  padding-top: 8px;
+  padding: 15px;
 }
 pre {
   color: red !important;
@@ -61,11 +55,22 @@ pre {
   font-style: italic;
 }
 
-.guessWordInputField{
+.guessWordInputField {
   font-size: 20px;
   letter-spacing: 1px;
   color: green;
   padding: 0 10px;
   font-weight: bold;
   border: 1px solid green;
+}
+
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: auto 0;
+  background: rgba(255, 255, 2555, 0.5);
 }

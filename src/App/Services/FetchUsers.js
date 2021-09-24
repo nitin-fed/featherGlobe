@@ -6,7 +6,6 @@ import {
 } from '../Store/Actions/users';
 
 export const initUsers = () => {
-  debugger;
   return dispatch => {
     const url = 'http://jsonplaceholder.typicode.com/Users';
     axios

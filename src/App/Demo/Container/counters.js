@@ -1,7 +1,6 @@
 
 import { Counters } from '../Components/Counters'
 
-import * as actionType from '../../Store/Actions/actionType'
 
 import { groupClick, storeResult, addCounter, subtractCounter, add10, subtract10 } from '../../Store/Actions/counterActions'
 

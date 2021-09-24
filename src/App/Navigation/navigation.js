@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
+import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 
-import Home from '../Home/home';
-import Profile from '../Profile/profile';
-import Photography from '../Photography/photography';
-import Demo from '../Demo/demoApp';
-import './navbar.css';
-import Backdrop from '../Components/Backdrop';
-import GuessedWordWrapper from '../Demo/Container/GuessedWordWrapper';
-
+import Home from "../Home/home";
+import Profile from "../Profile/profile";
+import Photography from "../Photography/photography";
+import Demo from "../Demo/demoApp";
+import "./navbar.css";
+import Backdrop from "../Components/Backdrop";
+import GuessedWordWrapper from "../Demo/Container/GuessedWordWrapper";
 
 class Navigation extends Component {
   constructor() {
@@ -17,43 +16,41 @@ class Navigation extends Component {
     this.state = {
       isMenuOpen: false,
       isModelOpen: false,
-      linkArr: ['profile', 'photography', 'demo', 'guessWord'],
-      pageToLoad: '/'
+      linkArr: ["profile", "photography", "demo", "guessWord"],
+      pageToLoad: "/"
     };
- 
+
     const test = () => {
-      this.setState({ ...this.state, pageToLoad: 'Nitin' });
-      console.log(this.state.linkArr[Math.floor(Math.random() * 5)], 'Nitin')
-    }
+      this.setState({ ...this.state, pageToLoad: "Nitin" });
+      console.log(this.state.linkArr[Math.floor(Math.random() * 5)], "Nitin");
+    };
     test();
-    console.log(this.state)
-
+    console.log(this.state);
   }
 
-
-  getDerivedStateFromProps() {
-    console.log('getDerivedStateFromProps')
-  }
+  // getDerivedStateFromProps() {
+  //   console.log('getDerivedStateFromProps')
+  // }
   componentWillReceiveProps() {
-    console.log('componentWillReceiveProps')
+    console.log("componentWillReceiveProps");
   }
   componentShouldMount() {
-    console.log('componentShouldMount')
+    console.log("componentShouldMount");
   }
 
   componentWillMount() {
-    console.log('componentWillMount')
+    console.log("componentWillMount");
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
+    console.log("componentDidMount");
     //this.setState({ ...this.state, pageToLoad: 'Nitin' });
-    console.log(this.state)
+    console.log(this.state);
     //this.props.history.push('/dashboard')
   }
 
   UNSAFE_componentWillMount() {
-    console.log('componentWillMount  --unsafe ')
+    console.log("componentWillMount  --unsafe ");
     if (window.innerWidth > 768) {
       this.setState({ ...this.state, isMenuOpen: true });
     }
@@ -64,11 +61,11 @@ class Navigation extends Component {
   };
 
   render() {
-    let attachedCSS = 'appNav';
+    let attachedCSS = "appNav";
     if (this.state.isMenuOpen) {
-      attachedCSS = 'appNav show';
+      attachedCSS = "appNav show";
     } else {
-      attachedCSS = 'appNav hide';
+      attachedCSS = "appNav hide";
     }
 
     return (
@@ -99,8 +96,8 @@ class Navigation extends Component {
               Guess Word
             </NavLink>
           </li>
+          <li style={{ padding: "6px", float: "right" }}> Nirin</li>
         </ul>
-        <hr />
 
         <div className="hamburger" onClick={this.hamburgerHandler}>
           <button>X</button>
@@ -121,8 +118,6 @@ class Navigation extends Component {
 
         <Redirect to={this.state.pageToLoad} />
       </div>
-
-
     );
   }
 }

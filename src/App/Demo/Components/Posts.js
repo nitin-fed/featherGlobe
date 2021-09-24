@@ -1,25 +1,24 @@
-import React, { useEffect } from 'react';
-import './Posts.css';
-import { Post } from './Post';
-import PostDescription from '../Container/PostDescription';
-import { AddPost } from './AddPost';
+import React, { useEffect } from "react";
+import "./Posts.css";
+import { Post } from "./Post";
+import PostDescription from "../Container/PostDescription";
+import { AddPost } from "./AddPost";
 
 export function Posts({
-  onFetchPosts,
   posts,
   onLoadPostDescription,
   show,
   onDeletePost,
-  onAddPost
+  onAddPost,
+  onFetchPosts
 }) {
   useEffect(() => {
     onFetchPosts();
-  }, []);
-
-  if (posts) {
+  }, [onFetchPosts]);
+  if (posts && posts.length > 0) {
     return (
       <div>
-        <button onClick={() => onAddPost()}>Add Post</button>
+        <button onClick={() => onAddPost()}>Add Post___</button>
         <AddPost />
         <PostDescription show={show} />
         <ul className="container main leftAlign posts">

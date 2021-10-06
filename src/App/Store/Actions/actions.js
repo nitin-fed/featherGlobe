@@ -9,7 +9,7 @@ export const fetchPhotos = () => {
   };
 };
 
-export const fetchPosts = (posts, dispatch) => {
+export const updatePostReducer = posts => {
   return {
     type: actionType.FETCH_POSTS,
     posts: posts

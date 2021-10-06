@@ -1,13 +1,10 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import Article from "./Article";
-import { store } from "../../Store/createStore";
+import Article from "../Article";
+import { store } from "../../../Store/createStore";
 import { Provider } from "react-redux";
 import * as reactRedux from "react-redux";
-
-// const mockSetShowModel = jest.fn();
-// React.useState = jest.fn(() => [false, mockSetShowModel]);
 
 const articles = {
   articles: [
@@ -24,12 +21,6 @@ const articles = {
     }
   ]
 };
-
-// jest.mock("react-redux", () => ({
-//   useSelector: jest.fn()
-// }));
-
-// useSelector.mockImplementation(() => articles);
 
 describe("Article", () => {
   const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
@@ -61,12 +52,9 @@ describe("Article", () => {
   );
 
   it("Add Article handler", () => {
+    // expect(useSelectorMock).toHaveBeenCalled();
     const button = wrapper.find({ "test-id": "addArticle" }).first();
     button.simulate("click");
-    // expect(mockSetShowModel).toHaveBeenCalledWith(true);
-    // expect(mockSetShowModel).toHaveBeenCalledTimes(1);
-    //wrapper.setProps({ showModal: true });
-    //wrapper.update();
     expect(wrapper.find("AddArticle").exists()).toBe(true);
     expect(wrapper.find({ "test-id": "closeModal" }).exists()).toBe(true);
   });
@@ -78,11 +66,8 @@ describe("Article", () => {
   });
 
   it("Delete", () => {
-    //console.log(wrapper.debug());
-    //console.log(wrapper.find(".articleHeader").length);
     const deleteButton = wrapper.find({ "data-test": "deleteButton" }).first();
     deleteButton.simulate("click");
-    //console.log(wrapper.find(".articleHeader").length);
   });
 
   it("Edit Description", () => {
@@ -90,13 +75,11 @@ describe("Article", () => {
       event: { target: { value: "test description" } }
     };
     const editableTextArea = wrapper.find("ContentEditable").first();
-    //console.log(editableTextArea.debug());
     editableTextArea.simulate("change", fakeEvent);
     expect(dummyDispatch).toHaveBeenCalled();
   });
 
   it("Save and Edit button if Editing", () => {
-    //console.log(wrapper.debug());
     const saveEditButton = wrapper
       .find({ "test-id": "saveEditButton" })
       .first();
@@ -104,7 +87,6 @@ describe("Article", () => {
   });
 
   it("Save and Edit button if Saving", () => {
-    //console.log(wrapper.debug());
     const saveEditButton = wrapper.find({ "test-id": "saveEditButton" }).at(1);
     saveEditButton.simulate("click");
   });

@@ -1,7 +1,6 @@
 import * as actionType from "../../Store/Actions/actionType";
-import { sendEditArticleDescription } from "./ArticleServices";
 
-export const fetchArticles = data => {
+export const updateArticles = data => {
   return {
     type: actionType.FETCH_ARTICLES,
     payload: data

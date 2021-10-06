@@ -1,22 +1,23 @@
 import axios from "axios";
 import {
-  fetchArticles,
+  updateArticles,
   fetchArticlesFail,
   saveEditButtonClick
 } from "./ArticleAction";
 
 import { displayLoader } from "../../Store/Actions/commonActions";
 
-const baseUrl = "https://myposts-fd0b5.firebaseio.com/Posts/Articles.json";
+export const baseUrl =
+  "https://myposts-fd0b5.firebaseio.com/Posts/Articles.json";
 
-export const initArticles = () => {
+export const fetchArticles = () => {
   const url = baseUrl;
   return dispatch => {
     dispatch(displayLoader(true));
     axios
       .get(url)
       .then(response => {
-        dispatch(fetchArticles(response.data));
+        dispatch(updateArticles(response.data));
         dispatch(displayLoader(false));
       })
       .catch(error => {
@@ -34,7 +35,7 @@ export const addArticle = payload => {
       data: payload
     })
       .then(response => {
-        dispatch(initArticles());
+        dispatch(updateArticles());
       })
       .catch(error => {
         console.log(error);
@@ -55,7 +56,7 @@ export const deleteArticle = payload => {
       .then(response => {
         if (response.status === 200) {
           dispatch(displayLoader(false));
-          dispatch(initArticles());
+          dispatch(updateArticles());
         }
       })
       .catch(error => {
@@ -80,7 +81,7 @@ export const sendEditArticleDescription = payload => {
         dispatch(
           saveEditButtonClick(payload.keyname, payload.desc, payload.editable)
         );
-        initArticles(dispatch);
+        updateArticles(dispatch);
       })
       .catch(err => {
         console.log(err);

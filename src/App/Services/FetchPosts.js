@@ -1,20 +1,18 @@
-import axios from 'axios';
-import { fetchPosts, fetchPostsFails } from '../Store/Actions/actions';
+import axios from "axios";
+export const fetchPosts = dispatch => {
+  const url = "http://jsonplaceholder.typicode.com/Posts";
+  return axios
+    .get(url)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      return error;
+    });
+};
 
-export const initPosts = () =>
-{
-  return dispatch =>
-  {
-    const url = 'http://jsonplaceholder.typicode.com/Posts';
-    axios
-      .get(url)
-      .then(response =>
-      {
-        dispatch(fetchPosts(response.data));
-      })
-      .catch(error =>
-      {
-        dispatch(fetchPostsFails(error));
-      });
-  };
+export const getSecrateWord = () => {
+  return axios
+    .get("http://jsonplaceholder.typicode.com/Posts")
+    .then(res => res.data);
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  initArticles,
+  fetchArticles,
   addArticle,
   deleteArticle,
   sendEditArticleDescription
@@ -16,6 +16,8 @@ import Backdrop from "../../Components/Backdrop";
 import { AddArticle } from "./AddArticle";
 import { Button } from "react-bootstrap";
 
+
+
 const Article = () => {
   const [showModal, setShowModel] = useState(false);
 
@@ -24,7 +26,7 @@ const Article = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(initArticles());
+    dispatch(fetchArticles());
   }, []);
 
   const handleAddArticle = () => {
@@ -36,8 +38,6 @@ const Article = () => {
   };
 
   const deleteHandler = keyname => {
-    console.log("Show Spinner ________________");
-    console.log(keyname);
     dispatch(deleteArticle(keyname));
   };
 

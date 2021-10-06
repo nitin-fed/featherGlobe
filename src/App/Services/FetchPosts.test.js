@@ -1,34 +1,64 @@
-import axios from "axios";
-import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
+import moxios from "moxios";
+import { fetchPosts, getSecrateWord } from "./FetchPosts";
 
-import { initPosts } from "./FetchPosts";
+const posts = [
+  {
+    body: "test post body",
+    id: 1,
+    title: "test post title",
+    userId: 1
+  },
+  {
+    body: "test post body",
+    id: 2,
+    title: "test post title",
+    userId: 2
+  }
+];
 
-const mockStore = configureMockStore(thunk);
+const responseData = {
+  status: 200,
+  response: posts
+};
 
-describe("Should return posts", () => {
+describe("FetchPosts", () => {
   beforeEach(() => {
-    const store = mockStore({
-      posts: []
-    });
+    moxios.install();
   });
 
   afterEach(() => {
-    fetchMock.reset();
-    fetchMock.restore();
+    moxios.uninstall();
   });
-  xit("Posts", () => {
-    fetchMock.getOnce("http://jsonplaceholder.typicode.com/Posts", {
-      body: {
-        posts: []
-      },
-      headers: {
-        "content-type": "application.json"
-      }
+
+  it("Returns getsecrateword data", () => {
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+
+      request.respondWith({
+        status: 200,
+        response: "party"
+      });
     });
 
-    const expectedAction = {
-      type: ""
-    };
+    return getSecrateWord().then(res => {
+      expect(res).toBe("party");
+    });
+  });
+
+  it("Returns post data", () => {
+    const dispatch = jest.fn();
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith(responseData);
+    });
+
+    return fetchPosts(dispatch)
+      .then(response => {
+        console.log(response);
+        expect(res).toBe(posts);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   });
 });

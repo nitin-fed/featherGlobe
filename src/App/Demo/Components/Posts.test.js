@@ -1,86 +1,48 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import { Posts } from './Posts';
-import configureStore from 'redux-mock-store';
-import { Provider } from 'react-redux';
+import React from "react";
+import { Posts } from "./Posts";
+import { Provider } from "react-redux";
+import { mount } from "enzyme";
 
-import { storeFactory } from '../../Utils/testsUtils'
+import { store } from "../../Store/createStore";
 
-const initialState = {
-  postReducer: {
-    posts: [],
-    postId: 0,
-    isAddPostVisible: false,
-    isEditing: false,
-    showBackdrop: false,
-    selectedPost: {}
-  }
+jest.mock("../../Services/FetchPosts");
+
+import { fetchPosts as mockfetchPosts } from "../../Services/FetchPosts";
+
+const props = {
+  onLoadPostDescription: jest.fn(),
+  show: true,
+  onDeletePost: jest.fn(),
+  onAddPost: jest.fn()
 };
 
-const store = storeFactory(initialState)
-
-describe('Posts', () => {
-  let props = {};
-  beforeEach(() => {
-    props = {
-      onFetchPosts: jest.fn(),
-      posts: [
-        {
-          body: 'test post body',
-          id: 1,
-          title: 'test post title',
-          userId: 1
-        },
-        {
-          body: 'test post body',
-          id: 2,
-          title: 'test post title',
-          userId: 2
-        }
-      ],
-      onLoadPostDescription: jest.fn(),
-      show: true,
-      onDeletePost: jest.fn(),
-      onAddPost: jest.fn()
-    };
-  });
-
-  const renderWithStore = (p) => {
-    return renderer.create(
+describe("Posts", () => {
+  it("Render", () => {
+    const wrapper = mount(
       <Provider store={store}>
-        <Posts  {...p} />
-        </Provider>
+        <Posts {...props} />
+      </Provider>
     );
-  };
+    expect(wrapper.find(Posts).exists()).toBeTruthy();
+    expect(wrapper.find("h1").text()).toEqual("No Posts Found.");
+  });
+});
 
-
-
-  it('Should render if posts===obj', () => {
-    const component = renderWithStore(props);
-    const tree = component.toJSON();
-    //expect(tree).toMatchSnapshot();
+describe("Fetch Posts", () => {
+  beforeEach(() => {
+    mockfetchPosts.mockClear();
   });
 
-  it('Should render if posts===undefined', () => {
-    const newProps = {
-      ...props,
-      posts: undefined
-    };
-    const component = renderWithStore(newProps);
-    const tree = component.toJSON();
-    //expect(tree).toMatchSnapshot();
-  });
+  it("fetchPosts returns object", () => {
+    const wrapper = mount(
+      <Provider store={store}>
+        <Posts {...props} />
+      </Provider>
+    );
 
-  xit('button click', () => {
-    const component = renderWithStore(props);
-    const tree = component.toJSON();
-    const myButton = tree.children.find(item => {
-      return item.type === 'button';
-    });
-
-    myButton.props.onClick({
-      target: { value: 'blue' }
-    });
-    expect(onAddPost).toHaveBeenCalledWith('blue');
+    expect(mockfetchPosts).toHaveBeenCalledTimes(1);
+    mockfetchPosts.mockClear();
+    wrapper.setProps();
+    expect(mockfetchPosts).toHaveBeenCalledTimes(0);
   });
 });

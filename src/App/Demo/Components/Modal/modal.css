@@ -1,0 +1,29 @@
+.fg-modal {
+  background: white;
+  position: absolute;
+  float: left;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, 0);
+  z-index: 101;
+  min-width: 450px;
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.fg-modal > div {
+  padding: 20px;
+}
+
+.fg-modal > .header {
+  border-bottom: 1px solid lightgray;
+}
+
+.fg-modal > .modalFooter {
+  border-top: 1px solid lightgray;
+  text-align: right;
+}
+
+.overflowHidden {
+  overflow: hidden;
+}

@@ -9,6 +9,7 @@ import Demo from "../Demo/demoApp";
 import "./navbar.css";
 import Backdrop from "../Components/Backdrop";
 import GuessedWordWrapper from "../Demo/Container/GuessedWordWrapper";
+import { jApp } from "../Jotto/jApp";
 
 class Navigation extends Component {
   constructor() {
@@ -27,6 +28,10 @@ class Navigation extends Component {
     test();
     console.log(this.state);
   }
+
+  hamburgerHandler = () => {
+    this.setState({ ...this.state, isMenuOpen: !this.state.isMenuOpen });
+  };
 
   // getDerivedStateFromProps() {
   //   console.log('getDerivedStateFromProps')
@@ -55,10 +60,6 @@ class Navigation extends Component {
       this.setState({ ...this.state, isMenuOpen: true });
     }
   }
-
-  hamburgerHandler = () => {
-    this.setState({ ...this.state, isMenuOpen: !this.state.isMenuOpen });
-  };
 
   render() {
     let attachedCSS = "appNav";
@@ -96,7 +97,12 @@ class Navigation extends Component {
               Guess Word
             </NavLink>
           </li>
-          <li style={{ padding: "6px", float: "right" }}> Nirin</li>
+          <li>
+            <NavLink activeClassName="active" to="/jotto">
+              Jotto
+            </NavLink>
+          </li>
+          <li className="userInfo">Welcome: Nitin</li>
         </ul>
 
         <div className="hamburger" onClick={this.hamburgerHandler}>
@@ -113,6 +119,7 @@ class Navigation extends Component {
             <Route path="/photography" component={Photography} />
             <Route path="/demo" component={Demo} />
             <Route path="/guessWord" component={GuessedWordWrapper} />
+            <Route path="/jotto" component={jApp} />
           </Switch>
         </div>
 

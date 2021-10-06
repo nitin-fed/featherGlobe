@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
-import { AddArticle } from "./AddArticle";
-import { store } from "../../Store/createStore";
+import { AddArticle } from "../AddArticle";
+import { store } from "../../../Store/createStore";
 import { Provider } from "react-redux";
 import { ModalDialog } from "react-bootstrap";
 import { act } from "react-dom/test-utils";
@@ -48,7 +48,7 @@ describe("Article", () => {
     expect(wrapper.find("#date").prop("value")).toEqual("test");
   });
 
-  it.only("Submit", () => {
+  it("Submit", () => {
     const submitButton = wrapper.find({ "test-id": "saveAndAddNew" }).first();
     submitButton.simulate("click");
     // expect(wrapper.find(ModalDialog).exists).toBeFalsy();

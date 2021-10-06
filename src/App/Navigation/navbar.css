@@ -32,13 +32,21 @@
 .appNav .active {
   color: #0096ff;
   font-weight: bold;
+  border-bottom: 3px solid #0096ff;
 }
 
 .subNavContainer {
   text-align: right;
 }
+.userInfo {
+  float: right;
+  padding: 6px;
+}
 
 @media (max-width: 768px) {
+  .userInfo {
+    padding: 12px;
+  }
   .appNav {
     display: none;
   }
@@ -48,23 +56,20 @@
   .hamburger {
     display: block;
   }
+  .show {
+    display: block;
+    position: absolute;
+    min-width: 360px;
+    right: 0;
+    top: 87px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+  }
 }
-.show {
-  display: block;
-}
+
 .hide {
   display: none;
 }
-.Backdrop {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
 .bodyContents {
   background-size: cover;
   height: calc(100vh - 78px);
@@ -89,6 +94,16 @@
 
 .navigation li {
   display: inline-block;
+}
+
+.navigation li a:hover {
+  color: #0096ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.navigation .active {
+  font-weight: bold;
+  color: #0096ff;
 }
 
 .navigation ul li a {

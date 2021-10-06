@@ -9,6 +9,8 @@ import { guessedWordsReducer } from "./guessedWordReducer";
 import { articleReducers } from "../../Demo/Article/ArticleReducer";
 import userReducer from "./userReducer";
 import commonReducer from "./commonReducer";
+import modalSlice from "./modalSlice";
+import profileSlice from "./profileSlice"
 
 export default combineReducers({
   appReducer: appReducer,
@@ -19,5 +21,7 @@ export default combineReducers({
   guessedWordsReducer: guessedWordsReducer,
   articleReducers: articleReducers,
   userReduder: userReducer,
-  commonReducer: commonReducer
+  commonReducer: commonReducer,
+  modalReducer: modalSlice,
+  profileReducer: profileSlice
 });

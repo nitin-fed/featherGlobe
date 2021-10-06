@@ -7,7 +7,9 @@ export const initialState = {
   isEditing: false,
   showBackdrop: false,
   selectedPost: {},
-  isVisible: false
+  isVisible: false,
+  isLoading: false,
+  error: ""
 };
 
 export function postReducer(state = initialState, action) {
@@ -44,6 +46,7 @@ export function postReducer(state = initialState, action) {
     case actionType.FETCH_POSTS: {
       return {
         ...state,
+        isLoading: false,
         posts: action.posts
       };
     }

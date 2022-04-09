@@ -1,6 +1,6 @@
 import React from "react";
 
-export const getSecretWord = (guessedWord, secretWord) => {
+export const getLetterMatchCount = (guessedWord, secretWord) => {
   const secretLetters = secretWord.split("");
   const gussedLetterSet = new Set(guessedWord);
   return secretLetters.filter(letter => gussedLetterSet.has(letter)).length;
@@ -12,7 +12,7 @@ const Support = () => {
   return (
     <>
       <h1>Support</h1>
-      <button onClick={() => getSecretWord("train", "party")}>
+      <button onClick={() => getLetterMatchCount("train", "party")}>
         Secret Word
       </button>
       <button onClick={() => setShow(show ? false : true)}> Show/Hide</button>

@@ -1,27 +1,39 @@
-import React from "react";
-export const Input = () => {
-  return (
-    <div>
-      <div class="row">
-        <div class="col-8">
-          <label>Enter Word:</label>
-        </div>
-        <div class="col-4"></div>
-      </div>
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
 
-      <div class="row">
-        <div class="col-8">
-          <input
-            className="form-control"
-            type="text"
-            placeholder="Enter Word"
-          />
-        </div>
-        <div class="col-4">
-          <button className="btn btn-primary">Check </button>
-        </div>
-      </div>
-      <br />
+export const Input = ({ secretWord }) => {
+  const [currentGuess, setCurrentGuess] = React.useState("");
+  const success = useSelector(state => state.secretWordReducer);
+  if (success) {
+    return <div data-test="component-input"></div>;
+  }
+  return (
+    <div data-test="component-input">
+      <form className="form-inline">
+        <input
+          data-test="input-box"
+          className="form-control m2 mx-sm-3"
+          type="text"
+          placeholder="Enter Word"
+          value={currentGuess}
+          onChange={e => setCurrentGuess(e.target.value)}
+        />
+        <button
+          data-test="submit-button"
+          className="btn btn-primary"
+          onClick={e => {
+            e.preventDefault();
+            setCurrentGuess("");
+          }}
+        >
+          Submit
+        </button>
+      </form>
     </div>
   );
+};
+
+Input.propTypes = {
+  secretWord: PropTypes.string
 };

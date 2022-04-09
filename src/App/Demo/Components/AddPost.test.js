@@ -24,13 +24,13 @@ describe("Add Posts", () => {
       }
     ]
   };
-  test("Should render isEditing  === true", () => {
+  xit("Should render isEditing  === true", () => {
     const component = renderer.create(<AddPost {...props} />);
     let tree = component.toJSON();
     //expect(tree).toMatchSnapshot();
   });
 
-  test("Should render if isEditing === false", () => {
+  xit("Should render if isEditing === false", () => {
     const newProps = {
       ...props,
       isEditing: false
@@ -42,7 +42,7 @@ describe("Add Posts", () => {
     //expect(tree).toMatchSnapshot();
   });
 
-  test("Should render if isVisible === false", () => {
+  xit("Should render if isVisible === false", () => {
     const newProps = {
       ...props,
       isVisible: false

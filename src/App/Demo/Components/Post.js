@@ -3,14 +3,14 @@ import * as Icon from "react-bootstrap-icons";
 export function Post(props) {
   return (
     <li>
-      <div class="d-flex bd-highlight mb-1">
+      <div className="d-flex bd-highlight mb-1">
         <div
-          class="p-2 bd-highlight"
+          className="p-2 bd-highlight"
           onClick={() => props.clickHandler(props.data.id)}
         >
           <h4>{props.data.title}</h4>
         </div>
-        <div class="ml-auto p-2 bd-highlight">
+        <div className="ml-auto p-2 bd-highlight">
           <Icon.Trash2Fill
             color="red"
             size="1.2rem"
@@ -20,9 +20,9 @@ export function Post(props) {
         </div>
       </div>
 
-      <div class="d-flex bd-highlight mb-1">
-        <div class="p-2 bd-highlight"> {props.data.body}</div>
-        <div class="ml-auto p-2 bd-highlight">&nbsp;</div>
+      <div className="d-flex bd-highlight mb-1">
+        <div className="p-2 bd-highlight"> {props.data.body}</div>
+        <div className="ml-auto p-2 bd-highlight">&nbsp;</div>
       </div>
     </li>
   );

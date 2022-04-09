@@ -28,9 +28,6 @@ export const STORE_COUNTER = "STORE_COUNTER";
 export const CANCEL_ADDPOST = "CANCEL_ADDPOST";
 export const DELETE_RESULT = "DELETE_RESULT";
 export const ADD_PERSON = "ADD_PERSON";
-
-export const CHECK_WORD = "CHECK_WORD";
-export const UPDATE_GUESSWORD = "UPDATE_GUESSWORD";
 export const DELETE_ROW = "DELETE_ROW";
 
 //Article Actions
@@ -44,3 +41,9 @@ export const LOADER = "LOADER";
 
 //Photos Actions
 export const FETCH_PHOTOS = "FETCH_PHOTOS";
+
+// Jotto App - Guess Word
+export const CHECK_WORD = "CHECK_WORD";
+export const UPDATE_GUESSWORD = "UPDATE_GUESSWORD";
+export const CORRECT_GUESS = "CORRECT_GUESS ";
+export const GUESS_WORD = "GUESS_WORD";

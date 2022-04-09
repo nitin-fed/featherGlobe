@@ -27,7 +27,7 @@ describe("Support", () => {
   });
 
   //**** OPTIONAL TO CHECK FALSE CONDITION */
-  it("Should Render desc when show === FALSE", () => {
+  xit("Should Render desc when show === FALSE", () => {
     const button = wrapper.find("button").at(1);
     wrapper.setProps({ show: false });
     button.props().onClick();

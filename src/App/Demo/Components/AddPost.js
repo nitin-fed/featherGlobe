@@ -60,14 +60,14 @@ export function AddPost({ submitHandler, posts, postId }) {
         <ModalFooter>
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             onClick={() => cancelHandler()}
           >
             Cancel
           </button>
           <button
             type="button"
-            class="btn btn-primary ml-3"
+            className="btn btn-primary ml-3"
             onClick={submitHandler}
           >
             Submit

@@ -17,7 +17,7 @@ const About = () => {
         <div className="leftAlign expertise">
           <ul>
             {profile["description"].map((item, index) => {
-              return <li>{item}</li>;
+              return <li key={index}>{item}</li>;
             })}
           </ul>
         </div>

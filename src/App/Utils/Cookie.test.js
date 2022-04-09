@@ -10,18 +10,6 @@ describe("Cookies", () => {
   it("getCookie", () => {
     const str = "nnn";
     const selectedCookie = getCookie(str);
-    expect(selectedCookie).toBe("nnn"); 
+    expect(selectedCookie).toBe("nnn");
   });
-
-    
 });
-
-
-// raja rajeshawri nagar
-
-// vijay nagar
-
-// kengeri nagar sattelie town
-
-// sanjiv katti
-

@@ -3,6 +3,7 @@ import { Loader } from "./Loader";
 import { useSelector } from "react-redux";
 import "./nestedMenu.css";
 import { NestedMenu } from "./NestedMenu";
+import { LoginWidget } from "../../Utils";
 // import { setCookie, getCookie } from "../Utils/Cookie";
 // import { loadUser } from "../Services/fetchUser";
 
@@ -18,7 +19,9 @@ const Logo = () => {
   // }, [dispatch]);
 
   const showNestedMenu = () => {
-    "";
+    console.log("here");
+    LoginWidget("Nitin");
+
     setShow(show === true ? false : true);
   };
 

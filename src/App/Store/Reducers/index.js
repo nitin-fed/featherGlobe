@@ -1,3 +1,5 @@
+/** @format */
+
 import { combineReducers } from "redux";
 
 import { postReducer } from "./postReducer";
@@ -10,6 +12,7 @@ import { articleReducers } from "../../Demo/Article/ArticleReducer";
 import userReducer from "./userReducer";
 import commonReducer from "./commonReducer";
 import modalSlice from "./modalSlice";
+import appSlice from "./appSlice";
 import profileSlice from "./profileSlice";
 import { secretWordReducer } from "../../Jotto/Jotto_Reducers";
 import { jottoGuessWordReducer } from "../../Jotto/Jotto_Reducers/jottoGuessWordReducer";
@@ -29,5 +32,6 @@ export default combineReducers({
   profileReducer: profileSlice,
   secretWordReducer: secretWordReducer,
   jottoGuessWordReducer: jottoGuessWordReducer,
-  jottoSecretWordReducer: jottoSecretWordReducer
+  jottoSecretWordReducer: jottoSecretWordReducer,
+  appReducer: appSlice,
 });

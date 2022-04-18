@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import { Loader } from "./Loader";
 import { useSelector } from "react-redux";
@@ -9,7 +11,7 @@ import { LoginWidget } from "../../Utils";
 
 const Logo = () => {
   // const { userData } = useSelector(state => state.userReduder);
-  const { displayLoader } = useSelector(state => state.commonReducer);
+  const { displayLoader } = useSelector((state) => state.commonReducer);
   const [show, setShow] = useState(false);
 
   // const dispatch = useDispatch();
@@ -18,21 +20,14 @@ const Logo = () => {
   //   dispatch(loadUser());
   // }, [dispatch]);
 
-  const showNestedMenu = () => {
-    console.log("here");
-    LoginWidget("Nitin");
-
-    setShow(show === true ? false : true);
-  };
-
   return (
     <>
       {displayLoader && <Loader />}
-      <div className="logo">
-        <div id="header" className="appName" onClick={() => showNestedMenu()}>
+      <div className='px-10 '>
+        <div id='header' className='text-3xl tracking-widest'>
           Featherglobe
         </div>
-        <div className="tagline">{"{DECODED FROM NATURE}"}</div>
+        <div className='logoFont'>{"{DECODED FROM NATURE}"}</div>
       </div>
 
       {/* <div className="nestedMenu">

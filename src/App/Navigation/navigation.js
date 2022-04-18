@@ -1,252 +1,84 @@
-import React, { Component } from "react";
+/** @format */
 
-import { Route, NavLink, Switch, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
-import Home from "../Home/home";
-import Profile from "../Profile/profile";
-import Photography from "../Photography/photography";
-// import Demo from "../Demo/demoApp";
-import "./navbar.css";
-import Backdrop from "../Components/Backdrop";
-import GuessedWordWrapper from "../Demo/Container/GuessedWordWrapper";
-import { JottoApp } from "../Jotto/JottoApp";
-import Article from "../Demo/Article/Article";
-import Gallery from "../Demo/Container/Gallery";
-import Users from "../Demo/Components/Users/Users";
-import todos from "../Demo/Container/todos";
-import Support from "../Demo/Support/Support";
-import Photos from "../Photography/Components/Photos";
-import Posts from "../Demo/Container/Posts";
-import Counters from "../Demo/Container/counters";
-import About from "../Profile/Components/about";
-import Skills from "../Profile/Components/skills";
-import Experience from "../Profile/Components/experience";
-import uiDesigning from "../Profile/Components/uiDesigning";
+import { NavLink } from "react-router-dom";
 
-class Navigation extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isMenuOpen: false,
-      isModelOpen: false,
-      linkArr: ["profile", "photography", "demo", "guessWord"],
-      pageToLoad: "/"
-    };
+const Navigation = () => {
+  const [toggleMenuContainer, setMenuContainer] = useState(false);
 
-    const test = () => {
-      //this.setState({ ...this.state, pageToLoad: "Nitin" });
-      console.log(this.state.linkArr[Math.floor(Math.random() * 5)], "Nitin");
-    };
-    test();
-    console.log(this.state);
-  }
-
-  hamburgerHandler = () => {
-    this.setState({ ...this.state, isMenuOpen: !this.state.isMenuOpen });
+  const toggleMenu = () => {
+    console.log(toggleMenuContainer);
+    setMenuContainer(!toggleMenuContainer);
   };
 
-  // getDerivedStateFromProps() {
-  //   console.log('getDerivedStateFromProps')
-  // }
-  componentWillReceiveProps() {
-    console.log("componentWillReceiveProps");
-  }
-  componentShouldMount() {
-    console.log("componentShouldMount");
-  }
+  const appReducer = useSelector((state) => state.appReducer);
+  const { menus } = appReducer;
 
-  componentWillMount() {
-    console.log("componentWillMount");
-  }
+  const linkStyles =
+    "mx-1 md:rounded-lg md:border md:border-lime-800 px-3 py-2 hover:bg-lime-700 hover:rounded-lg";
+  return (
+    <>
+      {/* Backdrop */}
+      <div
+        onClick={toggleMenu}
+        className={`${
+          toggleMenuContainer ? "" : "hidden"
+        } absolute top-0 left-0 w-full h-full bg-gray-800 opacity-80 `}></div>
 
-  componentDidMount() {
-    console.log("componentDidMount");
-    //this.setState({ ...this.state, pageToLoad: 'Nitin' });
-    console.log(this.state);
-    //this.props.history.push('/dashboard')
-
-    // if (screen.width <= 640) {
-    //   document.querySelector("#navbar").addEventListener("click", myFunction(event));
-
-    //   function myFunction() {
-    //     const isButton = event.target.className === "subnavbtn";
-    //     const subMenuItems = event.target.nextElementSibling;
-    //     isButton && subMenuItems.style["display"] === "none"
-    //       ? (subMenuItems.style["display"] = "block")
-    //       : (subMenuItems.style["display"] = "none");
-    //   }
-    // }
-  }
-
-  UNSAFE_componentWillMount() {
-    console.log("componentWillMount  --unsafe");
-    if (window.innerWidth > 768) {
-      this.setState({ ...this.state, isMenuOpen: true });
-    }
-  }
-
-  render() {
-    let attachedCSS = "appNav";
-    if (this.state.isMenuOpen) {
-      attachedCSS = "appNav show";
-    } else {
-      attachedCSS = "appNav hide";
-    }
-
-    return (
-      <div>
-        <div>
-          <div className="fg-navbar">
-            <NavLink activeClassName="active" exact to="/">
-              Home
-            </NavLink>
-
-            <div className="subnav">
-              <button className="subnavbtn">
-                <NavLink activeClassName="active" to="/profile">
-                  Profile <i className="fa fa-caret-down" />
-                </NavLink>
-              </button>
-              <div className="subnav-content">
-                <NavLink activeClassName="active" to="/profile/about">
-                  About
-                </NavLink>
-
-                <NavLink activeClassName="active" to="/profile/skills">
-                  Skills
-                </NavLink>
-
-                <NavLink activeClassName="active" to="/profile/experience">
-                  Experience
-                </NavLink>
-
-                <NavLink activeClassName="active" to="profile/uiDesigning">
-                  UI Desigining
-                </NavLink>
-              </div>
-            </div>
-            <NavLink activeClassName="active" to="/photography">
-              Photography
-            </NavLink>
-
-            <div className="subnav">
-              <button className="subnavbtn">
-                <NavLink activeClassName="active" to="/demo">
-                  Demo <i className="fa fa-caret-down"></i>
-                </NavLink>
-              </button>
-              <div className="subnav-content" id="list">
-                <NavLink activeClassName="active" to="/demo/Posts">
-                  Posts
-                </NavLink>
-
-                <NavLink activeClassName="active" to="/demo/Counters">
-                  Counters/Calc
-                </NavLink>
-
-                <NavLink activeClassName="active" to="/demo/Gallery">
-                  Gallery
-                </NavLink>
-
-                <NavLink activeClassName="active" to="/demo/RegisgerUser">
-                  Register User
-                </NavLink>
-
-                <NavLink activeClassName="active" to="/demo/Article">
-                  Article
-                </NavLink>
-
-                <NavLink activeClassName="active" to="/demo/Support">
-                  Support
-                </NavLink>
-              </div>
-            </div>
-            <NavLink activeClassName="active" to="/guessWord">
-              Guess Word
-            </NavLink>
-            <NavLink activeClassName="active" to="/jotto">
-              Jotto
-            </NavLink>
-
-            <NavLink activeClassName="active" to="/contact">
-              Contact
-            </NavLink>
-          </div>
-        </div>
-
-        {/* <ul className={attachedCSS}>
-          <li>
-            <NavLink activeClassName="active" exact to="/">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="active" to="/profile">
-              Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="active" to="/photography">
-              Photography
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="active" to="/demo">
-              Demo
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="active" to="/guessWord">
-              Guess Word
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="active" to="/jotto">
-              Jotto
-            </NavLink>
-          </li>
-          <li className="userInfo">Welcome: Nitin</li>
-        </ul> */}
-
-        {/* <div className="hamburger" onClick={this.hamburgerHandler}>
-          <button>X</button>
-        </div>
-        <Backdrop
-          show={this.state.isModelOpen}
-          clicked={this.hamburgerHandler}
-        /> */}
-        <div>
-          <Switch>
-            <React.Suspense fallback={<div>Loading...</div>}>
-              <Route exact path="/" component={Home} />
-
-              <Route path="/photography" component={Photos} />
-
-              <Route path="/guessWord" component={GuessedWordWrapper} />
-              <Route path="/jotto" component={JottoApp} />
-              <Redirect from="/demo" to="/demo/posts" />
-              <Route path="/demo/posts" component={Posts} />
-              <Route path="/demo/Counters" component={Counters} />
-              <Route path="/demo/Gallery" component={Gallery} />
-              <Route path="/demo/RegisgerUser" component={Users} />
-              <Route path="/demo/Todos" component={todos} />
-              <Route path="/demo/Article" component={Article} />
-              <Route path="/demo/Support" component={Support} />
-              <Route path="/contact" component={Support} />
-
-              <Redirect from="/profile" to="/profile/about" />
-              <Route path="/profile/about" exact component={About} />
-              <Route path="/profile/skills" component={Skills} />
-              <Route path="/profile/experience" component={Experience} />
-              <Route path="/profile/uiDesigning" component={uiDesigning} />
-            </React.Suspense>
-          </Switch>
-        </div>
-
-        <Redirect to={this.state.pageToLoad} />
+      <div className='sm:hidden relative z-1'>
+        <button onClick={toggleMenu} className='bg-gray-800 text-5xl'>
+          &#9776;
+        </button>
       </div>
-    );
-  }
-}
 
+      <div
+        className={`${
+          toggleMenuContainer ? "" : "hidden"
+        } sm:block p-3 relative z-10 `}>
+        {menus.map((item, index) => {
+          return (
+            <NavLink
+              key={index}
+              className={`${
+                toggleMenuContainer ? "block" : "inline-block"
+              } sm:inline-block ${linkStyles}`}
+              exact
+              to={`${item["url"]}`}>
+              {item["displayName"]}
+            </NavLink>
+          );
+        })}
+      </div>
+
+      {/* <div className='inline-block'>
+        <NavLink exact to='/'>
+          Home
+        </NavLink>
+        <NavLink to='/profile'>Profile</NavLink>
+
+        <NavLink to='/photography'>Photography</NavLink>
+
+        <NavLink to='/demo'>Demo</NavLink>
+        <NavLink to='/demo/Posts'>Posts</NavLink>
+
+        <NavLink to='/demo/Counters'>Counters/Calc</NavLink>
+
+        <NavLink to='/demo/Gallery'>Gallery</NavLink>
+
+        <NavLink to='/demo/RegisgerUser'>Register User</NavLink>
+
+        <NavLink to='/demo/Article'>Article</NavLink>
+
+        <NavLink to='/demo/Support'>Support</NavLink>
+
+        <NavLink to='/guessWord'>Guess Word</NavLink>
+        <NavLink to='/jotto'>Jotto</NavLink>
+
+        <NavLink to='/contact'>Contact</NavLink>
+      </div> */}
+    </>
+  );
+};
 export default Navigation;

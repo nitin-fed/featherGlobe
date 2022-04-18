@@ -1,0 +1,50 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: NanumGothic-Regular;
+    src: url("./App/assets/Fonts/Nanum_Gothic/NanumGothic-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: Nunito_Sans;
+    src: url("./App/assets/Fonts/Nunito_Sans/NunitoSans-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: NunitoSans-ExtraLight;
+    src: url("./App/assets/Fonts/Nunito_Sans/NunitoSans-ExtraLight.ttf");
+  }
+ @font-face {
+    font-family: NunitoSans-Light;
+    src: url("./App/assets/Fonts/Nunito_Sans/NunitoSans-Light.ttf");
+  }
+  
+
+@layer base {
+    html {
+      font-family: NunitoSans-ExtraLight;
+      color: #a8adb6;
+      background: #000;
+    }
+    a {
+      @apply text-lime-500;
+    }
+    a:hover {
+      @apply text-lime-300 underline;
+    }
+  }
+
+  .logoFont {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+  .footerImg{
+    background-image: url('/./images/a.jpg'); 
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: -25px;
+    z-index: -1;
+  }

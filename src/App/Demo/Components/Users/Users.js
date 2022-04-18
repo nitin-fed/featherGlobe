@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
-import './users.css';
+/** @format */
+
+import React, { Component } from "react";
+import "./users.css";
 
 class Users extends Component {
+  componentDidMount() {}
 
-  componentDidMount(){
-    
-  }
-
-  render(){
-    return(
-      <h1> itin</h1>
-    )
+  render() {
+    return <h1>Nitin</h1>;
   }
 }
 
-export default Users
-  
+export default Users;

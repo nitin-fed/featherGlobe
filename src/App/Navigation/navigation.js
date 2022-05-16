@@ -1,16 +1,28 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import { NavLink } from "react-router-dom";
+import { ChildNav } from "../Demo/ChildNav";
 
 const Navigation = () => {
   const [toggleMenuContainer, setMenuContainer] = useState(false);
 
+  useEffect(() => {
+    window.location.pathname.indexOf("demo") > 0 && updateDemoChildMenu(true);
+  });
   const toggleMenu = () => {
-    console.log(toggleMenuContainer);
     setMenuContainer(!toggleMenuContainer);
+  };
+  const [demoChildMenu, updateDemoChildMenu] = useState(false);
+
+  const updateChildMenu = (evt) => {
+    if (evt.currentTarget.innerText === "Practice") {
+      updateDemoChildMenu(true);
+    } else {
+      updateDemoChildMenu(false);
+    }
   };
 
   const appReducer = useSelector((state) => state.appReducer);
@@ -34,20 +46,28 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`${
+        className={`sticky top-0 ${
           toggleMenuContainer ? "" : "hidden"
         } sm:block p-3 relative z-10 `}>
         {menus.map((item, index) => {
           return (
-            <NavLink
-              key={index}
-              className={`${
-                toggleMenuContainer ? "block" : "inline-block"
-              } sm:inline-block ${linkStyles}`}
-              exact
-              to={`${item["url"]}`}>
-              {item["displayName"]}
-            </NavLink>
+            <>
+              <div className='inline-block' key={index}>
+                <NavLink
+                  onClick={(e) => updateChildMenu(e)}
+                  activeclassname='active'
+                  key={index}
+                  className={`${
+                    toggleMenuContainer ? "block" : "inline-block"
+                  } sm:inline-block ${linkStyles}`}
+                  to={`${item["url"]}`}>
+                  {item["displayName"]}
+                </NavLink>
+                {item["displayName"] === "Practice" && demoChildMenu ? (
+                  <ChildNav />
+                ) : null}
+              </div>
+            </>
           );
         })}
       </div>

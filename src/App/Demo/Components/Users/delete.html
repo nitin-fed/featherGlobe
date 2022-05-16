@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+        .eins {
+            background-color: orange;
+            height: 50px;
+        }
+
+        .zwei {
+            color: red;
+        }
+
+        .drei {
+            width: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="eins zwei">JS</div>
+
+    <script>
+        var eins = document.querySelector("div");
+        var klasse = eins.classList;
+        console.log(klasse);
+        setTimeout(b, 1000);
+        function b()
+        {
+            eins.classList.add("drei");
+            console.log(klasse);
+        }
+
+
+        let a = function ()
+        {
+            return {
+                'age': 55,
+                'name': "Jhon"
+            }
+        }
+
+        console.log(a());
+
+    </script>
+
+
+
+</body>
+
+</html>

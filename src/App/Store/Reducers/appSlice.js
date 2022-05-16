@@ -3,14 +3,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  isAuthenticated: true,
   menus: [
-    { url: "/", displayName: "Home", imgPath: "hb1.jpg" },
-    { url: "profile", displayName: "Profile", imgPath: "hb2.jpg" },
-    { url: "photography", displayName: "Photography", imgPath: "hb3.jpg" },
-    { url: "signup", displayName: "Sign Up", imgPath: "hb4.jpg" },
-    { url: "users", displayName: "Users Management", imgPath: "hb5.jpg" },
-    { url: "demo", displayName: "Demo/Samples", imgPath: "hb6.jpg" },
-    { url: "contact", displayName: "Contact", imgPath: "hb7.jpg" },
+    { url: "/", displayName: "Home", imgPath: "home.png" },
+    { url: "/profile", displayName: "Profile", imgPath: "profile.png" },
+    {
+      url: "/photography",
+      displayName: "Photography",
+      imgPath: "photography.png",
+    },
+    { url: "/signup", displayName: "Sign Up", imgPath: "signUp.png" },
+    { url: "/users", displayName: "Users Management", imgPath: "users.png" },
+    { url: "/demo", displayName: "Practice", imgPath: "practice.png" },
+    { url: "/contact", displayName: "Contact", imgPath: "contact.png" },
+    { url: "/admin", displayName: "Admin", imgPath: "contact.png" },
   ],
 };
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    function getFriday(day, month, year)
+    {
+
+        date = new Date(year, month - 1, day)
+
+        if (date.getDay() === 5)
+        {
+            return Math.floor(((day - 1) / 7) + 1)
+        } else
+        {
+            return "Date is not a Friday"
+        }
+    }
+
+    console.log(getFriday(6, 8, 2021))
+
+
+
+    // const givenDate = 'Mar 22, 2021'
+    // const dateObj = new Date(givenDate)
+    // const date = dateObj.getDate()
+    // const dayOfFirst = new Date(dateObj.getMonth() + 1 + "," + 01 + "," + dateObj.getFullYear()).getDay()
+    // const dateOfFirstFri = 5 - (dayOfFirst - 1)
+    // if (dateOfFirstFri == date)
+    // {
+    //     console.log("1st Friday")
+    // } else
+    // {
+    //     for (let i = 1; i < 5; i++)
+    //     {
+    //         if (dateOfFirstFri + (7 * i) == date)
+    //         {
+    //             console.log(i + 1);
+    //         }
+    //     }
+    // }
+
+</script>
+
+</html>

@@ -34,7 +34,7 @@ const App = () => {
           <div className='max-w-screen-xl my-0 mx-auto '>
             <header className='py-4'>
               <img
-                src='./images/a.jpg'
+                src='../../images/a.jpg'
                 className='absolute top-0 left-0 -z-10 w-full'
               />
               <Logo />

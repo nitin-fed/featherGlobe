@@ -10,17 +10,17 @@ const Home = () => {
   return (
     <>
       <div className='grid gap-10 sm:grid-col-1  md:grid-cols-3'>
-        {menus.map((item) => {
+        {menus.map((item, i) => {
           return (
-            <div className=''>
-              {/* <img
-                className='h-full w-ful'
-                src={`/images/${item["imgPath"]}`}
-              /> */}
-              <div className='text-xl p-2 relative bg-black/75 bottom-10'>
-                <a>{item["displayName"]}</a>
+            <a href={item["url"]} key={i}>
+              <div className='tile text-xl p-2 relative bg-black/75  h-40'>
+                {item["displayName"]}
+                <img
+                  className='h-1/2 absolute bottom-0 right-0'
+                  src={`../images/${item["imgPath"]}`}
+                />
               </div>
-            </div>
+            </a>
           );
         })}
       </div>

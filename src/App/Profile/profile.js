@@ -22,7 +22,9 @@ export const Profile = () => {
                       src={"./images/icons/" + item["imgsrc"]}
                       alt='SVG as an image'></img>
                     {item["url"] ? (
-                      <a href={item["url"]}>{item["desc"]} </a>
+                      <a className='hover:underline' href={item["url"]}>
+                        {item["desc"]}{" "}
+                      </a>
                     ) : (
                       item["desc"]
                     )}
@@ -35,7 +37,7 @@ export const Profile = () => {
 
             <ul>
               {profile["skills"].map((item, index) => {
-                return <li key={index}>{item}</li>;
+                return <li key={index + ":" + index}>{item}</li>;
               })}
             </ul>
           </div>
@@ -48,7 +50,7 @@ export const Profile = () => {
             <ul className='pl-4'>
               {profile["description"].map((item, index) => {
                 return (
-                  <li className='list-disc pl-4' key={index}>
+                  <li className='list-disc pl-4' key={index + "a" + index}>
                     {item}
                   </li>
                 );

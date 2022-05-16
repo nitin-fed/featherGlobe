@@ -1,60 +1,107 @@
 /** @format */
 
-import React, { useState, useImperativeHandle } from "react";
+import React, { useContext, useEffect } from "react";
+import { FormCtx } from "./Form";
 
-export const TextInput = React.forwardRef((props, ref) => {
-  const { max, min, label, required, classes } = props;
-  const inputStyle = "rounded-lg bg-transparent border border-lime-600 p-3";
+const TextInput = (props) => {
+  const { id, kind } = props;
+  const {
+    setFields,
+    addField,
+    fields,
+    validateField,
+    errors,
+    validatePassword,
+  } = useContext(FormCtx);
 
-  const [val, setVal] = useState("");
+  const field = fields[id] || {};
+  const {
+    name,
+    rows,
+    value,
+    validate,
+    placeholder,
+    label = "",
+    type = "text",
+    events = {},
+    classes = {},
+  } = field;
+  const fieldError = errors[id];
 
-  const validateInput = (evt, min, max, required, label) => {
-    setVal(evt.target.value);
-    const charLength = evt.target.value.length;
-    const targetEle = evt.target;
-    const emailValidationStr = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const phonvalidation = /^[0-9]+$/;
+  const { onChange, onBlur, ...restEvents } = events;
+  const { contClass, errorClass } = classes;
 
-    if (required && charLength === 0) {
-      showError(targetEle, "Field is required");
-    } else if (charLength > 0 && charLength < min) {
-      showError(targetEle, `Atleast ${min} charcter required`);
-    } else if (charLength > max) {
-      showError(targetEle, `Maximum ${max} charcters are allowed`);
-    } else if (label === "Email" && !emailValidationStr.test(val)) {
-      showError(targetEle, "Invalid email address");
-    } else if (label === "Phone" && !phonvalidation.test(val)) {
-      showError(targetEle, "Only numbers allowed");
+  const handleBlur = (event) => {
+    if (event.target.id === "confirmPassword") {
+      validateField(event.target.id, true);
     } else {
-      hideError(targetEle);
+      validateField(event.target.id);
     }
   };
 
-  return (
+  const handleChange = (event) => {
+    try {
+      setFields(event, field);
+    } catch (error) {
+      throw error;
+    }
+
+    if (typeof onChange === "function") {
+      onChange({
+        ...field,
+        value: event.target.value,
+      });
+    }
+    validateField(event.target.id);
+  };
+
+  useEffect(() => {
+    addField({
+      field: props,
+      value,
+    });
+  }, []);
+
+  const fieldProps = {
+    ...restEvents,
+    id,
+    name,
+    type,
+    value,
+    validate,
+    placeholder,
+    onChange: handleChange,
+    onBlur: handleBlur,
+  };
+
+  if (type === "textarea") {
+    delete fieldProps.type;
+    delete fieldProps.value;
+
+    fieldProps.defaultValue = value;
+    fieldProps.rows = rows || 2;
+  }
+
+  const inputStyle =
+    "placeholder:italic placeholder:text-slate-500 rounded-lg bg-transparent border border-lime-600 p-3 ";
+
+  return field && field.value !== undefined ? (
     <>
-      <div className='mb-5'>
-        <p>
-          {label} {required && <span className='text-lg text-red-500'> *</span>}
-        </p>
-
+      {label}
+      {type === "textarea" ? (
+        <textarea {...fieldProps} className={inputStyle} />
+      ) : (
         <input
-          ref={ref}
-          value={val}
-          onChange={(e) => validateInput(e, min, max, required, label)}
-          type='text'
-          className={`${classes} ${inputStyle} `}
+          type={type}
+          className={`rounded-lg bg-transparent border border-lime-600 p-3 ${inputStyle} `}
+          {...fieldProps}
         />
-
-        <p className='hidden text-red-400 text-sm'></p>
-      </div>
+      )}
+      <p className={`text-red-400 ${errorClass}`}>{fieldError}</p>
     </>
+  ) : (
+    ""
   );
-});
+};
 
-export const showError = (target, msg) => {
-  target.nextElementSibling.classList.remove("hidden");
-  target.nextElementSibling.innerHTML = msg;
-};
-export const hideError = (target) => {
-  target.nextElementSibling.classList.add("hidden");
-};
+export default TextInput;

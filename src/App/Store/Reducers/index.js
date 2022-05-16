@@ -19,7 +19,6 @@ import { jottoGuessWordReducer } from "../../Jotto/Jotto_Reducers/jottoGuessWord
 import { jottoSecretWordReducer } from "../../Jotto/Jotto_Reducers/jottoSecretWordReducer";
 
 export default combineReducers({
-  appReducer: appReducer,
   galleryReducer: galleryReducer,
   postReducer: postReducer,
   usersReduder: usersReducer,

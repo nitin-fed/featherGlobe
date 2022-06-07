@@ -1,10 +1,12 @@
 /** @format */
 
 const validations = {
-  required: {
-    rule: () => /\S/,
+  username: {
+    rule: () => {
+      return /^[0-9a-zA-Z\b]+$/;
+    },
     formatter(fieldName) {
-      return `${fieldName} is required.`;
+      return `Special characters and spaces not allowed.`;
     },
   },
   numeric: {
@@ -21,15 +23,21 @@ const validations = {
     },
   },
   min: {
-    rule: () => /^.{4,}$/,
+    rule: () => /^.{6,}$/,
     formatter(fieldName) {
-      return `Min 4 characters`;
+      return `Min 6 characters`;
     },
   },
   max: {
-    rule: () => /^.{4,10}$/,
+    rule: () => /^.{6,24}$/,
     formatter(fieldName) {
-      return `Max 10 characters allowed`;
+      return `Max 24 characters allowed`;
+    },
+  },
+  required: {
+    rule: () => /\S/,
+    formatter(fieldName) {
+      return `${fieldName} is required.`;
     },
   },
 };

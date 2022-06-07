@@ -1,8 +1,13 @@
 /** @format */
 
-import React, { Component, useEffect, useReducer, useState } from "react";
-import "./users.css";
+import React, { useEffect, useRef, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
+import {
+  primaryButtonStyle,
+  warningButtonStyle,
+  deleteButton,
+} from "../../../Utils/constants";
 
 import { db } from "../../../../firebase-config";
 import {
@@ -12,10 +17,12 @@ import {
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
+import { MessageBox } from "../../../Components/MessageBox";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
   const userCollectionRef = collection(db, "user");
+  const messageBoxRef = useRef(null);
   const history = useNavigate();
 
   const getUser = async () => {
@@ -26,15 +33,6 @@ const Users = () => {
   useEffect(() => {
     getUser();
   }, []);
-
-  const primaryButtonStyle =
-    "disabled:opacity-50 rounded-lg py-2  px-5 bg-lime-500 text-black hover:bg-lime-800 hover:text-white";
-
-  const warningButtonStyle =
-    "rounded-lg py-2  ml-3  px-5 bg-red-500 text-black hover:bg-red-800 hover:text-white";
-
-  const deleteButton =
-    "rounded-lg py-0 px-3  ml-3 bg-gray-700 text-black hover:bg-red-800 hover:text-white";
 
   const rows = [];
 
@@ -47,6 +45,7 @@ const Users = () => {
   };
 
   const deleteHandler = (id) => {
+    // messageBoxRef.current.showMessageBox();
     const userDoc = doc(db, "user", id);
     deleteDoc(userDoc, id);
     getUser();
@@ -59,12 +58,27 @@ const Users = () => {
     // getUser();
   };
 
+  const messageBoxOkHandler = () => {
+    console.log("Ok Hadler");
+  };
+  const messageBoxCancelHandler = () => {
+    console.log("Cancel Handler");
+  };
+
   return (
     <>
+      <MessageBox
+        ref={messageBoxRef}
+        title='Edit User Info'
+        message='Are you sure, you want to edit user info?'
+        okHandler={messageBoxOkHandler}
+        cancelHandler={messageBoxCancelHandler}
+      />
       <h1 className='text-2xl'>Users List</h1>
       <br />
       <ul className='striped'>
         {Object.entries(users).map(([key, value]) => {
+          console.log(value);
           return (
             <li className='leading-8 py-1' key={value.id}>
               <div className='flex flex-row w-full'>
@@ -77,20 +91,23 @@ const Users = () => {
                   />
                 </div>
                 <div className='w-48 grow-0'>
-                  {value["firstName"] && value["firstName"].value}
+                  {value["firstName"] && value["firstName"]}
                 </div>
                 <div className='w-36 grow-0'>
-                  {value["lastName"] && value["lastName"].value}
+                  {value["lastName"] && value["lastName"]}
                 </div>
                 <div className='w-48 grow-0'>
-                  {value["phone"] && value["phone"].value}
+                  {value["phone"] && value["phone"]}
                 </div>
-                <div className='grow'>
-                  {value["email"] && value["email"].value}
-                </div>
+                <div className='grow'>{value["email"] && value["email"]}</div>
 
                 <button
-                  onClick={() => deleteHandler(value.id)}
+                  onClick={() =>
+                    messageBoxRef.current.showMessageBox(
+                      deleteHandler,
+                      value.id
+                    )
+                  }
                   className={deleteButton}>
                   X
                 </button>

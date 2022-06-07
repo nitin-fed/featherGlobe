@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useRef } from "react";
 import Navigation from "./Navigation/navigation";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -8,9 +8,11 @@ import { store } from "./Store/createStore";
 import Logo from "./Components/Logo";
 import ErrorBoundary from "./ErrorBoundary";
 import { Body } from "./Body";
+import { MessageBox } from "./Components/MessageBox";
 
 const App = () => {
   useEffect(() => {
+    // messageBoxRef.current.showMessageBox();
     window.onscroll = function() {
       myFunction();
     };
@@ -27,17 +29,26 @@ const App = () => {
     }
   });
 
+  const messageBoxRef = useRef(null);
+
+  const messageBoxOkHandler = () => {
+    console.log("Ok Hadler");
+  };
+  const messageBoxCancelHandler = () => {
+    console.log("Cancel Handler");
+  };
+
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <ErrorBoundary>
+      <ErrorBoundary>
+        <BrowserRouter>
           <div className='max-w-screen-xl my-0 mx-auto '>
             <header className='py-4'>
               <img
                 src='../../images/a.jpg'
                 className='absolute top-0 left-0 -z-10 w-full'
               />
-              <Logo />
+              <Logo myRef={messageBoxRef} />
             </header>
             <nav
               className='bg-black/90  h-16 text-white text-sm px-5'
@@ -53,8 +64,16 @@ const App = () => {
               www.featherglobe.com
             </footer>
           </div>
-        </ErrorBoundary>
-      </BrowserRouter>
+
+          <MessageBox
+            ref={messageBoxRef}
+            title='Edit User Info'
+            message='Are you sure, you want to edit user info?'
+            okHandler={messageBoxOkHandler}
+            cancelHandler={messageBoxCancelHandler}
+          />
+        </BrowserRouter>
+      </ErrorBoundary>
     </Provider>
   );
 };

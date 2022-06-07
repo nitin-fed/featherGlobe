@@ -3,7 +3,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-export const Profile = () => {
+export const About = () => {
   const { profile } = useSelector((state) => state.profileReducer);
 
   return (

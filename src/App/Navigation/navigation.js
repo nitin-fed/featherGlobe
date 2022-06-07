@@ -6,6 +6,10 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { ChildNav } from "../Demo/ChildNav";
 
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase-config";
+import { async } from "@firebase/util";
+
 const Navigation = () => {
   const [toggleMenuContainer, setMenuContainer] = useState(false);
 
@@ -26,7 +30,11 @@ const Navigation = () => {
   };
 
   const appReducer = useSelector((state) => state.appReducer);
-  const { menus } = appReducer;
+  const { menus, isAuthenticated } = appReducer;
+
+  const handleLogout = async () => {
+    await signOut(auth);
+  };
 
   const linkStyles =
     "mx-1 md:rounded-lg md:border md:border-lime-800 px-3 py-2 hover:bg-lime-700 hover:rounded-lg";
@@ -70,34 +78,9 @@ const Navigation = () => {
             </>
           );
         })}
+
+        {isAuthenticated && <button onClick={handleLogout}>Logout</button>}
       </div>
-
-      {/* <div className='inline-block'>
-        <NavLink exact to='/'>
-          Home
-        </NavLink>
-        <NavLink to='/profile'>Profile</NavLink>
-
-        <NavLink to='/photography'>Photography</NavLink>
-
-        <NavLink to='/demo'>Demo</NavLink>
-        <NavLink to='/demo/Posts'>Posts</NavLink>
-
-        <NavLink to='/demo/Counters'>Counters/Calc</NavLink>
-
-        <NavLink to='/demo/Gallery'>Gallery</NavLink>
-
-        <NavLink to='/demo/RegisgerUser'>Register User</NavLink>
-
-        <NavLink to='/demo/Article'>Article</NavLink>
-
-        <NavLink to='/demo/Support'>Support</NavLink>
-
-        <NavLink to='/guessWord'>Guess Word</NavLink>
-        <NavLink to='/jotto'>Jotto</NavLink>
-
-        <NavLink to='/contact'>Contact</NavLink>
-      </div> */}
     </>
   );
 };

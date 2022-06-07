@@ -5,7 +5,6 @@ import React, { Component } from "react";
 import { Route, Routes, BrowserRouter, Switch } from "react-router-dom";
 
 import Home from "./Home/home";
-import { Profile } from "./Profile/profile";
 import Photography from "./Photography/photography";
 // import Demo from "./Demo/demoApp";
 
@@ -20,12 +19,16 @@ import Support from "./Demo/Support/Support";
 import Photos from "./Photography/Components/Photos";
 import Posts from "./Demo/Container/Posts";
 import Counters from "./Demo/Container/counters";
+import { About } from "../App/About/about";
+import { Contact } from "../App/About/Components/contact";
 
-import RegisterUser from "./Demo/Container/Register";
-import Contact from "./Profile/Components/contact";
+// import RegisterUser from "./Demo/Container/Signup";
+// import Contact from "./Profile/Components/contact";
 import Galaxy from "./Demo/Components/galaxy";
 import Protected from "../Utils/Protected";
 import PublicRoutes from "../Utils/PublicRoutes";
+import Login from "./Login";
+import { Profile } from "./Demo/Container/Profile";
 
 export const Body = () => {
   return (
@@ -33,7 +36,10 @@ export const Body = () => {
       <Route exact path='/' element={<Home />} />
       <Route path='/photography' element={<Photos />} />
       <Route path='/contact' element={<Contact />} />
-      <Route path='/profile' element={<Profile />} />
+
+      <Route path='/login' element={<Login />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/registerUser' element={<Login />} />
 
       <Route path='/' element={<Protected />}>
         <Route path='/demo' element={<Posts />} />
@@ -48,7 +54,7 @@ export const Body = () => {
         <Route path='/demo/counter' element={<Counters />} />
         <Route path='/users' element={<Users />} />
         <Route path='/demo/galaxy' element={<Galaxy />} />
-        <Route path='/signup' element={<RegisterUser />} />
+        <Route path='/profile' element={<Profile />} />
       </Route>
 
       <Route path='/signup' element={<PublicRoutes />}>

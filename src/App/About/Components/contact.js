@@ -4,7 +4,7 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 
-const Contact = () => {
+export const Contact = () => {
   const { profile } = useSelector((state) => state.profileReducer);
 
   return (
@@ -28,4 +28,3 @@ const Contact = () => {
   );
 };
 
-export default Contact;

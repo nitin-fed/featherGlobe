@@ -43,8 +43,6 @@
     }
   }
 
-  
-
   .logoFont {
     font-size: 10px;
     letter-spacing: 4px;
@@ -63,7 +61,7 @@
     border: 2px solid rgba(54,83,20,.5)
  
   }
-
+  
   .active {
   background-color: rgb(77 124 15);
   color: rgb(190 242 100 );
@@ -195,4 +193,13 @@
   transform: skew(306deg, 178deg);
   margin-left: -200px;
 
+}
+
+.modalBackground {
+  background-color: rgba(5, 23 ,42, .8);
+}
+
+.links {
+  text-decoration: underline;
+  background: none;
 }

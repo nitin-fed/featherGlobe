@@ -43,18 +43,19 @@ const App = () => {
       <ErrorBoundary>
         <BrowserRouter>
           <div className='max-w-screen-xl my-0 mx-auto '>
-            <header className='py-4'>
+            <header className='py-2'>
               <img
                 src='../../images/a.jpg'
                 className='absolute top-0 left-0 -z-10 w-full'
               />
               <Logo myRef={messageBoxRef} />
+              <nav
+                className='bg-black/90  h-16 text-white text-sm px-5'
+                id='myHeader'>
+                <Navigation />
+              </nav>
             </header>
-            <nav
-              className='bg-black/90  h-16 text-white text-sm px-5'
-              id='myHeader'>
-              <Navigation />
-            </nav>
+
             <div className='p-10 bg-black/80'>
               <Body />
             </div>

@@ -8,11 +8,8 @@ export const ChildNav = () => {
     "mx-1 md:rounded-lg md:border md:border-lime-800 px-3 py-2   hover:bg-lime-700 hover:rounded-lg";
 
   const tiles = [
-    { url: "/demo/posts", displayName: "Posts" },
     { url: "/demo/counter", displayName: "Counter" },
-
     { url: "/demo/gallery", displayName: "Gallery" },
-
     { url: "/demo/article", displayName: "Articles" },
     { url: "/demo/support", displayName: "Support" },
     { url: "/demo/galaxy", displayName: "Galaxy" },

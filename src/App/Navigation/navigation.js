@@ -3,15 +3,15 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-import { NavLink } from "react-router-dom";
 import { ChildNav } from "../Demo/ChildNav";
 
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
-import { async } from "@firebase/util";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [toggleMenuContainer, setMenuContainer] = useState(false);
+  const history = useNavigate();
 
   useEffect(() => {
     window.location.pathname.indexOf("demo") > 0 && updateDemoChildMenu(true);
@@ -34,10 +34,11 @@ const Navigation = () => {
 
   const handleLogout = async () => {
     await signOut(auth);
+    history("/");
   };
 
   const linkStyles =
-    "mx-1 md:rounded-lg md:border md:border-lime-800 px-3 py-2 hover:bg-lime-700 hover:rounded-lg";
+    "mx-1 md:rounded-lg md:border md:border-lime-800 px-3 py-2 hover:bg-lime-700 hover:rounded-lg transition ease-in-out duration-300";
   return (
     <>
       {/* Backdrop */}
@@ -79,7 +80,13 @@ const Navigation = () => {
           );
         })}
 
-        {isAuthenticated && <button onClick={handleLogout}>Logout</button>}
+        {isAuthenticated && (
+          <button
+            className='float-right p-2.5 rounded-lg bg-red-500 text-white hover:bg-red-800 hover:text-white'
+            onClick={handleLogout}>
+            Logout
+          </button>
+        )}
       </div>
     </>
   );

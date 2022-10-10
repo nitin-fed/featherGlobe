@@ -8,10 +8,12 @@ import { primaryButtonStyle, warningButtonStyle } from "./Utils/constants";
 import {
   createUserWithEmailAndPassword,
   signOut,
-  signInWithEmailAndPassword,
+  signInWithEmailAndPassword
 } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCurrentUser } from "./Store/Reducers/appSlice";
+import { init } from "./LoginCanvas";
+import { initDancingLetter } from "./dancingLetter";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -32,10 +34,10 @@ const Login = () => {
     }
   }, [location.pathname]);
 
-  const login = () => {
-    localStorage.setItem("user", "test");
-    navigate("/dashboard");
-  };
+  // const login = () => {
+  //   localStorage.setItem("user", "test");
+  //   navigate("/dashboard");
+  // };
 
   const userNameRef = useRef(null);
   const passwordRef = useRef(null);
@@ -46,15 +48,26 @@ const Login = () => {
     evt.preventDefault();
     const email = userNameRef.current.getValue();
     const password = passwordRef.current.getValue();
-    console.log(isLoading);
+    setLoading(true);
     try {
-      setLoading(true);
-      const user = await createUserWithEmailAndPassword(auth, email, password);
-      dispatch(updateCurrentUser(user.user.email));
+      const user = await signInWithEmailAndPassword(auth, email, password);
+      history("/");
     } catch (error) {
-      setLoading(false);
       setError(error.message);
     }
+    setLoading(false);
+    // evt.preventDefault();
+    // const email = userNameRef.current.getValue();
+    // const password = passwordRef.current.getValue();
+    // console.log(isLoading);
+    // try {
+    //   setLoading(true);
+    //   const user = await createUserWithEmailAndPassword(auth, email, password);
+    //   dispatch(updateCurrentUser(user.user.email));
+    // } catch (error) {
+    //   setLoading(false);
+    //   setError(error.message);
+    // }
   };
 
   const handleLogin = async (evt) => {
@@ -92,12 +105,15 @@ const Login = () => {
     history("/");
   };
 
+  useEffect(() => {
+    init();
+    initDancingLetter();
+  }, []);
+
   return (
     <div className='login p-10 sm:w-full lg:w-3/4 m-auto'>
       <h1 className='text-3xl'>{isLogin ? " Login" : "Register User"}</h1>
-
-      <br />
-      <div>{error && error}</div>
+      <div className='text-red-500 py-2'>{error && error}</div>
       <form onSubmit={(evt) => handleSubmit(evt)}>
         <TextInputField
           label='User Name'
@@ -132,26 +148,26 @@ const Login = () => {
         <div className='float-right'>
           <button
             onClick={(e) => handleCancel(e)}
-            className={warningButtonStyle}>
+            className={warningButtonStyle}
+          >
             Cancel
           </button>
           <button
             onClick={(e) => handleReset(e)}
-            className={primaryButtonStyle}>
+            className={primaryButtonStyle}
+          >
             Reset
           </button>
           {isLogin ? (
-            <button
-              disabled={isLoading}
-              onClick={handleLogin}
-              className={primaryButtonStyle}>
+            <button disabled={isLoading} className={primaryButtonStyle}>
               Login
             </button>
           ) : (
             <button
               disabled={isLoading}
               type={"submit"}
-              className={primaryButtonStyle}>
+              className={primaryButtonStyle}
+            >
               Sign up
             </button>
           )}
@@ -171,6 +187,7 @@ const Login = () => {
           </NavLink>
         </div>
       )}
+      <canvas id='myCanvas'></canvas> <canvas id='dancingLetter'></canvas>
     </div>
   );
 };

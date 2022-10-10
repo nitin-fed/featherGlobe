@@ -55,20 +55,22 @@ export const TextInputField = forwardRef((props, ref) => {
 
   return (
     <>
-      <label htmlFor={fieldName} className='text-sm'>
-        {label} {isRequired && <span className='text-red-600 text-xl'>*</span>}
-      </label>
-      <input
-        name='fieldName'
-        className={`rounded-lg bg-transparent border border-lime-700 p-3 ${inputStyle} `}
-        type={kind}
-        value={fieldName}
-        onChange={(e) => changeHandler(e)}
-        onBlur={(e) => changeHandler(e)}
-        required={isRequired}
-      />
-      <span className={`text-red-400 text-sm`}>{errors["fieldName"]}</span>
-      <br />
+      <div className='pt-3'>
+        <label htmlFor={fieldName} className='text-sm'>
+          {label}
+          {isRequired && <span className='text-red-600 text-xl'>*</span>}
+        </label>
+        <input
+          name='fieldName'
+          className={`w-full rounded-lg bg-transparent border border-lime-700 p-3 ${inputStyle} `}
+          type={kind}
+          value={fieldName}
+          onChange={(e) => changeHandler(e)}
+          onBlur={(e) => changeHandler(e)}
+          required={isRequired}
+        />
+        <span className={`text-red-400 text-sm`}>{errors["fieldName"]}</span>
+      </div>
     </>
   );
 });

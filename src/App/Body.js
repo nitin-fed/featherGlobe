@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 
 import { Route, Routes, BrowserRouter, Switch } from "react-router-dom";
 
@@ -29,23 +29,43 @@ import Protected from "../Utils/Protected";
 import PublicRoutes from "../Utils/PublicRoutes";
 import Login from "./Login";
 import { Profile } from "./Demo/Container/Profile";
+import { UnAuthUser } from "./Components/UnAuthUser";
+
+import { useDispatch, useSelector } from "react-redux";
+import { updateCurrentUser } from "./Store/Reducers/appSlice";
+import { auth } from "../firebase-config";
+import { Post } from "./Demo/Components/Post";
+import { Admin } from "./Components/Admin";
+
+import { CSSTransition } from "react-transition-group";
+import SecHome from "../sec";
 
 export const Body = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      dispatch(updateCurrentUser(user?.email));
+    });
+  }, []);
+
   return (
     <Routes>
       <Route exact path='/' element={<Home />} />
       <Route path='/photography' element={<Photos />} />
       <Route path='/contact' element={<Contact />} />
-
+      <Route path='/posts' element={<Posts />} />
       <Route path='/login' element={<Login />} />
       <Route path='/about' element={<About />} />
       <Route path='/registerUser' element={<Login />} />
+      <Route path='/post' element={<Post />} />
+      <Route path='/admin' element={<Admin />} />
+      <Route path='/secHome' element={<SecHome />} />
 
       <Route path='/' element={<Protected />}>
-        <Route path='/demo' element={<Posts />} />
+        <Route path='/demo' element={<Counters />} />
         <Route path='/guessWord' element={<GuessedWordWrapper />} />
         <Route path='/jotto' element={<JottoApp />} />
-        <Route path='/demo/posts' element={<Posts />} />
         <Route path='/demo/Counters' element={<Counters />} />
         <Route path='/demo/Gallery' element={<Gallery />} />
         <Route path='/demo/To rtretrtdos' element={<todos />} />
@@ -57,9 +77,8 @@ export const Body = () => {
         <Route path='/profile' element={<Profile />} />
       </Route>
 
-      <Route path='/signup' element={<PublicRoutes />}>
-        {/* <Route path='/signup' element={<RegisterUser />} /> */}
-      </Route>
+      <Route path='/signup' element={<PublicRoutes />}></Route>
+      <Route path='/unAuthUser' element={<UnAuthUser />}></Route>
     </Routes>
   );
 };

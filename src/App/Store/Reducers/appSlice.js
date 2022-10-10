@@ -8,7 +8,8 @@ const initialState = {
 
   menus: [
     { url: "/", displayName: "Home", imgPath: "home.png" },
-    { url: "/about", displayName: "About", imgPath: "profile.png" },
+    { url: "/about", displayName: "About", imgPath: "about.png" },
+    { url: "/posts", displayName: "Posts", imgPath: "posts.png" },
     {
       url: "/photography",
       displayName: "Photography",
@@ -17,8 +18,8 @@ const initialState = {
     { url: "/users", displayName: "Users Management", imgPath: "users.png" },
     { url: "/demo", displayName: "Practice", imgPath: "practice.png" },
     { url: "/contact", displayName: "Contact", imgPath: "contact.png" },
-    { url: "/admin", displayName: "Admin", imgPath: "contact.png" },
-    { url: "/login", displayName: "Login", imgPath: "contact.png" },
+    { url: "/admin", displayName: "Admin", imgPath: "admin.png" },
+    { url: "/login", displayName: "Login", imgPath: "login.png" },
   ],
 };
 
@@ -34,7 +35,7 @@ const appSlice = createSlice({
         state.menus.push({
           url: "/profile",
           displayName: "User Profile",
-          imgPath: "contact.png",
+          imgPath: "profile.png",
         });
       } else {
         state.currentUser = payload;
@@ -43,7 +44,7 @@ const appSlice = createSlice({
         state.menus.push({
           url: "/login",
           displayName: "Login",
-          imgPath: "contact.png",
+          imgPath: "login.png",
         });
       }
     },

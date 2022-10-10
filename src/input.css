@@ -32,7 +32,7 @@
 @layer base {
     html {
       font-family: NunitoSans-ExtraLight;
-      color: #a8adb6;
+      color: #d5e6d8;
       background: #000;
     }
     a {
@@ -46,6 +46,7 @@
   .logoFont {
     font-size: 10px;
     letter-spacing: 4px;
+    color:rgba(255, 255, 255, .8)
   }
   .footerImg{
     background-image: url('/./images/a.jpg'); 
@@ -202,4 +203,64 @@
 .links {
   text-decoration: underline;
   background: none;
+}
+ 
+.post table, td, tr{
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 0;
+}
+
+.post table, ul, ol, pre {
+  margin-top: 20px; 
+}
+
+.post ol, ul {
+  padding-left: 15px
+}
+
+.post ol li {
+  list-style-type: number;
+}
+
+.post ul li {
+  list-style-type: disc;
+}
+
+.postTitle {
+  color: rgb(90, 148, 8);
+}
+
+.posts a:link { 
+  background: none;
+}
+.posts a:hover {
+  color: rgb(90, 148, 8);
+  background: none;
+  text-decoration: underline;
+}
+.posts a:visited {
+  color: rgb(90, 148, 8);
+  background: none;
+}
+.ck-content {
+  color: black;
+  min-height: 280px;
+  max-height: 300px;
+  
+}
+
+.toggle-checkbox {
+  background-color: rgb(108, 108, 108);
+} 
+.toggle-checkbox:checked { 
+  right: 0; 
+  transition: all 1s ease;
+  background-color: rgb(77 124 15);
+} 
+
+pre {
+  border:1px solid #6f6f6f;
+  background-color: #161616 !important;
+  padding: 10px; 
 }

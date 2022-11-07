@@ -56,7 +56,7 @@ export function Posts({ onLoadPostDescription, onDeletePost }) {
     "September",
     "October",
     "November",
-    "December",
+    "December"
   ];
 
   // console.log(Object.keys(posts));
@@ -93,14 +93,13 @@ export function Posts({ onLoadPostDescription, onDeletePost }) {
           <ul className='container main leftAlign posts'>
             {posts.length > 0 &&
               posts.map((item, index) => {
-                debugger;
                 const _date = `${
                   monthArr[new Date(item["date"]).getMonth()]
                 } ${new Date(item["date"]).getDate()}, ${new Date(
                   item["date"]
                 ).getFullYear()}`;
                 return (
-                  <li className='py-4 border-b border-lime-800' key={index}>
+                  <li className='py-4 border-b  ' key={index}>
                     <div className=''>
                       <div className=' '>
                         <h3 className='text-2xl'>
@@ -110,18 +109,19 @@ export function Posts({ onLoadPostDescription, onDeletePost }) {
                             state={{
                               date: _date,
                               title: item["title"],
-                              desc: item["description"],
+                              desc: item["description"]
                             }}
                             to={{
-                              pathname: "/post",
-                            }}>
+                              pathname: "/post"
+                            }}
+                          >
                             {item["title"]}
                           </NavLink>
                         </h3>
                       </div>
 
                       <div className=' float-right'>
-                        <span className='text-xs italic text-gray-100 '>
+                        <span className='text-xs italic text-gray-400 '>
                           Posted on:{" "}
                         </span>
                         {_date}

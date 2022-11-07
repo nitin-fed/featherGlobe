@@ -4,7 +4,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { auth } from "../firebase-config";
 import { TextInputField } from "./Components/TextInputField";
-import { primaryButtonStyle, warningButtonStyle } from "./Utils/constants";
+import {
+  primaryButtonStyle,
+  warningButtonStyle,
+  secondaryButtonStyle
+} from "./Utils/constants";
 import {
   createUserWithEmailAndPassword,
   signOut,
@@ -50,7 +54,12 @@ const Login = () => {
     const password = passwordRef.current.getValue();
     setLoading(true);
     try {
-      const user = await signInWithEmailAndPassword(auth, email, password);
+      debugger;
+      const user = await signInWithEmailAndPassword(
+        auth,
+        email.toString(),
+        password
+      );
       history("/");
     } catch (error) {
       setError(error.message);
@@ -106,8 +115,8 @@ const Login = () => {
   };
 
   useEffect(() => {
-    init();
-    initDancingLetter();
+    // init();
+    //initDancingLetter();
   }, []);
 
   return (
@@ -148,13 +157,13 @@ const Login = () => {
         <div className='float-right'>
           <button
             onClick={(e) => handleCancel(e)}
-            className={warningButtonStyle}
+            className={secondaryButtonStyle}
           >
             Cancel
           </button>
           <button
             onClick={(e) => handleReset(e)}
-            className={primaryButtonStyle}
+            className={secondaryButtonStyle}
           >
             Reset
           </button>
@@ -177,7 +186,7 @@ const Login = () => {
       <br />
       {isLogin && (
         <div>
-          Don't have account ?{" "}
+          Don't have account?
           <NavLink to='/registerUser' className='links px-2 text-sm'>
             Register now using email
           </NavLink>
@@ -187,7 +196,7 @@ const Login = () => {
           </NavLink>
         </div>
       )}
-      <canvas id='myCanvas'></canvas> <canvas id='dancingLetter'></canvas>
+      {/* <canvas id='myCanvas'></canvas> <canvas id='dancingLetter'></canvas> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useRef,
-  useState,
+  useState
 } from "react";
 import validations from "./validations";
 
@@ -29,14 +29,14 @@ export const TextInputField = forwardRef((props, ref) => {
       if (!validated) {
         setErrors({
           ...errors,
-          [name]: _rule.formatter.apply(null, [label]),
+          [name]: _rule.formatter.apply(null, [label])
         });
         evt.target.setCustomValidity(_rule.formatter.apply(null, [label]));
         return;
       } else {
         setErrors({
           ...errors,
-          [name]: "",
+          [name]: ""
         });
         evt.target.setCustomValidity("");
       }
@@ -50,7 +50,7 @@ export const TextInputField = forwardRef((props, ref) => {
     },
     getValue() {
       return fieldName;
-    },
+    }
   }));
 
   return (
@@ -62,7 +62,7 @@ export const TextInputField = forwardRef((props, ref) => {
         </label>
         <input
           name='fieldName'
-          className={`w-full rounded-lg bg-transparent border border-lime-700 p-3 ${inputStyle} `}
+          className={`w-full rounded-lg bg-transparent border border-gray-400 p-3 ${inputStyle} `}
           type={kind}
           value={fieldName}
           onChange={(e) => changeHandler(e)}

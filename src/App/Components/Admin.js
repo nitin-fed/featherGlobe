@@ -8,7 +8,11 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import hljs from "highlight.js";
 
 import { useSelector } from "react-redux";
-import { primaryButtonStyle, warningButtonStyle } from "../Utils/constants";
+import {
+  primaryButtonStyle,
+  secondaryButtonStyle,
+  warningButtonStyle
+} from "../Utils/constants";
 import { db } from "../../firebase-config";
 
 import {
@@ -18,7 +22,7 @@ import {
   updateDoc,
   deleteDoc,
   setDoc,
-  addDoc,
+  addDoc
 } from "firebase/firestore";
 import ToggleButton from "./ToggleButton";
 
@@ -31,7 +35,7 @@ export const Admin = () => {
   const userCollectionRef = collection(db, "Posts");
 
   const editorConfiguration = {
-    toolbar: ["bold", "italic"],
+    toolbar: ["bold", "italic"]
   };
 
   // useEffect(() => {
@@ -52,7 +56,7 @@ export const Admin = () => {
       title,
       description: editorData,
       tags: ["javascript"],
-      date: Date.now(),
+      date: Date.now()
     };
     const res = await addDoc(userCollectionRef, data);
     console.log(res.id);
@@ -72,8 +76,9 @@ export const Admin = () => {
           onChange={(e) => setTitle(e.target.value)}
           value={title}
           name='title'
-          className='text-3x1 w-full rounded-lg bg-transparent border border-lime-700 p-3'
-          placeholder='Enter title'></input>
+          className='text-3x1 w-full rounded-lg bg-transparent border border-gray-400 p-3'
+          placeholder='Enter title'
+        ></input>
         <br />
         <br />
         <label htmlFor='desc' className='text-sm'>
@@ -90,14 +95,14 @@ export const Admin = () => {
                 {
                   language: "javascript",
                   label: "JavaScript",
-                  class: "js javascript js-code",
+                  class: "js javascript js-code"
                 },
                 {
                   language: "html",
-                  label: "HTML",
-                },
-              ],
-            },
+                  label: "HTML"
+                }
+              ]
+            }
           }}
           name='desc'
           placeholder='Type the content here!'
@@ -135,16 +140,15 @@ export const Admin = () => {
           })}
         </fieldset>
 
-        <br />
-        <br />
-
         <div className='float-right'>
-          <button className={warningButtonStyle}>Clear</button>
+          <button className={secondaryButtonStyle}>Clear</button>
           <button onClick={() => addPost()} className={primaryButtonStyle}>
             Post
           </button>
         </div>
       </div>
+      <br />
+      <br />
     </>
   );
 };

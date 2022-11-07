@@ -11,7 +11,10 @@ export const About = () => {
       <div className='flex md:flex-row sm:flex-col '>
         <div className='basis-1/4'>
           <div className=''>
-            <img src='/images/profilePic.jpg' />
+            <img
+              src='/images/profilePic.jpg'
+              className='rounded-full border-2 border-white drop-shadow-xl my-0 mx-auto'
+            />
             <br />
             <ul>
               {profile["contact"].map((item, index) => {
@@ -20,9 +23,14 @@ export const About = () => {
                     <img
                       className='h-5 w-5 inline-block mr-5'
                       src={"./images/icons/" + item["imgsrc"]}
-                      alt='SVG as an image'></img>
+                      alt='SVG as an image'
+                    ></img>
                     {item["url"] ? (
-                      <a className='hover:underline' href={item["url"]}>
+                      <a
+                        className='hover:underline'
+                        target='_black'
+                        href={item["url"]}
+                      >
                         {item["desc"]}{" "}
                       </a>
                     ) : (
@@ -33,7 +41,7 @@ export const About = () => {
               })}
             </ul>
             <br />
-            <div className='text-xl text-lime-500'>Expertise in</div>
+            <div className='text-xl text-gray-500'>Expertise in</div>
 
             <ul>
               {profile["skills"].map((item, index) => {
@@ -42,8 +50,8 @@ export const About = () => {
             </ul>
           </div>
         </div>
-        <div className='basis-3/4 pl-8'>
-          <h3 className='text-5xl pb-8 text-lime-500'>{profile["name"]}</h3>
+        <div className='basis-3/4 pl-12'>
+          <h3 className='text-4xl pb-8 text-gray-500'>{profile["name"]}</h3>
           <div className=''> {profile["technologies"]}</div>
           <br />
           <div className=' '>

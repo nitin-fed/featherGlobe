@@ -51,15 +51,16 @@ export const Body = () => {
 
   return (
     <Routes>
-      <Route exact path='/' element={<Home />} />
+      {/* <Route exact path='/' element={<Home />} /> */}
       <Route path='/photography' element={<Photos />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/posts' element={<Posts />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/' element={<About />} />
       <Route path='/about' element={<About />} />
       <Route path='/registerUser' element={<Login />} />
       <Route path='/post' element={<Post />} />
-      <Route path='/admin' element={<Admin />} />
+      <Route path='/createPost' element={<Admin />} />
       <Route path='/secHome' element={<SecHome />} />
 
       <Route path='/' element={<Protected />}>

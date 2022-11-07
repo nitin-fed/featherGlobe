@@ -22,6 +22,16 @@
     src: url("./App/assets/Fonts/Nunito_Sans/NunitoSans-Light.ttf");
   }
 
+  @font-face {
+    font-family: worksans;
+    src: url("./App/assets/Fonts/worksans/TTF/WorkSans-Thin.ttf");
+  }
+
+  @font-face {
+    font-family: MrDeHaviland-Regular;
+    src: url("./App/assets/Fonts/MrDeHaviland-Regular.ttf");
+  }
+  
   @layer utilities {
     .striped li:nth-child(odd) {
       @apply bg-gray-900
@@ -30,23 +40,39 @@
   
 
 @layer base {
+ 
     html {
-      font-family: NunitoSans-ExtraLight;
-      color: #d5e6d8;
-      background: #000;
+      font-family: sans-serif;
+      color: rgb(138, 138, 138); 
+      letter-spacing:1px;
+      font-size: 1rem;
+      line-height: 2rem;
+      font-weight: 100;
     }
     a {
-      @apply text-lime-500;
+      @apply text-blue-500;
+     
     }
     a:hover {
-      @apply text-lime-300;
+      @apply text-blue-700;
+      @apply underline 
+    }
+    .active{
+      @apply text-gray-900
     }
   }
 
+  .welcomeUser{
+    font-family: MrDeHaviland-Regular;
+    line-height: 20px;
+  font-size: 30px;
+  letter-spacing: 4px;
+  padding: 0 10px  10px 10px; 
+ 
+  }
   .logoFont {
     font-size: 10px;
-    letter-spacing: 4px;
-    color:rgba(255, 255, 255, .8)
+    letter-spacing: 6px; 
   }
   .footerImg{
     background-image: url('/./images/a.jpg'); 
@@ -63,11 +89,7 @@
  
   }
   
-  .active {
-  background-color: rgb(77 124 15);
-  color: rgb(190 242 100 );
-  border-radius: 8px;
-  }
+ 
 
 /* GALAXY STYLE ********/
 #main {
@@ -228,19 +250,19 @@
 }
 
 .postTitle {
-  color: rgb(90, 148, 8);
+   
 }
 
 .posts a:link { 
   background: none;
 }
 .posts a:hover {
-  color: rgb(90, 148, 8);
+   
   background: none;
   text-decoration: underline;
 }
 .posts a:visited {
-  color: rgb(90, 148, 8);
+  
   background: none;
 }
 .ck-content {

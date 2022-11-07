@@ -32,12 +32,13 @@ export function Post() {
           onClick={() => {
             history("/posts");
           }}
-          className={`${primaryButtonStyle}`}>
+          className={`${primaryButtonStyle}`}
+        >
           Back to All Posts
         </button>
       </div>
       {/* <h1 className='text-3xl py-2'>All Posts</h1> */}
-      <div className='bg-black/10 p-4 border border-white/20 my-4'>
+      <div className=' p-4 border border-gray my-4'>
         <div className='grid grid-flow-row-dense grid-cols-2'>
           <h3 className=' text-2xl postTitle py-2'>
             {location.state["title"]}
@@ -49,7 +50,8 @@ export function Post() {
         </div>
         <div
           className='post'
-          dangerouslySetInnerHTML={{ __html: location.state["desc"] }}></div>
+          dangerouslySetInnerHTML={{ __html: location.state["desc"] }}
+        ></div>
       </div>
       {/* <button className={`${primaryButtonStyle} float-right`}>Edit</button>ch */}
       <button className={`${primaryButtonStyle} float-right`}>

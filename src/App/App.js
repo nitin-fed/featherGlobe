@@ -42,21 +42,16 @@ const App = () => {
     <Provider store={store}>
       <ErrorBoundary>
         <BrowserRouter>
-          <div className='max-w-screen-xl my-0 mx-auto '>
-            <header className='py-2'>
-              <img
-                src='../../images/a.jpg'
-                className='absolute top-0 left-0 -z-10 w-full'
-              />
-              <Logo myRef={messageBoxRef} />
-              <nav
-                className='bg-black/90  h-16 text-white text-sm px-5'
-                id='myHeader'>
-                <Navigation />
-              </nav>
-            </header>
-
-            <div className='p-10 bg-black/80'>
+          <header className='pt-3 sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent'>
+            <Logo myRef={messageBoxRef} />
+            <hr className='w-full absolute left-0' />
+            <nav className='  text-white text-sm px-5' id='myHeader'>
+              <Navigation />
+            </nav>
+            <hr className='w-full absolute left-0' />
+          </header>
+          <div className='max-w-screen-xl my-0 mx-auto px-10  '>
+            <div className='my-8'>
               <Body />
             </div>
 

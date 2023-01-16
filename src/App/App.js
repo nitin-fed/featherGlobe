@@ -45,7 +45,7 @@ const App = () => {
           <header className='pt-3 sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent'>
             <Logo myRef={messageBoxRef} />
             <hr className='w-full absolute left-0' />
-            <nav className='  text-white text-sm px-5' id='myHeader'>
+            <nav className='text-sm px-5' id='myHeader'>
               <Navigation />
             </nav>
             <hr className='w-full absolute left-0' />
@@ -55,7 +55,7 @@ const App = () => {
               <Body />
             </div>
 
-            <footer className='px-4 leading-8 footer fixed bottom-0  text-white w-full '>
+            <footer className='px-8 leading-8 footer fixed bottom-0  w-full backdrop-supports-backdrop-blur:bg-white/60 dark:bg-transparent backdrop-blur  '>
               <div className='footerImg fixed left-0 bottom-0 w-full h-8'></div>
               www.featherglobe.com
             </footer>

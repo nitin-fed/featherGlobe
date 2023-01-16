@@ -20,7 +20,7 @@ const initialState = {
       "Testing to identify bugs and technical issues before and after deploying.",
       "Documenting bug reports, tickets, and any code changes.",
       "Unit testing using JEST and Enzyme",
-      "ADA (Americans with Disabilities Act) - experience with ADA compatible web application development]",
+      "ADA (Americans with Disabilities Act) - experience with ADA compatible web application development]"
     ],
     skills: [
       "JavaScript",
@@ -33,46 +33,46 @@ const initialState = {
       "JEST",
       "Node JS",
       "YUI",
-      "jQuery",
+      "jQuery"
     ],
     contact: [
       { type: "email", imgsrc: "email.svg", desc: "nitin@featherglobe.com" },
-      { type: "phone", imgsrc: "phone.svg", desc: "+1 510 857 9536" },
+      // { type: "phone", imgsrc: "phone.svg", desc: "+1 510 857 9536" },
       { type: "location", imgsrc: "location.svg", desc: "CA - USA" },
       {
         type: "site",
         imgsrc: "web.svg",
         desc: "featherGlobe",
-        url: "http://www.featherglobe.com",
+        url: "http://www.featherglobe.com"
       },
       {
         type: "linkedin",
         imgsrc: "linkedin.svg",
         desc: "LinkedIn",
-        url: "http://www.linkedin.com/nitin.fed",
+        url: "http://www.linkedin.com/in/featherglobe"
       },
       {
         type: "git",
         imgsrc: "git.svg",
         desc: "GitHub",
-        url: "http://www.github.com/nitin-fed",
+        url: "http://www.github.com/nitin-fed"
       },
       {
         type: "flikr",
         imgsrc: "flikr.svg",
         desc: "Flickr",
-        url: "https://www.flickr.com/photos/154195298@N06/",
-      },
-    ],
-  },
+        url: "https://www.flickr.com/photos/154195298@N06/"
+      }
+    ]
+  }
 };
 
 const profileSlice = createSlice({
   name: "profile",
   initialState,
   reducers: {
-    showHideModal(state, { payload }) {},
-  },
+    showHideModal(state, { payload }) {}
+  }
 });
 
 //export const { showHideModal } = modalSlice.actions;

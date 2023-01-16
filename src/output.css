@@ -1225,7 +1225,7 @@ a:hover {
 }
 
 .footerImg{
-  background-image: url('/./images/a.jpg');
+  background-color: 'red';
   background-repeat: no-repeat;
   background-size: 100%;
   background-position-y: -25px;

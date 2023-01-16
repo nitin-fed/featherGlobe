@@ -6,7 +6,7 @@ const initialState = {
 
 const galleryReducer = (state = initialState, action) => {
   function findImage(id) {
-    console.log(id);
+  console.log(id);
     var findImage = state.photos.find(
       photo => parseInt(photo.id) === parseInt(id)
     );

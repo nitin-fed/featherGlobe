@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import './Photos.css';
+/** @format */
+
+import React, { Component } from "react";
+import "./Photos.css";
 
 class Photo extends Component {
   constructor() {
@@ -11,7 +13,7 @@ class Photo extends Component {
   }
 
   componentDidMount() {
-    this.imageRef.current.addEventListener('load', this.setImageHeight);
+    this.imageRef.current.addEventListener("load", this.setImageHeight);
   }
 
   setImageHeight = () => {

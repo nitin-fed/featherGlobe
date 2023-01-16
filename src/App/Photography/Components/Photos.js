@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPhotos, loadLargeImage } from "../../Store/Actions/actions";
@@ -13,20 +15,20 @@ const Photos = () => {
     dispatch(fetchPhotos());
   }, []);
 
-  const { photos } = useSelector(state => state.galleryReducer);
-  console.log(photos);
+  const { photos } = useSelector((state) => state.galleryReducer);
+
   return (
     <div>
       <LargeImage />
-      <span className="gallery">
+      <span className='gallery'>
         {photos.length > 0 &&
           photos.map((photo, index) => {
             return (
               <ImageLoad
-                clickHandler={event => dispatch(loadLargeImage(event))}
+                clickHandler={(event) => dispatch(loadLargeImage(event))}
                 src={photo.src}
                 placeholder={photo.placeholder}
-                alt="Decription"
+                alt='Decription'
                 id={photo.id}
                 key={index}
               />

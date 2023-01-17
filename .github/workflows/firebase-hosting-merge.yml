@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2 
       - run: npm install
+      - mkdir: build
+      - touch: build/info.txt
       - run: npm run build --if-present
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

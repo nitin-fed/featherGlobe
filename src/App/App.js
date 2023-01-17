@@ -1,14 +1,14 @@
 /** @format */
 
-import React, { Component, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Navigation from "./Navigation/navigation";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./Store/createStore";
-import Logo from "./Components/Logo";
 import ErrorBoundary from "./ErrorBoundary";
 import { Body } from "./Body";
 import { MessageBox } from "./Components/MessageBox";
+import Logo from "./Components/Logo";
 
 const App = () => {
   useEffect(() => {

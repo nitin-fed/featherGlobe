@@ -13,7 +13,7 @@ import { MessageBox } from "./Components/MessageBox";
 const App = () => {
   useEffect(() => {
     // messageBoxRef.current.showMessageBox();
-    window.onscroll = function() {
+    window.onscroll = function () {
       myFunction();
     };
 
@@ -55,7 +55,7 @@ const App = () => {
               <Body />
             </div>
 
-            <footer className='px-8 leading-8 footer fixed bottom-0  w-full backdrop-supports-backdrop-blur:bg-white/60 dark:bg-transparent backdrop-blur  '>
+            <footer className='leading-8 footer fixed bottom-0  w-full backdrop-supports-backdrop-blur:bg-white/60 dark:bg-transparent backdrop-blur  '>
               <div className='footerImg fixed left-0 bottom-0 w-full h-8'></div>
               www.featherglobe.com
             </footer>

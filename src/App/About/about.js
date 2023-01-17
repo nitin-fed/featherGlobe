@@ -8,8 +8,8 @@ export const About = () => {
 
   return (
     <div>
-      <div className='flex md:flex-row sm:flex-col '>
-        <div className='basis-1/4'>
+      <div className='md:flex '>
+        <div className='md:basis-1/4 sm:w-full mb-8'>
           <div className=''>
             <img
               src='/images/profilePic.jpg'
@@ -50,8 +50,10 @@ export const About = () => {
             </ul>
           </div>
         </div>
-        <div className='basis-3/4 pl-12'>
-          <h3 className='text-4xl pb-8 text-gray-500'>{profile["name"]}</h3>
+        <div className='md:basis-3/4 md:pl-12 sm:pl-0  sm:w-full'>
+          <h3 className='text-4xl pb-8 text-gray-500  sm:text-center md:text-left'>
+            {profile["name"]}
+          </h3>
           <div className=''> {profile["technologies"]}</div>
           <br />
           <div className=' '>

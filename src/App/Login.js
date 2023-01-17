@@ -123,7 +123,7 @@ const Login = () => {
     <div className='login p-10 sm:w-full lg:w-3/4 m-auto'>
       <h1 className='text-3xl'>{isLogin ? " Login" : "Register User"}</h1>
       <div className='text-red-500 py-2'>{error && error}</div>
-      <form onSubmit={(evt) => handleSubmit(evt)}>
+      <form className='loginForm' onSubmit={(evt) => handleSubmit(evt)}>
         <TextInputField
           label='User Name'
           kind='text'
@@ -157,13 +157,13 @@ const Login = () => {
         <div className='float-right'>
           <button
             onClick={(e) => handleCancel(e)}
-            className={secondaryButtonStyle}
+            className={`${secondaryButtonStyle} sm:w-full m-0`}
           >
             Cancel
           </button>
           <button
             onClick={(e) => handleReset(e)}
-            className={secondaryButtonStyle}
+            className={`${secondaryButtonStyle} sm:w-full m-0`}
           >
             Reset
           </button>

@@ -1,6 +1,9 @@
-node_modules/
-build/
-coverage/
-test-coverage/
+build
+dist
+coverage
+test-coverage
+Server
 firebase-debug.log
-
+node_modules
+.gitignore
+Mocks

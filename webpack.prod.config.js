@@ -1,12 +1,15 @@
+/** @format */
+
 const path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const UnusedWebpackPlugin = require('unused-webpack-plugin');
+const UnusedWebpackPlugin = require("unused-webpack-plugin");
 
 module.exports = {
   entry: ["babel-polyfill", path.resolve(__dirname, "src", "index.js")],
   mode: "development",
   devServer: {
+    inline: false,
     contentBase: path.resolve(__dirname, "dist"),
     open: true,
     clientLogLevel: "silent",
@@ -16,9 +19,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
-  },
-  node: {
-    fs: "empty"
   },
 
   plugins: [
@@ -34,11 +34,10 @@ module.exports = {
       // Root directory (optional)
       root: __dirname
     })
-    
   ],
 
   module: {
-    loaders: [{ test: /\.js?$/, loader: "babel" }],
+    // loaders: [{ test: /\.js?$/, loader: "babel" }],
     rules: [
       {
         use: {

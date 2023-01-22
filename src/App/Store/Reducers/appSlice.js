@@ -15,7 +15,7 @@ const initialState = {
       displayName: "Photography",
       imgPath: "photography.png"
     },
-    { url: "/users", displayName: "Users Management", imgPath: "users.png" },
+    //{ url: "/users", displayName: "Users Management", imgPath: "users.png" },
     // { url: "/demo", displayName: "Practice", imgPath: "practice.png" },
     { url: "/contact", displayName: "Contact", imgPath: "contact.png" },
     { url: "/createPost", displayName: "Create Post", imgPath: "admin.png" },

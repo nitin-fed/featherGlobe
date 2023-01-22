@@ -36,7 +36,12 @@ const initialState = {
       "jQuery"
     ],
     contact: [
-      { type: "email", imgsrc: "email.svg", desc: "nitin@featherglobe.com" },
+      {
+        type: "email",
+        imgsrc: "email.svg",
+        desc: "nitin@featherglobe.com",
+        url: "mailto:nitin@featherglobe.com"
+      },
       // { type: "phone", imgsrc: "phone.svg", desc: "+1 510 857 9536" },
       { type: "location", imgsrc: "location.svg", desc: "CA - USA" },
       {

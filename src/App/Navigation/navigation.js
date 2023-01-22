@@ -8,6 +8,7 @@ import { ChildNav } from "../Demo/ChildNav";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { blurBackground } from "../Utils/constants";
 
 const Navigation = () => {
   const [toggleMenuContainer, setMenuContainer] = useState(false);
@@ -46,7 +47,7 @@ const Navigation = () => {
         onClick={toggleMenu}
         className={`${
           toggleMenuContainer ? "" : "hidden"
-        } absolute top-0 left-0 w-full h-full `}
+        } absolute top-0 left-0 w-full h-full`}
       ></div>
 
       <div className='sm:hidden relative z-1'>
@@ -56,14 +57,17 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`sticky top-0 ${
+        className={` ${
           toggleMenuContainer ? "" : "hidden"
-        } sm:block p-2 relative z-10  text-center`}
+        } sm:block p-2 z-10 text-center sm:absolute sm:w-full xs:absolute xs:w-full sm:left-0 xs:left-0  ${blurBackground}`}
       >
         {menus.map((item, index) => {
           return (
             <>
-              <div className='inline-block ' key={index}>
+              <div
+                className='md:inline-block xs:text-left sm:text-left sm:border-b xs:border-b md:border-none '
+                key={index}
+              >
                 <NavLink
                   onClick={(e) => updateChildMenu(e)}
                   activeclassname='active'
@@ -85,7 +89,7 @@ const Navigation = () => {
 
         {isAuthenticated && (
           <button
-            className='float-right p-2.5 rounded-lg bg-red-500 text-white hover:bg-red-800 hover:text-white'
+            className='xs:float-left sm:float-left md:float-right lg:float-right p-2.5 rounded-lg text-red-500 hover:text-red-800'
             onClick={handleLogout}
           >
             Logout

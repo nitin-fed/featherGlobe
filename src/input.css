@@ -74,13 +74,7 @@
     font-size: 10px;
     letter-spacing: 6px; 
   }
-  .footerImg{
-     
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position-y: -25px;
-    z-index: -1;
-  }
+ 
 
   .tile {
     background: rgb(54,83,20);
@@ -235,10 +229,6 @@
 
 .post table, ul, ol, pre {
   margin-top: 20px; 
-}
-
-.post ol, ul {
-  padding-left: 15px
 }
 
 .post ol li {

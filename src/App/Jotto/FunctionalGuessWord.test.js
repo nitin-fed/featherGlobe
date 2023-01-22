@@ -1,5 +1,7 @@
 /**
  * This is functional test file. NOT UNIT TEST
+ *
+ * @format
  */
 
 import React from "react";
@@ -28,7 +30,6 @@ describe("Functional Test - No word guess", () => {
       guessedWords: []
     });
   });
-  console.log(wrapper.debug());
 
   it("should render", () => {
     const guessedWordRows = findByTestAttr(wrapper, "guessed-word");

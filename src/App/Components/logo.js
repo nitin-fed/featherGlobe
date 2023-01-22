@@ -14,20 +14,27 @@ const Logo = () => {
     <>
       {displayLoader && <Loader />}
 
-      <div class='flex justify-between max-w-screen-xl my-0 mx-auto px-10 '>
+      <div class='md:flex justify-between max-w-screen-xl my-0 mx-auto px-10 '>
         <div>
           <div>
-            <div id='header' className='text-3xl tracking-widest text-gray-500'>
+            <div
+              id='header'
+              className='text-3xl tracking-widest text-gray-500 xs:text-center sm:text-center md:text-left'
+            >
               Featherglobe
             </div>
-            <div className='logoFont'>{"{DECODED FROM NATURE}"}</div>
+            <div className='logoFont xs:text-center sm:text-center'>
+              {"{DECODED FROM NATURE}"}
+            </div>
           </div>
         </div>
-        <div></div>
+
         <div>
           <div className='logoFont'>
-            Welcome
-            <div className='welcomeUser'>{currentUser}</div>
+            <div className=' xs:text-center sm:text-center'>Welcome</div>
+            <div className='welcomeUser xs:text-center sm:text-center '>
+              {currentUser}
+            </div>
           </div>
         </div>
       </div>

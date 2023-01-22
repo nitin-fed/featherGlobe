@@ -1,3 +1,5 @@
+/** @format */
+
 import moxios from "moxios";
 import { fetchPosts, getSecrateWord } from "./FetchPosts";
 
@@ -40,7 +42,7 @@ describe("FetchPosts", () => {
       });
     });
 
-    return getSecrateWord().then(res => {
+    return getSecrateWord().then((res) => {
       expect(res).toBe("party");
     });
   });
@@ -53,11 +55,10 @@ describe("FetchPosts", () => {
     });
 
     return fetchPosts(dispatch)
-      .then(response => {
-        console.log(response);
+      .then((response) => {
         expect(res).toBe(posts);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   });

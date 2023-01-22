@@ -9,6 +9,7 @@ import ErrorBoundary from "./ErrorBoundary";
 import { Body } from "./Body";
 import { MessageBox } from "./Components/MessageBox";
 import Logo from "./Components/Logo";
+import { blurBackground } from "./Utils/constants";
 
 const App = () => {
   useEffect(() => {
@@ -42,10 +43,10 @@ const App = () => {
     <Provider store={store}>
       <ErrorBoundary>
         <BrowserRouter>
-          <header className='pt-3 sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent'>
+          <header className={`pt-3 sticky top-0 z-40 w-full ${blurBackground}`}>
             <Logo myRef={messageBoxRef} />
             <hr className='w-full absolute left-0' />
-            <nav className='text-sm px-5' id='myHeader'>
+            <nav className='text-sm px-5 md:h-12' id='myHeader'>
               <Navigation />
             </nav>
             <hr className='w-full absolute left-0' />
@@ -55,9 +56,14 @@ const App = () => {
               <Body />
             </div>
 
-            <footer className='leading-8 footer fixed bottom-0  w-full backdrop-supports-backdrop-blur:bg-white/60 dark:bg-transparent backdrop-blur  '>
-              <div className='footerImg fixed left-0 bottom-0 w-full h-8'></div>
-              www.featherglobe.com
+            <footer
+              className={`leading-8 footer fixed bottom-0  w-full left-0 `}
+            >
+              <div
+                className={`fixed left-0 bottom-0 w-full h-8 px-12 ${blurBackground}`}
+              >
+                www.featherglobe.com
+              </div>
             </footer>
           </div>
 

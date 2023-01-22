@@ -53,30 +53,33 @@ const Login = () => {
     const email = userNameRef.current.getValue();
     const password = passwordRef.current.getValue();
     setLoading(true);
-    try {
-      debugger;
-      const user = await signInWithEmailAndPassword(
-        auth,
-        email.toString(),
-        password
-      );
-      history("/");
-    } catch (error) {
-      setError(error.message);
+    if (isLogin) {
+      // Login
+      try {
+        const user = await signInWithEmailAndPassword(
+          auth,
+          email.toString(),
+          password
+        );
+        history("/");
+      } catch (error) {
+        setError(error.message);
+      }
+      setLoading(false);
+    } else {
+      // Signup
+      try {
+        const user = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        dispatch(updateCurrentUser(user.user.email));
+      } catch (error) {
+        setLoading(false);
+        setError(error.message);
+      }
     }
-    setLoading(false);
-    // evt.preventDefault();
-    // const email = userNameRef.current.getValue();
-    // const password = passwordRef.current.getValue();
-    // console.log(isLoading);
-    // try {
-    //   setLoading(true);
-    //   const user = await createUserWithEmailAndPassword(auth, email, password);
-    //   dispatch(updateCurrentUser(user.user.email));
-    // } catch (error) {
-    //   setLoading(false);
-    //   setError(error.message);
-    // }
   };
 
   const handleLogin = async (evt) => {
@@ -120,7 +123,7 @@ const Login = () => {
   }, []);
 
   return (
-    <div className='login p-10 sm:w-full lg:w-3/4 m-auto'>
+    <div className='login sm:p-0 md:p-10 sm:w-full lg:w-3/4 m-auto'>
       <h1 className='text-3xl'>{isLogin ? " Login" : "Register User"}</h1>
       <div className='text-red-500 py-2'>{error && error}</div>
       <form className='loginForm' onSubmit={(evt) => handleSubmit(evt)}>
@@ -154,7 +157,7 @@ const Login = () => {
         )}
 
         <br />
-        <div className='float-right'>
+        <div className='float-right flex flex-row'>
           <button
             onClick={(e) => handleCancel(e)}
             className={`${secondaryButtonStyle} sm:w-full m-0`}

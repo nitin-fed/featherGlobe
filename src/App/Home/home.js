@@ -8,15 +8,14 @@ const Home = () => {
   const appReducer = useSelector((state) => state.appReducer);
   const { menus } = appReducer;
   useEffect(() => {
-    console.log("______");
     document.cookie = "username=John Doe";
   });
 
-  useEffect(() => {
-    setTimeout(() => {
-      console.log(document.cookie);
-    }, 2000);
-  });
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     console.log(document.cookie);
+  //   }, 2000);
+  // });
 
   return (
     <>

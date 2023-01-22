@@ -28,8 +28,6 @@ const ImageLoad = React.memo(
       setSpanHeight(spanHeight);
     };
 
-    console.log(imageRef);
-
     return (
       <div style={{ gridRowEnd: `span ${spanHeight}` }}>
         <img

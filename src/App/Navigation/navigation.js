@@ -38,7 +38,7 @@ const Navigation = () => {
     history("/");
   };
 
-  const linkStyles = "mx-1 px-3 py-2  ";
+  const linkStyles = "mx-1 px-3 py-2 ";
   return (
     <>
       {/* Backdrop */}
@@ -47,7 +47,7 @@ const Navigation = () => {
         onClick={toggleMenu}
         className={`${
           toggleMenuContainer ? "" : "hidden"
-        } absolute top-0 left-0 w-full h-full`}
+        } absolute top-0 left-0 w-full `}
       ></div>
 
       <div className='sm:hidden relative z-1'>
@@ -56,10 +56,13 @@ const Navigation = () => {
         </button>
       </div>
 
+      {/* <div className='h-screen bg-black w-full block absolute left'></div> */}
+
       <div
+        onClick={toggleMenu}
         className={` ${
-          toggleMenuContainer ? "" : "hidden"
-        } sm:block p-2 z-10 text-center sm:absolute sm:w-full xs:absolute xs:w-full sm:left-0 xs:left-0  ${blurBackground}`}
+          toggleMenuContainer ? "" : "hidden "
+        } sm:block p-2 z-10 text-center sm:absolute sm:w-full xs:absolute xs:w-full sm:left-0 xs:left-0 sm:h-screen  xs:h-screen  md:h-auto ${blurBackground}`}
       >
         {menus.map((item, index) => {
           return (

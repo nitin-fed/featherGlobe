@@ -11,7 +11,7 @@ import validations from "./validations";
 export const TextInputField = forwardRef((props, ref) => {
   const { label, validation = 0, kind, value = "", isRequired } = props;
   const inputStyle =
-    "placeholder:italic placeholder:text-slate-500 rounded-lg bg-transparent border border-lime-600 p-3 ";
+    "placeholder:italic placeholder:text-slate-500 rounded-lg bg-transparent border p-3 ";
 
   const [fieldName, setName] = useState(value);
   const [errors, setErrors] = useState({});

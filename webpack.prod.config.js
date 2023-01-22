@@ -7,14 +7,7 @@ const UnusedWebpackPlugin = require("unused-webpack-plugin");
 
 module.exports = {
   entry: ["babel-polyfill", path.resolve(__dirname, "src", "index.js")],
-  mode: "development",
-  devServer: {
-    inline: false,
-    contentBase: path.resolve(__dirname, "dist"),
-    open: true,
-    clientLogLevel: "silent",
-    port: 9000
-  },
+  mode: "production",
 
   output: {
     path: path.resolve(__dirname, "dist"),

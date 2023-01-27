@@ -1,42 +1,44 @@
 /** @format */
 
-import React, { Component } from "react";
-import "./Photos.css";
+// /** @format */
 
-class Photo extends Component {
-  constructor() {
-    super();
-    this.state = {
-      span: 0
-    };
-    this.imageRef = React.createRef();
-  }
+// import React, { Component } from "react";
+// import "./Photos.css";
 
-  componentDidMount() {
-    this.imageRef.current.addEventListener("load", this.setImageHeight);
-  }
+// class Photo extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       span: 0
+//     };
+//     this.imageRef = React.createRef();
+//   }
 
-  setImageHeight = () => {
-    const spanHeight = Math.ceil(this.imageRef.current.clientHeight / 10);
-    this.setState({
-      ...this.state,
-      span: spanHeight
-    });
-  };
+//   componentDidMount() {
+//     this.imageRef.current.addEventListener("load", this.setImageHeight);
+//   }
 
-  render() {
-    return (
-      <div style={{ gridRowEnd: `span ${this.state.span}` }}>
-        <img
-          id={this.props.id}
-          alt={this.props.imgSrc}
-          ref={this.imageRef}
-          src={this.props.imgSrc}
-          onClick={this.props.clickHandler}
-        />
-      </div>
-    );
-  }
-}
+//   setImageHeight = () => {
+//     const spanHeight = Math.ceil(this.imageRef.current.clientHeight / 10);
+//     this.setState({
+//       ...this.state,
+//       span: spanHeight
+//     });
+//   };
 
-export default Photo;
+//   render() {
+//     return (
+//       <div style={{ gridRowEnd: `span ${this.state.span}` }}>
+//         <img
+//           id={this.props.id}
+//           alt={this.props.imgSrc}
+//           ref={this.imageRef}
+//           src={this.props.imgSrc}
+//           onClick={this.props.clickHandler}
+//         />
+//       </div>
+//     );
+//   }
+// }
+
+// export default Photo;

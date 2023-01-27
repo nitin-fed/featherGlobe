@@ -1,3 +1,5 @@
+/** @format */
+
 import * as actionType from "./actionType";
 import { displayLoader } from "./commonActions";
 
@@ -9,27 +11,27 @@ export const fetchPhotos = () => {
   };
 };
 
-export const updatePostReducer = posts => {
+export const updatePostReducer = (posts) => {
   return {
     type: actionType.FETCH_POSTS,
     posts: posts
   };
 };
 
-export const fetchPostsFails = error => {
+export const fetchPostsFails = (error) => {
   return {
     type: actionType.FETCH_POSTS_FAILS
   };
 };
 
-export const loadLargeImage = e => {
+export const loadLargeImage = (e) => {
   return {
     type: actionType.LOAD_LARGE_IMAGE,
     payload: { currentId: e.target.id }
   };
 };
 
-export const deletePost = id => {
+export const deletePost = (id) => {
   return {
     type: actionType.DELETE_POST,
     payload: { id: id }
@@ -54,7 +56,7 @@ export const backdropClicked = () => {
   };
 };
 
-export const loadPostDescription = selectedPostId => {
+export const loadPostDescription = (selectedPostId) => {
   return {
     type: actionType.LOAD_POST_DESCRIPTION,
     id: selectedPostId
@@ -99,14 +101,14 @@ export const addGuessedWord = () => {
   };
 };
 
-export const updateGuessWord = evt => {
+export const updateGuessWord = (evt) => {
   return {
     type: actionType.UPDATE_GUESSWORD,
     payload: evt.target.value
   };
 };
 
-export const deleteRow = id => {
+export const deleteRow = (id) => {
   return {
     type: actionType.DELETE_ROW,
     payload: { id: id }
@@ -116,190 +118,115 @@ export const deleteRow = id => {
 const photos = {
   photos: [
     {
-      src: "../photos/photos/0C9A0174.jpg",
-      id: 1,
-      placeholder: "../photos/placeholder/0C9A0174.jpg"
+      src: "../gallery/img_d_0.jpg",
+      thumbnail: "../gallery/img_t_0.jpg",
+      mobile: "../gallery/img_m_0.jpg",
+      id: 0
     },
     {
-      src: "../photos/photos/0C9A0927.jpg",
-      id: 2,
-      placeholder: "../photos/placeholder/0C9A0927.jpg"
+      src: "../gallery/img_d_1.jpg",
+      thumbnail: "../gallery/img_t_1.jpg",
+      mobile: "../gallery/img_m_1.jpg",
+      id: 1
     },
     {
-      src: "../photos/photos/duck.jpg",
-      id: 3,
-      placeholder: "../photos/placeholder/duck.jpg"
+      src: "../gallery/img_d_2.jpg",
+      thumbnail: "../gallery/img_t_2.jpg",
+      mobile: "../gallery/img_m_2.jpg",
+      id: 2
     },
     {
-      src: "../photos/photos/0C9A0189.jpg",
-      id: 4,
-      placeholder: "../photos/placeholder/0C9A0189.jpg"
+      src: "../gallery/img_d_3.jpg",
+      thumbnail: "../gallery/img_t_3.jpg",
+      mobile: "../gallery/img_m_3.jpg",
+      id: 3
     },
     {
-      src: "../photos/photos/0C9A0928.jpg",
-      id: 5,
-      placeholder: "../photos/placeholder/0C9A0928.jpg"
+      src: "../gallery/img_d_4.jpg",
+      thumbnail: "../gallery/img_t_4.jpg",
+      mobile: "../gallery/img_m_4.jpg",
+      id: 4
     },
     {
-      src: "../photos/photos/duck1.jpg",
-      id: 6,
-      placeholder: "../photos/placeholder/duck1.jpg"
+      src: "../gallery/img_d_5.jpg",
+      thumbnail: "../gallery/img_t_5.jpg",
+      mobile: "../gallery/img_m_5.jpg",
+      id: 5
     },
     {
-      src: "../photos/photos/0C9A0191.jpg",
-      id: 7,
-      placeholder: "../photos/placeholder/0C9A0191.jpg"
+      src: "../gallery/img_d_6.jpg",
+      thumbnail: "../gallery/img_t_6.jpg",
+      mobile: "../gallery/img_m_6.jpg",
+      id: 6
+    },
+    // {
+    //   src: "../gallery/img_d_7.jpg",
+    //   thumbnail: "../gallery/img_t_7.jpg",
+    //   mobile: "../gallery/img_m_7.jpg",
+    //   id: 7
+    // },
+    {
+      src: "../gallery/img_d_8.jpg",
+      thumbnail: "../gallery/img_t_8.jpg",
+      mobile: "../gallery/img_m_8.jpg",
+      id: 8
     },
     {
-      src: "../photos/photos/0C9A0958.jpg",
-      id: 8,
-      placeholder: "../photos/placeholder/0C9A0958.jpg"
+      src: "../gallery/img_d_9.jpg",
+      thumbnail: "../gallery/img_t_9.jpg",
+      mobile: "../gallery/img_m_9.jpg",
+      id: 9
     },
     {
-      src: "../photos/photos/dumbartonBridge.jpg",
-      id: 9,
-      placeholder: "../photos/placeholder/dumbartonBridge.jpg"
+      src: "../gallery/img_d_10.jpg",
+      thumbnail: "../gallery/img_t_10.jpg",
+      mobile: "../gallery/img_m_10.jpg",
+      id: 10
     },
     {
-      src: "../photos/photos/0C9A0235.jpg",
-      id: 10,
-      placeholder: "../photos/placeholder/0C9A0235.jpg"
+      src: "../gallery/img_d_11.jpg",
+      thumbnail: "../gallery/img_t_11.jpg",
+      mobile: "../gallery/img_m_11.jpg",
+      id: 11
     },
     {
-      src: "../photos/photos/IndianRoller.jpg",
-      id: 11,
-      placeholder: "../photos/placeholder/IndianRoller.jpg"
+      src: "../gallery/img_d_12.jpg",
+      thumbnail: "../gallery/img_t_12.jpg",
+      mobile: "../gallery/img_m_12.jpg",
+      id: 12
     },
     {
-      src: "../photos/photos/Sandpiper.jpg",
-      id: 14,
-      placeholder: "../photos/placeholder/Sandpiper.jpg"
+      src: "../gallery/img_d_13.jpg",
+      thumbnail: "../gallery/img_t_13.jpg",
+      mobile: "../gallery/img_m_13.jpg",
+      id: 13
     },
     {
-      src: "../photos/photos/goldflinch.jpg",
-      id: 15,
-      placeholder: "../photos/placeholder/goldflinch.jpg"
+      src: "../gallery/img_d_14.jpg",
+      thumbnail: "../gallery/img_t_14.jpg",
+      mobile: "../gallery/img_m_14.jpg",
+      id: 14
     },
     {
-      src: "../photos/photos/0C9A0241.jpg",
-      id: 16,
-      placeholder: "../photos/placeholder/0C9A0241.jpg"
+      src: "../gallery/img_d_15.jpg",
+      thumbnail: "../gallery/img_t_15.jpg",
+      mobile: "../gallery/img_m_15.jpg",
+      id: 15
     },
     {
-      src: "../photos/photos/bird.jpg",
-      id: 17,
-      placeholder: "../photos/placeholder/bird.jpg"
+      src: "../gallery/img_d_16.jpg",
+      thumbnail: "../gallery/img_t_16.jpg",
+      mobile: "../gallery/img_m_16.jpg",
+      id: 16
     },
     {
-      src: "../photos/photos/jay.jpg",
-      id: 18,
-      placeholder: "../photos/placeholder/jay.jpg"
-    },
-    {
-      src: "../photos/photos/0C9A0245.jpg",
-      id: 19,
-      placeholder: "../photos/placeholder/0C9A0245.jpg"
-    },
-    {
-      src: "../photos/photos/bird1.jpg",
-      id: 20,
-      placeholder: "../photos/placeholder/bird1.jpg"
-    },
-    {
-      src: "../photos/photos/lightHousre.jpg",
-      id: 21,
-      placeholder: "../photos/placeholder/lightHousre.jpg"
-    },
-    {
-      src: "../photos/photos/0C9A0246.jpg",
-      id: 22,
-      placeholder: "../photos/placeholder/0C9A0246.jpg"
-    },
-    {
-      src: "../photos/photos/bird2.jpg",
-      id: 23,
-      placeholder: "../photos/placeholder/bird2.jpg"
-    },
-    {
-      src: "../photos/photos/pointRayes.jpg",
-      id: 24,
-      placeholder: "../photos/placeholder/pointRayes.jpg"
-    },
-    {
-      src: "../photos/photos/0C9A0278.jpg",
-      id: 25,
-      placeholder: "../photos/placeholder/0C9A0278.jpg"
-    },
-    {
-      src: "../photos/photos/bird_1.jpg",
-      id: 26,
-      placeholder: "../photos/placeholder/bird_1.jpg"
-    },
-    {
-      src: "../photos/photos/sparrow1.jpg",
-      id: 27,
-      placeholder: "../photos/placeholder/sparrow1.jpg"
-    },
-    {
-      src: "../photos/photos/0C9A0800.jpg",
-      id: 28,
-      placeholder: "../photos/placeholder/0C9A0800.jpg"
-    },
-    {
-      src: "../photos/photos/deer.jpg",
-      id: 29,
-      placeholder: "../photos/placeholder/deer.jpg"
-    },
-    {
-      src: "../photos/photos/yosemite.jpg",
-      id: 30,
-      placeholder: "../photos/placeholder/yosemite.jpg"
-    },
-    {
-      src: "../photos/photos/0C9A0831.jpg",
-      id: 31,
-      placeholder: "../photos/placeholder/0C9A0831.jpg"
-    },
-    {
-      src: "../photos/photos/donEdward.jpg",
-      id: 32,
-      placeholder: "../photos/placeholder/donEdward.jpg"
+      src: "../gallery/img_d_17.jpg",
+      thumbnail: "../gallery/img_t_17.jpg",
+      mobile: "../gallery/img_m_17.jpg",
+      id: 17
     }
   ],
-  gallery: [
-    {
-      category: "birds",
-      photos: [
-        { src: "../photos/photos/bird.jpg", id: 1 },
-        { src: "../photos/photos/yosemite.jpg", id: 2 },
-        { src: "../photos/photos/sparrow1.jpg", id: 3 },
-        { src: "../photos/photos/deer.jpg", id: 4 },
-        { src: "../photos/photos/sparrow.jpg", id: 5 },
-        { src: "../photos/photos/Sandpiper.jpg", id: 6 },
-        { src: "../photos/photos/pointRayes.jpg", id: 7 },
-        { src: "../photos/photos/lightHousre.jpg", id: 8 },
-        { src: "../photos/photos/IndianRoller.jpg", id: 9 },
-        { src: "../photos/photos/goldflinch.jpg", id: 10 },
-        { src: "../photos/photos/gnotcatcher.jpg", id: 11 },
-        { src: "../photos/photos/dumbartonBridge.jpg", id: 12 },
-        { src: "../photos/photos/donEdward.jpg", id: 13 }
-      ]
-    },
-    {
-      category: "nature",
-      photos: [
-        { src: "../photos/photos/bird.jpg", id: 1 },
-        { src: "../photos/photos/yosemite.jpg", id: 2 }
-      ]
-    },
-    {
-      category: "bridge",
-      photos: [
-        { src: "../photos/photos/dumbartonBridge.jpg", id: 12 },
-        { src: "../photos/photos/donEdward.jpg", id: 13 }
-      ]
-    }
-  ],
+
   loadLargeImage: false,
   imageToDisplay: null,
   largeImageSrc: null,

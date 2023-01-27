@@ -4,20 +4,18 @@ import React, { useState, useEffect } from "react";
 import "./Photos.css";
 
 const ImageLoad = React.memo(
-  ({ src, thumbnail, alt = "", id, clickHandler, mobile }) => {
+  ({ src, placeholder, alt = "", id, clickHandler }) => {
     const [loading, setLoading] = useState(true);
-    const [currentSrc, updateSrc] = useState(thumbnail);
+    const [currentSrc, updateSrc] = useState(placeholder);
     const [spanHeight, setSpanHeight] = useState(0);
-
-    console.log(src, thumbnail, mobile, id);
 
     const imageRef = React.createRef();
     useEffect(() => {
       const imageToLoad = new Image();
-      imageToLoad.src = thumbnail;
+      imageToLoad.src = placeholder;
       imageToLoad.onload = () => {
         setLoading(false);
-        updateSrc(thumbnail);
+        updateSrc(placeholder);
       };
     }, [src]);
 
@@ -26,8 +24,6 @@ const ImageLoad = React.memo(
     });
 
     const setImageHeight = (imageRef) => {
-      console.log(imageRef.current.clientHeight);
-
       const spanHeight = Math.ceil(imageRef.current.clientHeight / 10);
       setSpanHeight(spanHeight);
     };
@@ -43,7 +39,7 @@ const ImageLoad = React.memo(
             opacity: loading ? 0.5 : 1,
             transition: "opacity .15s linear"
           }}
-          // alt={alt}
+          alt={alt}
         />
       </div>
     );

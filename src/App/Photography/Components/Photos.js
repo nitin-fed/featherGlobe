@@ -27,8 +27,8 @@ const Photos = () => {
               <ImageLoad
                 clickHandler={(event) => dispatch(loadLargeImage(event))}
                 src={photo.src}
-                thumbnail={photo.thumbnail}
-                mobile={photo.mobile}
+                placeholder={photo.src}
+                alt='Decription'
                 id={photo.id}
                 key={index}
               />

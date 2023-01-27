@@ -42,16 +42,14 @@
 }
 
 .largeImage {
-  display: block; 
-  margin: 50px;
+  display: block;
 }
 
 .largeImage img {
-    /* height: calc(100vh - 85px); */
-  /* width: 100%; */
+  height: calc(100vh - 85px);
   z-index: 101;
   border: 10px solid white;
-max-height: 90vh;
+
   margin: 0;
   position: fixed;
   top: 50%;
@@ -70,14 +68,4 @@ max-height: 90vh;
 
 .disabled {
   opacity: 0.3;
-}
-
- 
-
-@media (max-width: 640px) {
-  .largeImage img {
-    height: 100vh;
-    width: auto;
-    border: none;
-  }
 }

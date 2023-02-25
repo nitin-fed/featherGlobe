@@ -61,11 +61,10 @@ export const Body = () => {
       <Route path='/about' element={<About />} />
       <Route path='/registerUser' element={<Login />} />
       <Route path='/post' element={<Post />} />
-
+      <Route path='/uploadPhotos' element={<UploadPhotos />} />
       <Route path='/secHome' element={<SecHome />} />
 
       <Route path='/' element={<Protected />}>
-        <Route path='/uploadPhotos' element={<UploadPhotos />} />
         <Route path='/createPost' element={<Admin />} />
         <Route path='/demo' element={<Counters />} />
         <Route path='/guessWord' element={<GuessedWordWrapper />} />

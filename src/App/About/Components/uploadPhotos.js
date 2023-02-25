@@ -12,6 +12,9 @@ import {
   secondaryButtonStyle
 } from "../../Utils/constants";
 import Thumbnail from "../../Photography/Components/Thumbnail";
+import { TextInputField } from "../../Components/TextInputField";
+import { Textarea } from "react-bootstrap-icons";
+import { TextArea } from "../../Components/TextArea";
 
 export const UploadPhotos = () => {
   const { profile } = useSelector((state) => state.profileReducer);
@@ -19,26 +22,27 @@ export const UploadPhotos = () => {
   const [uploadProgress, setProgress] = useState(0);
   const history = useNavigate();
   let test = "";
+
   const handleChange = (evt) => {
     const images = evt.target.files;
-    test = () => {
-      return <h1>Nitin</h1>;
-    };
-    Object.entries(images).forEach((image) => {
-      return <Thumbnail src={URL.createObjectURL(image[1])} alt='Decription' />;
 
-      // const output = new Image("200");
-      // console.log(URL.createObjectURL(image[1]));
-      // output.src = URL.createObjectURL(image[1]);
-      // document.querySelector("#preview").appendChild(output);
-      // output.onload = function () {
-      //   URL.revokeObjectURL(output.src); // free memory
-      // };
-    });
+    test = <h1>Nitin</h1>;
 
-    console.log(images);
+    // Object.entries(images).forEach((image) => {
+    //   return <Thumbnail src={URL.createObjectURL(image[1])} alt='Decription' />;
+
+    //   // const output = new Image("200");
+    //   // console.log(URL.createObjectURL(image[1]));
+    //   // output.src = URL.createObjectURL(image[1]);
+    //   // document.querySelector("#preview").appendChild(output);
+    //   // output.onload = function () {
+    //   //   URL.revokeObjectURL(output.src); // free memory
+    //   // };
+    // });
+
     setFile(images);
   };
+
   const handleCancel = () => {
     history("/");
   };
@@ -109,15 +113,28 @@ export const UploadPhotos = () => {
   };
 
   return (
-    <div>
+    <div className='text-center  rounded-lg bg-gray-100  border border-gray-300 p-6 m-auto w-fit '>
       <img id='output' width='200px' />
-      <div className='md:basis-3/4 md:pl-12 sm:pl-0  sm:w-full'>
-        <input
+      <div className='md:basis-3/4'>
+        {/* <input
           multiple
           type='file'
           accept='/image/*'
           onChange={(e) => handleChange(e)}
-        />
+        /> */}
+
+        <div class='inputWrapper'>
+          <input
+            label='Browse'
+            class='fileInput'
+            name='file1'
+            multiple
+            type='file'
+            accept='/image/*'
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
+
         <button className={secondaryButtonStyle} onClick={() => handleCancel()}>
           Cancel
         </button>
@@ -126,8 +143,40 @@ export const UploadPhotos = () => {
         </button>
       </div>
 
-      <span id='preview' className='gallery'>
-        {test}
+      <span>
+        {Object.entries(fileName).map(([key, value]) => {
+          return (
+            <>
+              <div class='flex border  rounded-lg bg-white  border border-gray-300 p-6 mt-6 '>
+                <div class='flex-none '>
+                  <img
+                    src={URL.createObjectURL(value)}
+                    alt='Decription'
+                    width='400'
+                    className=' rounded-lg'
+                  />
+                </div>
+                <div class='flex-auto w-64 pl-8'>
+                  <TextInputField
+                    label='Title'
+                    kind='text'
+                    // ref={userNameRef}
+                    value=''
+                    // isRequired={true}
+                    validation={["required", "min"]}
+                  />
+                  <TextArea
+                    label='Description'
+                    kind='text'
+                    value=''
+                    validation={[""]}
+                  />
+                </div>
+              </div>
+              <br />
+            </>
+          );
+        })}
       </span>
     </div>
   );

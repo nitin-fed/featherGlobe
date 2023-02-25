@@ -17,28 +17,33 @@
 }
 
 .imgNavigator {
-  position: fixed;
-  font-weight: bold;
-  z-index: 102;
+  position: fixed; 
+  z-index: 2;
   top: 45%;
   width: 100%;
-  padding: 0 50px;
-}
-
-.imgNavigator div {
-  background: white;
-  border: 2px solid #ccc;
-  height: 20px;
-  width: 60px;
-  text-align: center;
+  padding: 0 80px;
+  left: 0; 
 }
 
 .imgNavigator .left {
-  float: left;
+  float: left; 
+  height: 48px;
+  width: 48px;
+  transition: all .2s ease-in-out; 
+}
+.imgNavigator .left:hover {
+  transform: scale(1.5); 
 }
 
 .imgNavigator .right {
-  float: right;
+  float: right; 
+  height: 48px;
+  width: 48px; 
+  transition: all .2s ease-in-out; 
+}
+
+.imgNavigator .right:hover {
+  transform: scale(1.5); 
 }
 
 .largeImage {
@@ -46,10 +51,9 @@
 }
 
 .largeImage img {
-  height: calc(100vh - 85px);
-  z-index: 101;
-  border: 10px solid white;
-
+  width: calc(100vw - 85px);
+  z-index: 1;
+  border: 10px solid #000;
   margin: 0;
   position: fixed;
   top: 50%;

@@ -13,6 +13,7 @@ import userReducer from "./userReducer";
 import commonReducer from "./commonReducer";
 import modalSlice from "./modalSlice";
 import appSlice from "./appSlice";
+import gallerySlice from "./gallerySlice";
 import profileSlice from "./profileSlice";
 import { secretWordReducer } from "../../Jotto/Jotto_Reducers";
 import { jottoGuessWordReducer } from "../../Jotto/Jotto_Reducers/jottoGuessWordReducer";
@@ -33,4 +34,5 @@ export default combineReducers({
   jottoGuessWordReducer: jottoGuessWordReducer,
   jottoSecretWordReducer: jottoSecretWordReducer,
   appReducer: appSlice,
+  gallery: gallerySlice
 });

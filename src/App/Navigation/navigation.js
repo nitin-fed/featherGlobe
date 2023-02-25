@@ -62,7 +62,7 @@ const Navigation = () => {
         onClick={toggleMenu}
         className={` ${
           toggleMenuContainer ? "" : "hidden "
-        } sm:block p-2 z-10 text-center sm:absolute sm:w-full xs:absolute xs:w-full sm:left-0 xs:left-0 sm:h-screen  xs:h-screen  md:h-auto ${blurBackground}`}
+        } sm:block p-2 z-1 text-center sm:absolute sm:w-full xs:absolute xs:w-full sm:left-0 xs:left-0 sm:h-screen  xs:h-screen  md:h-auto ${blurBackground}`}
       >
         {menus.map((item, index) => {
           return (

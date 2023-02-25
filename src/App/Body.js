@@ -39,6 +39,7 @@ import { Admin } from "./Components/Admin";
 
 import { CSSTransition } from "react-transition-group";
 import SecHome from "../sec";
+import { UploadPhotos } from "./About/Components/uploadPhotos";
 
 export const Body = () => {
   const dispatch = useDispatch();
@@ -64,6 +65,7 @@ export const Body = () => {
       <Route path='/secHome' element={<SecHome />} />
 
       <Route path='/' element={<Protected />}>
+        <Route path='/uploadPhotos' element={<UploadPhotos />} />
         <Route path='/createPost' element={<Admin />} />
         <Route path='/demo' element={<Counters />} />
         <Route path='/guessWord' element={<GuessedWordWrapper />} />

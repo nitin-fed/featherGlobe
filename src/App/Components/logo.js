@@ -14,7 +14,7 @@ const Logo = () => {
     <>
       {displayLoader && <Loader />}
 
-      <div class='md:flex justify-between max-w-screen-xl my-0 mx-auto px-10 '>
+      <div className='md:flex justify-between max-w-screen-xl my-0 mx-auto px-10 '>
         <div>
           <div>
             <div

@@ -14,13 +14,13 @@ const Galaxy = (props) => {
       <div className='absolute top-0 left-0 w-full h-full bg-black z-500'>
         <div id='container'>
           <div id='main'>
-            <div class='star'> </div>
-            <div class='star'></div>
-            <div class='star rotate45'> </div>
-            <div class='star rotate135'> </div>
+            <div className='star'> </div>
+            <div className='star'></div>
+            <div className='star rotate45'> </div>
+            <div className='star rotate135'> </div>
           </div>
         </div>
-        <div class='inputContainer'>
+        <div className='inputContainer'>
           Number of Stars: (Range: 1-1000){" "}
           <input value='100' id='starCount' type='number' min='1' max='1000' />
           <button onclick='start()'>Apply</button>

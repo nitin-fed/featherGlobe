@@ -8,7 +8,7 @@ const initialState = {
 
   menus: [
     { url: "/", displayName: "Home", imgPath: "home.png" },
-    // { url: "/about", displayName: "About", imgPath: "about.png" },
+
     { url: "/posts", displayName: "Posts", imgPath: "posts.png" },
     {
       url: "/photography",
@@ -18,6 +18,10 @@ const initialState = {
     //{ url: "/users", displayName: "Users Management", imgPath: "users.png" },
     // { url: "/demo", displayName: "Practice", imgPath: "practice.png" },
     { url: "/contact", displayName: "Contact", imgPath: "contact.png" },
+    {
+      url: "/uploadPhotos",
+      displayName: "Upload Photos"
+    },
     { url: "/createPost", displayName: "Create Post", imgPath: "admin.png" },
     { url: "/login", displayName: "Login", imgPath: "login.png" }
   ]

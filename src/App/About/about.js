@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useSelector } from "react-redux";
+import prifilePic from "../../App/assets/images/profilePic.jpg";
 
 export const About = () => {
   const { profile } = useSelector((state) => state.profileReducer);
@@ -15,7 +16,7 @@ export const About = () => {
               {profile["name"]}
             </h3>
             <img
-              src='/images/profilePic.jpg'
+              src={prifilePic}
               className='rounded-full border-2 border-white drop-shadow-xl my-0 mx-auto'
             />
             <br />

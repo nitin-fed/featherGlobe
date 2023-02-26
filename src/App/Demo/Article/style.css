@@ -89,20 +89,14 @@ h4 {
 }
 
 .inputWrapper {
-  height: 32px;
-  width: 64px;
   overflow: hidden;
   position: relative;
-  cursor: pointer;
-  /*Using a background color, but you can use a background image to represent a button*/
-  background-color: #DDF;
+  cursor: pointer;  
 }
 .fileInput {
   cursor: pointer;
-  height: 100%;
   position:absolute;
-  top: 0;
-  right: 0;
+   
   z-index: 99;
   /*This makes the button huge. If you want a bigger button, increase the font size*/
   font-size:50px;

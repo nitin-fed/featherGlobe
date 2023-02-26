@@ -7,7 +7,8 @@ import { setShowLargeImage } from "../../Store/Reducers/gallerySlice";
 
 import chevRight from "../../../App/assets/images/chevronRight.svg";
 import chevLeft from "../../../App/assets/images/chevronLeft.svg";
-import "../../../loader.css";
+
+import { Loader } from "./Loader";
 
 export const LargeImage = ({ photos, currentIndex }) => {
   const [idx, setIndex] = useState(currentIndex);
@@ -17,6 +18,8 @@ export const LargeImage = ({ photos, currentIndex }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
+    document.querySelector("body").classList.remove("h-screen");
+    document.querySelector("body").classList.remove("overflow-y-hidden");
     dispatch(setShowLargeImage(false));
   };
 
@@ -58,8 +61,13 @@ export const LargeImage = ({ photos, currentIndex }) => {
   const handleLoad = () => {
     setImageLoading(true);
   };
-
   const { showLargeImage } = useSelector((state) => state.gallery);
+
+  useEffect(() => {
+    if (showLargeImage) {
+      document.querySelector("body").className = "h-screen overflow-y-hidden";
+    }
+  }, [showLargeImage]);
 
   const getIcon = () => {
     let icons = null;
@@ -123,9 +131,7 @@ export const LargeImage = ({ photos, currentIndex }) => {
   if (showLargeImage) {
     return (
       <>
-        {!isLoading ? (
-          ""
-        ) : (
+        {!isLoading ? null : (
           <div
             style={{
               zIndex: 52
@@ -144,19 +150,16 @@ export const LargeImage = ({ photos, currentIndex }) => {
           tabIndex='0'
           onClick={(event) => handleClick(event)}
         >
-          {isLoading ? (
-            ""
-          ) : (
-            <div className='lds-ripple z-10 fixed left inset-1/2'>
-              <div></div>
-              <div></div>
-            </div>
-          )}
+          {isLoading ? "" : <Loader />}
           <img
             onLoad={handleLoad}
             src={largeImgSrc.data().imgUrl.replace("thumbnail", "images")}
             alt='Home page'
-            className={isLoading ? "block" : "hidden"}
+            className={
+              isLoading
+                ? "block  max-w-screen max-h-screen aspect-auto"
+                : "hidden"
+            }
           />
           <Backdrop show={showLargeImage} clicked={(evt) => handleClick(evt)} />
         </div>

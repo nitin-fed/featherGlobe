@@ -8,6 +8,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc, collection, getDocs } from "firebase/firestore";
 import Compressor from "compressorjs";
 import {
+  greenButtonStyle,
   primaryButtonStyle,
   secondaryButtonStyle
 } from "../../Utils/constants";
@@ -47,9 +48,9 @@ export const UploadPhotos = () => {
     history("/");
   };
 
-  const generateThumbnail = (folderName, file) => {
+  const generateThumbnail = (folderName, file, quality) => {
     new Compressor(file, {
-      quality: 1,
+      quality: quality,
       width: 600,
       success(result) {
         uploadFileHadler(folderName, result);
@@ -78,7 +79,8 @@ export const UploadPhotos = () => {
       // generateThumbnail()
       for (let i = 0; i < fileName.length; i++) {
         uploadFileHadler("images", fileName[i]);
-        generateThumbnail("thumbnail", fileName[i]);
+        generateThumbnail("thumbnail", fileName[i], 1);
+        generateThumbnail("lowres", fileName[i], 0.1);
       }
       //uploadFileHadler(fileName);
     }
@@ -113,42 +115,50 @@ export const UploadPhotos = () => {
   };
 
   return (
-    <div className='text-center  rounded-lg bg-gray-100  border border-gray-300 p-6 m-auto w-fit '>
+    <div className='rounded-lg bg-gray-100  border border-gray-300 p-6 m-auto  '>
       <img id='output' width='200px' />
-      <div className='md:basis-3/4'>
-        {/* <input
+
+      <div className='md:flex lg:flex'>
+        <div className='flex-none '>
+          {/* <input
           multiple
           type='file'
           accept='/image/*'
           onChange={(e) => handleChange(e)}
         /> */}
 
-        <div class='inputWrapper'>
-          <input
-            label='Browse'
-            class='fileInput'
-            name='file1'
-            multiple
-            type='file'
-            accept='/image/*'
-            onChange={(e) => handleChange(e)}
-          />
+          <div className={`inputWrapper ${greenButtonStyle}`}>
+            Browse Photos
+            <input
+              label='Browse'
+              className='fileInput'
+              name='file1'
+              multiple
+              type='file'
+              accept='/image/*'
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
         </div>
-
-        <button className={secondaryButtonStyle} onClick={() => handleCancel()}>
-          Cancel
-        </button>
-        <button className={primaryButtonStyle} onClick={() => uploadFiles()}>
-          Submit
-        </button>
+        <div className='flex-auto w-64 md:pl-8 text-right pr-2.5'>
+          <button
+            className={secondaryButtonStyle}
+            onClick={() => handleCancel()}
+          >
+            Cancel
+          </button>
+          <button className={primaryButtonStyle} onClick={() => uploadFiles()}>
+            Submit
+          </button>
+        </div>
       </div>
 
       <span>
         {Object.entries(fileName).map(([key, value]) => {
           return (
             <>
-              <div class='flex border  rounded-lg bg-white  border border-gray-300 p-6 mt-6 '>
-                <div class='flex-none '>
+              <div className='flex border  rounded-lg bg-white  border border-gray-300 p-6 mt-6 '>
+                <div className='flex-none '>
                   <img
                     src={URL.createObjectURL(value)}
                     alt='Decription'
@@ -156,7 +166,7 @@ export const UploadPhotos = () => {
                     className=' rounded-lg'
                   />
                 </div>
-                <div class='flex-auto w-64 pl-8'>
+                <div className='flex-auto w-64 pl-8'>
                   <TextInputField
                     label='Title'
                     kind='text'
@@ -173,7 +183,6 @@ export const UploadPhotos = () => {
                   />
                 </div>
               </div>
-              <br />
             </>
           );
         })}

@@ -17,7 +17,7 @@ export const About = () => {
             </h3>
             <img
               src={prifilePic}
-              className='rounded-full border-2 border-white drop-shadow-xl my-0 mx-auto'
+              className='sm:w-full rounded-full border-2 border-white drop-shadow-xl my-0 mx-auto'
             />
             <br />
             <ul>
@@ -76,4 +76,3 @@ export const About = () => {
     </div>
   );
 };
-  

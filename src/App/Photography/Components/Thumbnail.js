@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
+import { Loader } from "./Loader";
 import "./Photos.css";
 
 const Thumbnail = React.memo(({ src, alt = "", id, clickHandler }) => {
@@ -14,12 +15,14 @@ const Thumbnail = React.memo(({ src, alt = "", id, clickHandler }) => {
     imageToLoad.src = src;
     imageToLoad.onload = () => {
       setLoading(false);
+      console.log(src + "Completed");
       // updateSrc(placeholder);
     };
   }, [src]);
 
   useEffect(() => {
     imageRef.current.addEventListener("load", setImageHeight(imageRef));
+    imageRef.current.src = src;
   });
 
   const setImageHeight = (imageRef) => {
@@ -27,15 +30,19 @@ const Thumbnail = React.memo(({ src, alt = "", id, clickHandler }) => {
     setSpanHeight(spanHeight);
   };
 
+ 
   return (
     <div style={{ gridRowEnd: `span ${spanHeight}` }}>
       <img
+        // lowsrc={src.replace("thumbnail", "lowres")}
+
         onClick={clickHandler}
         ref={imageRef}
         id={id}
-        src={src}
+        src={src.replace("thumbnail", "lowres")}
         style={{
-          opacity: loading ? 0.1 : 1,
+          minHeight: 200,
+          opacity: loading ? 0.2 : 1,
           transition: "opacity .15s linear"
         }}
         alt={alt}

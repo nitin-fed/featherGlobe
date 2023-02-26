@@ -157,7 +157,7 @@ const Login = () => {
         )}
 
         <br />
-        <div className='float-right flex flex-row'>
+        <div className='md:float-right md:flex md:flex-row'>
           <button
             onClick={(e) => handleCancel(e)}
             className={`${secondaryButtonStyle} sm:w-full m-0`}

@@ -7,7 +7,7 @@ const UnusedWebpackPlugin = require("unused-webpack-plugin");
 
 module.exports = {
   entry: ["babel-polyfill", path.resolve(__dirname, "src", "index.js")],
-  mode: "production",
+  mode: 'production',
 
   output: {
     path: path.resolve(__dirname, "./build"),
@@ -16,8 +16,9 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Application name",
-      template: "./src/index.html"
+      filename: "index.html",
+      inject: true,
+      template: path.resolve(__dirname, "src", "index.html")
     }),
     new UnusedWebpackPlugin({
       // Source directories

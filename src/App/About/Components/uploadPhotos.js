@@ -44,6 +44,16 @@ export const UploadPhotos = () => {
     setFile(images);
   };
 
+  useEffect(() => {
+    if (uploadProgress > 0)
+      document.querySelector("#loader").style.width = uploadProgress + "%";
+    console.log(
+      document.querySelector("#loader") &&
+        document.querySelector("#loader").style.width,
+      uploadProgress + "%"
+    );
+  }, [uploadProgress]);
+
   const handleCancel = () => {
     history("/");
   };
@@ -159,6 +169,7 @@ export const UploadPhotos = () => {
             <>
               <div className='flex border  rounded-lg bg-white  border border-gray-300 p-6 mt-6 '>
                 <div className='flex-none '>
+                  <div id='loader' className='bg-gray-500 w-0'></div>
                   <img
                     src={URL.createObjectURL(value)}
                     alt='Decription'

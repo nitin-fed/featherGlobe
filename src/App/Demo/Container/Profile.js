@@ -47,7 +47,7 @@ export const Profile = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(validateForm());
+     
 
     handleReset(evt);
     if (isFormEditing) {
@@ -66,7 +66,7 @@ export const Profile = () => {
   };
 
   const createUser = async (evt) => {
-    console.log(collectData(evt));
+     
 
     await addDoc(userCollectionRef, { ...collectData(evt) });
   };
@@ -75,7 +75,7 @@ export const Profile = () => {
     let dataCollection = {};
     allRefs.forEach((item) => {
       Object.entries(item).forEach(([key, value]) => {
-        console.log(key, value);
+         
         dataCollection = { ...dataCollection, [key]: value.current.getValue() };
       });
     });

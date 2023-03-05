@@ -19,8 +19,6 @@ const Photos = () => {
   };
   const { showLargeImage } = useSelector((state) => state.gallery);
 
-  console.log(showLargeImage);
-
   useEffect(() => {
     fetchData();
   }, []);

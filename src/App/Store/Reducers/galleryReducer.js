@@ -50,8 +50,6 @@ const galleryReducer = (state = initialState, action) => {
       }
 
     case "NEXT_CLICKED":
-      console.log("next", state.currentSelectedImageId);
-
       if (state.currentSelectedImageId < state.photos.length) {
         const nextId = parseInt(state.currentSelectedImageId) + parseInt(1);
         return {

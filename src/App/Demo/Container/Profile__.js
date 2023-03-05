@@ -49,7 +49,7 @@ class Profile extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
+   
   return {
     name: state.profileReducer.person.name,
     age: state.profileReducer.person.age,

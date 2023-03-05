@@ -21,7 +21,7 @@ class Todos extends Component {
         this.setState({ task: '', status: '', id: '' });
       }
     } else {
-      console.log('Show Erorrr');
+       
     }
   };
   render() {

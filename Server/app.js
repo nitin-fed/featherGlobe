@@ -1,27 +1,21 @@
 /** @format */
 
-const express = require("express");
-const app = express();
-const port = "3001";
+var express = require("express");
 var path = require("path");
 
-// app.get('/', (req, res) => {
-//     res.send('Hello World');
-// })
+var app = express();
 
-app.use(express.static("*"));
+const port = 5001;
 
-app.get("/", function (req, res) {
-  console.log(req.header);
+app.use(express.static("./dist/"));
+app.use("/static", express.static(path.join(__dirname, "dist")));
+
+app.get("./", function (req, res) {
   res.sendFile(path.join(__dirname + "/dist/index.html"));
 });
 
-console.log(__dirname);
-
 app.listen(port, () => {
-  console.log("App running on " + port);
+  console.log(`Example app listening at http://localhost:${port}`);
 });
 
-app.get("/users", (req, res) => {
-  res.json({ name: " Nitin", lastName: "Sharma" });
-});
+module.exports = app;

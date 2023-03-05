@@ -2,6 +2,7 @@
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "production",
@@ -12,26 +13,39 @@ module.exports = {
   },
 
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name][contenthash].css",
+      chunkFilename: "[id].css",
+      ignoreOrder: false
+    }),
     new htmlWebpackPlugin({ template: "./public/index.html" }),
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, "./src/assets/css"),
-          to: path.resolve(__dirname, "./build/assets/css")
+          to: path.resolve(__dirname, "./build/css")
         },
         {
           from: path.resolve(__dirname, "./src/assets/fonts"),
-          to: path.resolve(__dirname, "./build/assets/fonts")
+          to: path.resolve(__dirname, "./build/fonts")
         },
         {
           from: path.resolve(__dirname, "./src/assets/images"),
-          to: path.resolve(__dirname, "./build/assets/images")
+          to: path.resolve(__dirname, "./build/images")
+        },
+        {
+          from: path.resolve(__dirname, "./src/assets/images/icons"),
+          to: path.resolve(__dirname, "./build/images/icons")
         }
       ]
     })
   ],
   module: {
     rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
+      },
       {
         use: {
           loader: "babel-loader",
@@ -42,10 +56,7 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/
       },
-      {
-        test: /\.(css|scss)$/,
-        use: ["style-loader", "css-loader"]
-      },
+
       {
         test: /\.js$/,
         exclude: /node_modules/,

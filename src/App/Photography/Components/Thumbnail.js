@@ -15,7 +15,6 @@ const Thumbnail = React.memo(({ src, alt = "", id, clickHandler }) => {
     imageToLoad.src = src;
     imageToLoad.onload = () => {
       setLoading(false);
-      console.log(src + "Completed");
       // updateSrc(placeholder);
     };
   }, [src]);

@@ -8,7 +8,7 @@ import { store } from "./Store/createStore";
 import ErrorBoundary from "./ErrorBoundary";
 import { Body } from "./Body";
 import { MessageBox } from "./Components/MessageBox";
-import Logo from "./Components/Logo";
+import { Logo } from "./Components/Logo";
 import { blurBackground } from "./Utils/constants";
 
 const App = () => {

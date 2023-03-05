@@ -5,7 +5,7 @@ import { Loader } from "./Loader";
 import { useSelector } from "react-redux";
 import "./nestedMenu.css";
 
-const Logo = () => {
+export const Logo = () => {
   const { displayLoader } = useSelector((state) => state.commonReducer);
 
   const { currentUser } = useSelector((state) => state.appReducer);
@@ -41,5 +41,3 @@ const Logo = () => {
     </>
   );
 };
-
-export default Logo;

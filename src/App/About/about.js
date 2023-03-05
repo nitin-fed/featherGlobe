@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useSelector } from "react-redux";
-import prifilePic from "../../App/assets/images/profilePic.jpg";
+import prifilePic from "../../assets/images/profilePic.jpg";
 
 export const About = () => {
   const { profile } = useSelector((state) => state.profileReducer);

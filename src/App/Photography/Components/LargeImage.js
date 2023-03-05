@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Backdrop from "../../Components/Backdrop";
 import { setShowLargeImage } from "../../Store/Reducers/gallerySlice";
 
-import chevRight from "../../../App/assets/images/chevronRight.svg";
-import chevLeft from "../../../App/assets/images/chevronLeft.svg";
+import chevRight from "../../../assets/images/chevronRight.svg";
+import chevLeft from "../../../assets/images/chevronLeft.svg";
 
 import { Loader } from "./Loader";
 
@@ -45,7 +45,6 @@ export const LargeImage = ({ photos, currentIndex }) => {
 
   useEffect(() => {
     setImgSrc(photos[idx]);
-    console.log(photos[idx]);
 
     if (showLargeImage) {
       document.onkeydown = (event) => handleArrowKeys(event);
@@ -75,7 +74,7 @@ export const LargeImage = ({ photos, currentIndex }) => {
       icons = (
         <>
           <div className='left disabled'>
-            <img src={chevLeft} />
+            <img src={chevLeft} alt='previous' />
           </div>
           <div
             className='right'
@@ -83,7 +82,7 @@ export const LargeImage = ({ photos, currentIndex }) => {
               nextImage();
             }}
           >
-            <img src={chevRight} />
+            <img src={chevRight} alt='next' />
           </div>
         </>
       );
@@ -96,10 +95,10 @@ export const LargeImage = ({ photos, currentIndex }) => {
               prevImage();
             }}
           >
-            <img src={chevLeft} />
+            <img src={chevLeft} alt='previous' />
           </div>
           <div className='right disabled'>
-            <img src={chevRight} />
+            <img src={chevRight} alt='next' />
           </div>
         </>
       );
@@ -112,7 +111,7 @@ export const LargeImage = ({ photos, currentIndex }) => {
               prevImage();
             }}
           >
-            <img src={chevLeft} />
+            <img src={chevLeft} alt='previous' />
           </div>
           <div
             className='right'
@@ -120,7 +119,7 @@ export const LargeImage = ({ photos, currentIndex }) => {
               nextImage();
             }}
           >
-            <img src={chevRight} />
+            <img src={chevRight} alt='next' />
           </div>
         </>
       );

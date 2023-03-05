@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-import { Loader } from "./Loader";
+
 import "./Photos.css";
 
 const Thumbnail = React.memo(({ src, alt = "", id, clickHandler }) => {
@@ -30,7 +30,6 @@ const Thumbnail = React.memo(({ src, alt = "", id, clickHandler }) => {
     setSpanHeight(spanHeight);
   };
 
- 
   return (
     <div style={{ gridRowEnd: `span ${spanHeight}` }}>
       <img

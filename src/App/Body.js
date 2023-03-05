@@ -1,12 +1,8 @@
 /** @format */
 
-import React, { Component, useEffect } from "react";
+import React, { useEffect } from "react";
 
-import { Route, Routes, BrowserRouter, Switch } from "react-router-dom";
-
-import Home from "./Home/home";
-import Photography from "./Photography/photography";
-// import Demo from "./Demo/demoApp";
+import { Route, Routes } from "react-router-dom";
 
 // import Backdrop from "../Components/Backdrop";
 import GuessedWordWrapper from "./Demo/Container/GuessedWordWrapper";
@@ -14,7 +10,6 @@ import { JottoApp } from "./Jotto/JottoApp";
 import Article from "./Demo/Article/Article";
 import Gallery from "./Demo/Container/Gallery";
 import Users from "./Demo/Components/Users/Users";
-import todos from "./Demo/Container/todos";
 import Support from "./Demo/Support/Support";
 import Photos from "./Photography/Components/Photos";
 import Posts from "./Demo/Container/Posts";
@@ -31,13 +26,12 @@ import Login from "./Login";
 import { Profile } from "./Demo/Container/Profile";
 import { UnAuthUser } from "./Components/UnAuthUser";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateCurrentUser } from "./Store/Reducers/appSlice";
 import { auth } from "../firebase-config";
 import { Post } from "./Demo/Components/Post";
 import { Admin } from "./Components/Admin";
 
-import { CSSTransition } from "react-transition-group";
 import SecHome from "../sec";
 import { UploadPhotos } from "./About/Components/uploadPhotos";
 

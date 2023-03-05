@@ -1,6 +1,6 @@
-import * as actionType from "./actionType";
-import { displayLoader } from "./commonActions";
+/** @format */
 
+import * as actionType from "./actionType";
 //TODO: Fetch photos from server, curretly passed hardcoded object
 export const fetchPhotos = () => {
   return {
@@ -9,27 +9,27 @@ export const fetchPhotos = () => {
   };
 };
 
-export const updatePostReducer = posts => {
+export const updatePostReducer = (posts) => {
   return {
     type: actionType.FETCH_POSTS,
     posts: posts
   };
 };
 
-export const fetchPostsFails = error => {
+export const fetchPostsFails = (error) => {
   return {
     type: actionType.FETCH_POSTS_FAILS
   };
 };
 
-export const loadLargeImage = e => {
+export const loadLargeImage = (e) => {
   return {
     type: actionType.LOAD_LARGE_IMAGE,
     payload: { currentId: e.target.id }
   };
 };
 
-export const deletePost = id => {
+export const deletePost = (id) => {
   return {
     type: actionType.DELETE_POST,
     payload: { id: id }
@@ -54,7 +54,7 @@ export const backdropClicked = () => {
   };
 };
 
-export const loadPostDescription = selectedPostId => {
+export const loadPostDescription = (selectedPostId) => {
   return {
     type: actionType.LOAD_POST_DESCRIPTION,
     id: selectedPostId
@@ -99,14 +99,14 @@ export const addGuessedWord = () => {
   };
 };
 
-export const updateGuessWord = evt => {
+export const updateGuessWord = (evt) => {
   return {
     type: actionType.UPDATE_GUESSWORD,
     payload: evt.target.value
   };
 };
 
-export const deleteRow = id => {
+export const deleteRow = (id) => {
   return {
     type: actionType.DELETE_ROW,
     payload: { id: id }

@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import "../../../loader.css";
+import "../../../assets/css/loader.css";
 
 export const Loader = () => {
   return (

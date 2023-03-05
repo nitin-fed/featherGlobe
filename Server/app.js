@@ -12,8 +12,7 @@ var path = require("path");
 app.use(express.static("*"));
 
 app.get("/", function (req, res) {
-  res.header("X-Content-Type-Options", "nosniff");
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000/*");
+  console.log(req.header);
   res.sendFile(path.join(__dirname + "/dist/index.html"));
 });
 
@@ -24,6 +23,5 @@ app.listen(port, () => {
 });
 
 app.get("/users", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000/*");
   res.json({ name: " Nitin", lastName: "Sharma" });
 });

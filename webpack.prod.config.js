@@ -1,37 +1,36 @@
 /** @format */
-
 const path = require("path");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const UnusedWebpackPlugin = require("unused-webpack-plugin");
+const htmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: ["babel-polyfill", path.resolve(__dirname, "src", "index.js")],
-  mode: 'production',
-
+  mode: "production",
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./build"),
-    filename: "bundle.js"
+    filename: "[name].[contenthash].js"
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      inject: true,
-      template: path.resolve(__dirname, "src", "index.html")
-    }),
-    new UnusedWebpackPlugin({
-      // Source directories
-      directories: [path.join(__dirname, "src")],
-      // Exclude patterns
-      exclude: ["*.test.js"],
-      // Root directory (optional)
-      root: __dirname
+    new htmlWebpackPlugin({ template: "./public/index.html" }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "./src/assets/css"),
+          to: path.resolve(__dirname, "./build/assets/css")
+        },
+        {
+          from: path.resolve(__dirname, "./src/assets/fonts"),
+          to: path.resolve(__dirname, "./build/assets/fonts")
+        },
+        {
+          from: path.resolve(__dirname, "./src/assets/images"),
+          to: path.resolve(__dirname, "./build/assets/images")
+        }
+      ]
     })
   ],
-
   module: {
-    // loaders: [{ test: /\.js?$/, loader: "babel" }],
     rules: [
       {
         use: {
@@ -43,35 +42,28 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/
       },
-
       {
         test: /\.(css|scss)$/,
         use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        exclude: [
-          /\.html$/,
-          /\.(js|jsx)$/,
-          /\.css$/,
-          /\.scss$/,
-          /\.json$/,
-          /\.bmp$/,
-          /\.gif$/,
-          /\.jpe?g$/,
-          /\.png$/,
-          /\.ejs$/
-        ],
-        loader: "file-loader",
-        options: {
-          name: "fonts/[name].[ext]"
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
         }
       },
       {
-        test: /\.(png|jpg|svg)$/,
-        use: {
-          loader: "url-loader"
-        }
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192
+            }
+          }
+        ],
+        type: "javascript/auto"
       }
     ]
   }

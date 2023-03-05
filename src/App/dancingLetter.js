@@ -6,7 +6,6 @@ export const initDancingLetter = () => {
   const canvasWidth = 500;
   const canvasHeight = 300;
   const canvasBackground = "#e7e7e7";
-  const circleCount = 50;
 
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;

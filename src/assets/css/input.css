@@ -1,0 +1,273 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: NanumGothic-Regular;
+    src: url("../fonts/Nanum_Gothic/NanumGothic-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: Nunito_Sans;
+    src: url("../fonts/Nunito_Sans/NunitoSans-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: NunitoSans-ExtraLight;
+    src: url("../fonts/Nunito_Sans/NunitoSans-ExtraLight.ttf");
+  }
+ @font-face {
+    font-family: NunitoSans-Light;
+    src: url("../fonts/Nunito_Sans/NunitoSans-Light.ttf");
+  }
+ 
+  @font-face {
+    font-family: MrDeHaviland-Regular;
+    src: url("../fonts/MrDeHaviland-Regular.ttf");
+  }
+  
+  @layer utilities {
+    .striped li:nth-child(odd) {
+      @apply bg-gray-900
+    }
+  }
+  
+
+@layer base {
+ 
+    html {
+      font-family: sans-serif;
+      color: rgb(138, 138, 138); 
+      letter-spacing:1px;
+      font-size: 1rem;
+      line-height: 2rem;
+      font-weight: 100;
+    }
+    a {
+      @apply text-blue-500;
+     
+    }
+    a:hover {
+      @apply text-blue-700;
+      @apply underline 
+    }
+    .active{
+      @apply text-gray-900
+    }
+  }
+
+  .welcomeUser{
+    font-family: MrDeHaviland-Regular;
+    line-height: 20px;
+  font-size: 30px;
+  letter-spacing: 4px;
+  padding: 0 10px  10px 10px; 
+ 
+  }
+  .logoFont {
+    font-size: 10px;
+    letter-spacing: 6px; 
+  }
+ 
+
+  .tile {
+    background: rgb(54,83,20);
+    background: linear-gradient(150deg, rgba(54,83,20,.5) 0%, rgba(63,98,18,.8) 100%);
+    border: 2px solid rgba(54,83,20,.5)
+ 
+  }
+  
+ 
+
+/* GALAXY STYLE ********/
+#main {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+}
+
+ 
+
+.rotate90 {
+  transform: rotate(90deg);
+}
+
+.rotate45 {
+  transform: rotate(45deg);
+}
+
+.rotate135 {
+  transform: rotate(135deg);
+}
+
+.star {
+  position: fixed;
+  display: inline-block;
+  height: 50px;
+  width: 2px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%);
+}
+
+.star1 {
+  position: fixed;
+  display: inline-block;
+  width: 50px;
+  height: 2px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%);
+}
+
+
+@keyframes myAnimation {
+  0% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+  }
+
+
+  50% {
+      transform: scale(1.5);
+      -webkit-transform: scale(1.5);
+  }
+
+  100% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+  }
+}
+
+@keyframes myAnimation1 {
+  0% {
+      transform: rotate(90deg) scale(1.0);
+      -webkit-transform: rotate(90deg) scale(1.0);
+  }
+
+
+  30% {
+      transform: rotate(90deg) scale(1.5);
+      -webkit-transform: rotate(90deg) scale(1.5);
+  }
+
+  100% {
+      transform: rotate(90deg) scale(1);
+      -webkit-transform: rotate(90deg) scale(1);
+  }
+}
+
+.inputContainer {
+  border: 1px solid #c2c9d1;
+  background: rgb(136 146 156);
+  width: fit-content;
+  padding: 5px;
+  bottom: 10px;
+  position: fixed;
+}
+
+#sun {
+  top: calc(50% - 250px);
+
+  height: 500px;
+  width: 400px;
+  background: #ffd200;
+  border-radius: 0 50% 50% 0;
+  margin-left: -264px;
+  position: fixed;
+  border: 1px solid white;
+
+  -webkit-box-shadow: 0px 0px 300px 50px rgb(255, 234, 0);
+  -moz-box-shadow: 0px 0px 300px 50px rgb(255, 234, 0);
+  box-shadow: 0px 0px 300px 50px rgb(255, 234, 0);
+
+}
+
+#sunInner {
+  top: calc(50% - 250px);
+  height: 500px;
+  width: 400px;
+  background: #ffd200;
+  border-radius: 0 50% 50% 0;
+  margin-left: -264px;
+  position: fixed;
+  -moz-box-shadow: inset 0 0 10px #ff6d00;
+  -webkit-box-shadow: inset 0 0 10px #ff6d00;
+  box-shadow: inset 0 0 100px #ff6d00;
+}
+
+#orbit {
+  border: 1px solid white;
+  height: 600px;
+  width: 600px;
+  position: fixed;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: skew(306deg, 178deg);
+  margin-left: -200px;
+
+}
+
+.modalBackground {
+  background-color: rgba(5, 23 ,42, .8);
+}
+
+.links {
+  text-decoration: underline;
+  background: none;
+}
+ 
+.post table, td, tr{
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 0;
+}
+
+.post table, ul, ol, pre {
+  margin-top: 20px; 
+}
+
+.post ol li {
+  list-style-type: number;
+}
+
+.post ul li {
+  list-style-type: disc;
+}
+
+.postTitle {
+   
+}
+
+.posts a:link { 
+  background: none;
+}
+.posts a:hover {
+   
+  background: none;
+  text-decoration: underline;
+}
+.posts a:visited {
+  
+  background: none;
+}
+.ck-content {
+  color: black;
+  min-height: 280px;
+  max-height: 300px;
+  
+}
+
+.toggle-checkbox {
+  background-color: rgb(108, 108, 108);
+} 
+.toggle-checkbox:checked { 
+  right: 0; 
+  transition: all 1s ease;
+  background-color: rgb(77 124 15);
+} 
+
+pre {
+  border:1px solid #6f6f6f;
+  background-color: #161616 !important;
+  padding: 10px; 
+}

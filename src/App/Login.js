@@ -50,6 +50,7 @@ const Login = () => {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
+    setError("");
     const email = userNameRef.current.getValue();
     const password = passwordRef.current.getValue();
     setLoading(true);
@@ -75,6 +76,7 @@ const Login = () => {
           password
         );
         dispatch(updateCurrentUser(user.user.email));
+        history("/");
       } catch (error) {
         setLoading(false);
         setError(error.message);
@@ -100,6 +102,19 @@ const Login = () => {
     auth.onAuthStateChanged((user) => {
       dispatch(updateCurrentUser(user?.email));
     });
+
+    const listener = (event) => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        console.log("Enter key was pressed. Run your function.");
+        // event.preventDefault();
+        handleSubmit(event);
+        // callMyFunction();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
   }, []);
 
   const handleReset = (e) => {

@@ -33,7 +33,7 @@ const appSlice = createSlice({
   reducers: {
     updateCurrentUser(state, { payload }) {
       if (payload !== undefined) {
-        state.currentUser = payload;
+        state.currentUser = payload.substr(0, payload.indexOf("@"));
         state.isAuthenticated = true;
         state.menus.pop();
         state.menus.push({
@@ -43,6 +43,7 @@ const appSlice = createSlice({
         });
       } else {
         state.isAuthenticated = false;
+        state.currentUser = "Guest User";
         state.menus.pop();
         state.menus.push({
           url: "/login",

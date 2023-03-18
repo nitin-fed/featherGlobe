@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Navigation from "./Navigation/navigation";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./Store/createStore";
 import ErrorBoundary from "./ErrorBoundary";
@@ -42,7 +42,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <ErrorBoundary>
-        <HashRouter>
+        <BrowserRouter>
           <header className={`pt-3 sticky top-0 z-40 w-full ${blurBackground}`}>
             <Logo myRef={messageBoxRef} />
             <hr className='w-full absolute left-0' />
@@ -74,7 +74,7 @@ const App = () => {
             okHandler={messageBoxOkHandler}
             cancelHandler={messageBoxCancelHandler}
           />
-        </HashRouter>
+        </BrowserRouter>
       </ErrorBoundary>
     </Provider>
   );

@@ -16,6 +16,7 @@
     "compressorjs": "^1.1.1",
     "D": "^1.0.0",
     "firebase": "^9.17.2",
+    "firebase-tools": "^11.24.1",
     "highlight.js": "^11.7.0",
     "identity-obj-proxy": "^3.0.0",
     "jest-cli": "^29.3.1",

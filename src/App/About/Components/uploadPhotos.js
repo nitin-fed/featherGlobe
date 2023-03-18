@@ -45,13 +45,11 @@ export const UploadPhotos = () => {
   };
 
   useEffect(() => {
-    if (uploadProgress > 0)
+    if (uploadProgress > 0) {
       document.querySelector("#loader").style.width = uploadProgress + "%";
-    console.log(
-      document.querySelector("#loader") &&
-        document.querySelector("#loader").style.width,
-      uploadProgress + "%"
-    );
+    } else if (uploadProgress === 100) {
+      history.push("/photography");
+    }
   }, [uploadProgress]);
 
   const handleCancel = () => {
@@ -141,7 +139,7 @@ export const UploadPhotos = () => {
             Browse Photos
             <input
               label='Browse'
-              className='fileInput'
+              className='fileInput left-0 top-0'
               name='file1'
               multiple
               type='file'

@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { ChildNav } from "../Demo/ChildNav";
 
@@ -9,8 +9,10 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { blurBackground } from "../Utils/constants";
+import { updateCurrentUser } from "../Store/Reducers/appSlice";
 
 const Navigation = () => {
+  const dispatch = useDispatch();
   const [toggleMenuContainer, setMenuContainer] = useState(false);
   const history = useNavigate();
 
@@ -35,6 +37,7 @@ const Navigation = () => {
 
   const handleLogout = async () => {
     await signOut(auth);
+    dispatch(updateCurrentUser());
     history("/");
   };
 
@@ -66,7 +69,7 @@ const Navigation = () => {
       >
         {menus.map((item, index) => {
           return (
-            <>
+            <React.Fragment key={index}>
               <div
                 className='md:inline-block xs:text-left sm:text-left sm:border-b xs:border-b md:border-none '
                 key={index}
@@ -86,7 +89,7 @@ const Navigation = () => {
                   <ChildNav />
                 ) : null}
               </div>
-            </>
+            </React.Fragment>
           );
         })}
 

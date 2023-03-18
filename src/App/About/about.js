@@ -23,9 +23,9 @@ export const About = () => {
             <ul>
               {profile["contact"].map((item, index) => {
                 return (
-                  <li key={index} className='py-1'>
+                  <li key={index} className='py-1 '>
                     <img
-                      className='h-5 w-5 inline-block mr-3'
+                      className='h-5 w-5 inline-block mr-3 '
                       src={"./images/icons/" + item["imgsrc"]}
                       alt='SVG as an image'
                     ></img>

@@ -99,7 +99,7 @@ export function Posts({ onLoadPostDescription, onDeletePost }) {
                   item["date"]
                 ).getFullYear()}`;
                 return (
-                  <li className='py-4 border-b  ' key={index}>
+                  <li className='py-4 border-b '>
                     <div className=''>
                       <div className=' '>
                         <h3 className='text-2xl'>

@@ -123,7 +123,7 @@ export const UploadPhotos = () => {
   };
 
   return (
-    <div className='rounded-lg bg-gray-100  border border-gray-300 p-6 m-auto  '>
+    <div className='md:rounded-lg md:bg-gray-100  md:border md:border-gray-300 md:p-6 md:m-auto  '>
       <img id='output' width='200px' />
 
       <div className='md:flex lg:flex'>
@@ -135,7 +135,7 @@ export const UploadPhotos = () => {
           onChange={(e) => handleChange(e)}
         /> */}
 
-          <div className={`inputWrapper ${greenButtonStyle}`}>
+          <div className={`inputWrapper ${greenButtonStyle} text-center`}>
             Browse Photos
             <input
               label='Browse'
@@ -148,7 +148,7 @@ export const UploadPhotos = () => {
             />
           </div>
         </div>
-        <div className='flex-auto w-64 md:pl-8 text-right pr-2.5'>
+        <div className='flex-auto  text-right  '>
           <button
             className={secondaryButtonStyle}
             onClick={() => handleCancel()}
@@ -165,8 +165,8 @@ export const UploadPhotos = () => {
         {Object.entries(fileName).map(([key, value]) => {
           return (
             <>
-              <div className='flex border  rounded-lg bg-white  border border-gray-300 p-6 mt-6 '>
-                <div className='flex-none '>
+              <div className='md:flex border  rounded-lg bg-white  border border-gray-300 p-6 mt-6 '>
+                <div className=' '>
                   <div id='loader' className='bg-gray-500 w-0'></div>
                   <img
                     src={URL.createObjectURL(value)}
@@ -175,7 +175,7 @@ export const UploadPhotos = () => {
                     className=' rounded-lg'
                   />
                 </div>
-                <div className='flex-auto w-64 pl-8'>
+                <div className='flex-auto  md:pl-8'>
                   <TextInputField
                     label='Title'
                     kind='text'

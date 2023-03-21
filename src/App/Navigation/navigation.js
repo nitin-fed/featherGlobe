@@ -45,12 +45,19 @@ const Navigation = () => {
   return (
     <>
       {/* Backdrop */}
+      <div
+        onClick={toggleMenu}
+        style={{ zIndex: -5 }}
+        className={` ${
+          toggleMenuContainer ? "" : "hidden "
+        }  h-screen bg-black w-full xm:block sm:block md:hidden absolute left bg-white/90 top-0 left-0 `}
+      />
 
       <div
         onClick={toggleMenu}
         className={`${
           toggleMenuContainer ? "" : "hidden"
-        } absolute top-0 left-0 w-full `}
+        } absolute top-0 left-0 w-full`}
       ></div>
 
       <div className='sm:hidden relative z-1'>
@@ -59,19 +66,17 @@ const Navigation = () => {
         </button>
       </div>
 
-      {/* <div className='h-screen bg-black w-full block absolute left'></div> */}
-
       <div
         onClick={toggleMenu}
         className={` ${
           toggleMenuContainer ? "" : "hidden "
-        }  sm:block p-2 z-1 text-center sm:absolute sm:w-full xs:absolute xs:w-full sm:left-0 xs:left-0 sm:h-screen  xs:h-screen  md:h-auto ${blurBackground}`}
+        } sm:block p-2 z-1 text-center sm:absolute sm:w-full xs:absolute xs:w-full sm:left-0 xs:left-0 sm:h-screen  xs:h-screen  md:h-auto ${blurBackground}  `}
       >
         {menus.map((item, index) => {
           return (
             <React.Fragment key={index}>
               <div
-                className='md:inline-block xs:text-left sm:text-left sm:border-b xs:border-b md:border-none '
+                className='md:inline-block xs:text-left sm:text-left sm:border-b xs:border-b md:border-none  '
                 key={index}
               >
                 <NavLink

@@ -11,7 +11,7 @@ import validations from "./validations";
 export const TextInputField = forwardRef((props, ref) => {
   const { label, validation = 0, kind, value = "", isRequired } = props;
   const inputStyle =
-    "placeholder:italic placeholder:text-slate-500 rounded-lg bg-transparent border p-3 ";
+    "placeholder:italic placeholder:text-slate-500 rounded-lg bg-transparent border p-2 ";
 
   const [fieldName, setName] = useState(value);
   const [errors, setErrors] = useState({});
@@ -62,7 +62,7 @@ export const TextInputField = forwardRef((props, ref) => {
         </label>
         <input
           name='fieldName'
-          className={`w-full rounded-lg bg-transparent border border-gray-400 p-3 ${inputStyle} `}
+          className={`w-full rounded-lg bg-transparent border border-gray-400 p-2 ${inputStyle} `}
           type={kind}
           value={fieldName}
           onChange={(e) => changeHandler(e)}

@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     // messageBoxRef.current.showMessageBox();
     window.onscroll = function () {
-      myFunction();
+      // myFunction();
     };
 
     var header = document.getElementById("myHeader");

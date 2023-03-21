@@ -53,7 +53,8 @@
       @apply underline 
     }
     .active{
-      @apply text-gray-900
+      @apply text-blue-900
+     
     }
   }
 

@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import {
   primaryButtonStyle,
   secondaryButtonStyle,
-  warningButtonStyle
+  warningButtonStyle,
 } from "../Utils/constants";
 import { db } from "../../firebase-config";
 
@@ -22,7 +22,7 @@ import {
   updateDoc,
   deleteDoc,
   setDoc,
-  addDoc
+  addDoc,
 } from "firebase/firestore";
 import ToggleButton from "./ToggleButton";
 
@@ -35,7 +35,7 @@ export const Admin = () => {
   const userCollectionRef = collection(db, "Posts");
 
   const editorConfiguration = {
-    toolbar: ["bold", "italic"]
+    toolbar: ["bold", "italic"],
   };
 
   // useEffect(() => {
@@ -56,7 +56,7 @@ export const Admin = () => {
       title,
       description: editorData,
       tags: ["javascript"],
-      date: Date.now()
+      date: Date.now(),
     };
     const res = await addDoc(userCollectionRef, data);
     console.log(res.id);
@@ -95,14 +95,14 @@ export const Admin = () => {
                 {
                   language: "javascript",
                   label: "JavaScript",
-                  class: "js javascript js-code"
+                  class: "js javascript js-code",
                 },
                 {
                   language: "html",
-                  label: "HTML"
-                }
-              ]
-            }
+                  label: "HTML",
+                },
+              ],
+            },
           }}
           name='desc'
           placeholder='Type the content here!'

@@ -24,26 +24,33 @@
     <div class="eins zwei">JS</div>
 
     <script>
-        var eins = document.querySelector("div");
-        var klasse = eins.classList;
-        console.log(klasse);
-        setTimeout(b, 1000);
-        function b()
-        {
-            eins.classList.add("drei");
-            console.log(klasse);
-        }
+
+        const arr = [3, 5, -4, 8, 11, 1, -1, 6, 4, 7]
+        const sequence = [2, 3, 4, 2, 1]
+
+        const competitions = [["HTML", "C#"], ["C#", "Python"], ["Python", "HTML"],]
+        const results = [1, 1, 4, 1, 4, 5, 56, 6, 77, 6, 564, 453,]
+
+        // const matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        const matrix = [6, 3, 2, 2, 1]
 
 
-        let a = function ()
-        {
-            return {
-                'age': 55,
-                'name': "Jhon"
+        function nonConstructibleChange(matrix) {
+            const sortedArr = matrix.sort()
+            let total = 0
+
+            for (let i = 0; i < sortedArr.length; i++) {
+                let subTotal = 0
+                for (let j = 0; j < i; j++) {
+                    subTotal += sortedArr[j]
+                }
+                total += subTotal
             }
+            console.log(total)
+            return total;
         }
 
-        console.log(a());
+        nonConstructibleChange(matrix)
 
     </script>
 

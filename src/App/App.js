@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navigation from "./Navigation/navigation";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -12,6 +12,7 @@ import { Logo } from "./Components/Logo";
 import { blurBackground } from "./Utils/constants";
 
 const App = () => {
+  const [name, setName, lastnme] = useState("Nitin");
   useEffect(() => {
     // messageBoxRef.current.showMessageBox();
     window.onscroll = function () {
@@ -53,6 +54,7 @@ const App = () => {
           </header>
           <div className='max-w-screen-xl my-0 mx-auto px-10  '>
             <div className='my-8'>
+              {lastnme}
               <Body />
             </div>
 

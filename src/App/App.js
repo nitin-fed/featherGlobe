@@ -1,4 +1,4 @@
-
+/** @format */
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Navigation from "./Navigation/navigation";
@@ -59,17 +59,17 @@ const App = () => {
           </button> */}
           {/* <SearchBar /> */}
           {/* <NestedMenu /> */}
-          <EATransfers />
+          {/* <EATransfers /> */}
           <header className={`pt-3 sticky top-0 z-40 w-full ${blurBackground}`}>
-            {/* <Logo myRef={messageBoxRef} /> */}
+            <Logo myRef={messageBoxRef} />
             <hr className='w-full absolute left-0' />
             <nav className='text-sm px-5 md:h-12' id='myHeader'>
-              {/* <Navigation /> */}
+              <Navigation />
             </nav>
 
             <hr className='w-full absolute left-0' />
           </header>
-          {/* <div className='max-w-screen-xl my-0 mx-auto px-10  '>
+          <div className='max-w-screen-xl my-0 mx-auto px-10  '>
             <div className='my-8'>
               {lastnme}
 
@@ -85,7 +85,7 @@ const App = () => {
                 www.featherglobe.com
               </div>
             </footer>
-          </div> */}
+          </div>
           <MessageBox
             ref={messageBoxRef}
             title='Edit User Info'

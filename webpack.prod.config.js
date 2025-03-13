@@ -35,6 +35,10 @@ module.exports = {
           to: path.resolve(__dirname, "./build/images"),
         },
         {
+          from: path.resolve(__dirname, "./src/assets/icons"),
+          to: path.resolve(__dirname, "./build/icons"),
+        },
+        {
           from: path.resolve(__dirname, "./src/assets/images/icons"),
           to: path.resolve(__dirname, "./build/images/icons"),
         },

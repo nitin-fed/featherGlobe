@@ -1,4 +1,4 @@
-
+/** @format */
 
 import React, { useEffect, useState } from "react";
 
@@ -30,7 +30,7 @@ export default function EATransfers() {
         if (theme === "christmas") {
           await import(`./css/styles_xmas.css`);
         } else if (theme === "newyear") {
-          await import(`./newyear.css`);
+          await import(`./styles_newyear.css`);
         } else if (theme === "default") {
           await import(`./css/styles_default.css`);
         }

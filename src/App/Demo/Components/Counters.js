@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import Counter from "./Counter";
 import Buttons from "./Buttons";
@@ -14,7 +16,7 @@ export function Counters({
   onAdd10,
   onSubtract10,
   storeResult,
-  onGroupClick
+  onGroupClick,
 }) {
   console.log(storeResult);
   const buttonsArr = [
@@ -33,34 +35,34 @@ export function Counters({
     0,
     ".",
     "=",
-    "+"
+    "+",
   ];
   return (
-    <div className="container">
+    <div className='container'>
       <h1>Counter</h1>
       <Counter counter={ctr} />
       <br />
       <br />
-      <Buttons key="add" clickHandler={onAddCounter} caption={actionType.ADD} />
+      <Buttons key='add' clickHandler={onAddCounter} caption={actionType.ADD} />
       &nbsp;
       <Buttons
-        key="subtranct"
+        key='subtranct'
         clickHandler={onSubtractCounter}
         caption={actionType.SUBTRACT_CTR}
       />
       &nbsp;
-      <Buttons key="add10" clickHandler={() => onAdd10(10)} caption="ADD 10" />
+      <Buttons key='add10' clickHandler={() => onAdd10(10)} caption='ADD 10' />
       &nbsp;
       <Buttons
-        key="sub10"
+        key='sub10'
         clickHandler={() => onSubtract10(10)}
-        caption="SUBTRACT 10"
+        caption='SUBTRACT 10'
       />
       <hr />
       <Buttons
-        key="storeCounter"
+        key='storeCounter'
         clickHandler={onStoreCounter}
-        caption="Store Counter"
+        caption='Store Counter'
       />
       <small>Result will append after 2 seconds</small>
       <hr />
@@ -71,35 +73,35 @@ export function Counters({
       <br />
       <br />
       <h1>Simple Calculator</h1>
-      <div className="container calculatorContainer">
-        <div className="row">
-          <div className="col-12">
-            <input type="text" value={calScreen} className="calScreen" />{" "}
+      <div className='container calculatorContainer'>
+        <div className='row'>
+          <div className='col-12'>
+            <input type='text' value={calScreen} className='calScreen' />{" "}
           </div>
         </div>
 
-        <div className="row">
-          <div className="col-3"></div>
-          <div className="col-3"></div>
-          <div className="col-3">
-            <Buttons caption="C" buttonclass="calButton" />
+        <div className='row'>
+          <div className='col-3'></div>
+          <div className='col-3'></div>
+          <div className='col-3'>
+            <Buttons caption='C' buttonclass='calButton' />
           </div>
-          <div className="col-3">
-            <Buttons caption="AC" buttonclass="calButton" />
+          <div className='col-3'>
+            <Buttons caption='AC' buttonclass='calButton' />
           </div>
-          <div className="col-3"></div>
-          <div className="col-3"></div>
+          <div className='col-3'></div>
+          <div className='col-3'></div>
         </div>
 
-        <div className="row">
+        <div className='row'>
           {buttonsArr.map((button, index) => {
             return (
-              <div key={index} className="col-3">
+              <div key={index} className='col-3'>
                 <Buttons
                   datalabel={button}
                   caption={button}
-                  buttonclass="calButton"
-                  clickHandler={evt => onGroupClick(evt)}
+                  buttonclass='calButton'
+                  clickHandler={(evt) => onGroupClick(evt)}
                 />
               </div>
             );

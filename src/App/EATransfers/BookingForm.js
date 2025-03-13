@@ -1,11 +1,11 @@
-
+/** @format */
 
 import React from "react";
-import { ReactComponent as Map } from "./icons/map.svg";
-import { ReactComponent as Flag } from "./icons/flag.svg";
-import { ReactComponent as Calender } from "./icons/calender.svg";
-import { ReactComponent as Clock } from "./icons/clock.svg";
-import { ReactComponent as Numbers } from "./icons/numbers.svg";
+import { ReactComponent as Map } from "../../assets/icons/map.svg";
+import { ReactComponent as Flag } from "../../assets/icons/flag.svg";
+import { ReactComponent as Calender } from "../../assets/icons/calender.svg";
+import { ReactComponent as Clock } from "../../assets/icons/clock.svg";
+import { ReactComponent as Numbers } from "../../assets/icons/numbers.svg";
 
 export default function BookingForm() {
   return (

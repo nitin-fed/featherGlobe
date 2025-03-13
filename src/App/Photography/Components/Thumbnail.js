@@ -1,4 +1,4 @@
-/** @format */
+
 
 import React, { useState, useEffect } from "react";
 
@@ -19,6 +19,8 @@ const Thumbnail = React.memo(({ src, alt = "", id, clickHandler }) => {
     };
   }, [src]);
 
+   
+
   useEffect(() => {
     imageRef.current.addEventListener("load", setImageHeight(imageRef));
     imageRef.current.src = src;
@@ -37,11 +39,12 @@ const Thumbnail = React.memo(({ src, alt = "", id, clickHandler }) => {
         onClick={clickHandler}
         ref={imageRef}
         id={id}
-        src={src.replace("thumbnail", "lowres")}
+        // src={src.replace("thumbnail", "lowres")}
+        src={src}
         style={{
           minHeight: 200,
           opacity: loading ? 0.2 : 1,
-          transition: "opacity .15s linear"
+          transition: "opacity .15s linear",
         }}
         alt={alt}
       />

@@ -1,4 +1,4 @@
-/** @format */
+
 
 export const init = () => {
   const canvas = document.querySelector("#myCanvas");

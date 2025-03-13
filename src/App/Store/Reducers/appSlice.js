@@ -1,4 +1,4 @@
-/** @format */
+
 
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -8,23 +8,24 @@ const initialState = {
 
   menus: [
     { url: "/", displayName: "Home", imgPath: "home.png" },
-
+    { url: "/stockPhotos", displayName: "Stock Photos", imgPath: "home.png" },
+    { url: "/eat", displayName: "EA Transfers", imgPath: "home.png" },
     { url: "/posts", displayName: "Posts", imgPath: "posts.png" },
     {
       url: "/photography",
       displayName: "Photography",
-      imgPath: "photography.png"
+      imgPath: "photography.png",
     },
     //{ url: "/users", displayName: "Users Management", imgPath: "users.png" },
     // { url: "/demo", displayName: "Practice", imgPath: "practice.png" },
     { url: "/contact", displayName: "Contact", imgPath: "contact.png" },
     {
       url: "/uploadPhotos",
-      displayName: "Upload Photos"
+      displayName: "Upload Photos",
     },
     { url: "/createPost", displayName: "Create Post", imgPath: "admin.png" },
-    { url: "/login", displayName: "Login", imgPath: "login.png" }
-  ]
+    { url: "/login", displayName: "Login", imgPath: "login.png" },
+  ],
 };
 
 const appSlice = createSlice({
@@ -39,7 +40,7 @@ const appSlice = createSlice({
         state.menus.push({
           url: "/profile",
           displayName: "User Profile",
-          imgPath: "profile.png"
+          imgPath: "profile.png",
         });
       } else {
         state.isAuthenticated = false;
@@ -48,7 +49,7 @@ const appSlice = createSlice({
         state.menus.push({
           url: "/login",
           displayName: "Login",
-          imgPath: "login.png"
+          imgPath: "login.png",
         });
       }
     },
@@ -59,8 +60,8 @@ const appSlice = createSlice({
       payload
         ? bodyNode.setAttribute("class", "overflowHidden")
         : bodyNode.removeAttribute("class");
-    }
-  }
+    },
+  },
 });
 
 export const { updateCurrentUser } = appSlice.actions;

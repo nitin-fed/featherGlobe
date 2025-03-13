@@ -1,4 +1,4 @@
-/** @format */
+
 
 export const primaryButtonStyle =
   "mt-3 md:mt-0 lg:mt-0 w-full md:w-auto lg:w-auto  md:ml-3 disabled:opacity-50 rounded-lg py-3  px-5 bg-blue-400 text-white  hover:bg-blue-600 hover:text-white transition ease-in-out duration-300 text-sm whitespace-nowrap";
@@ -17,3 +17,6 @@ export const blurBackground =
 
 export const greenButtonStyle =
   " disabled:opacity-50 rounded-lg py-3  px-5 bg-green-600 text-white  hover:bg-green-800 hover:text-white transition ease-in-out duration-300 text-sm whitespace-nowrap";
+
+export const blurBackgroundEAT =
+  "background: #000 backdrop-blur flex-none transition-colors duration-500 lg:z-50 bg-black supports-backdrop-blur:bg-green/40";

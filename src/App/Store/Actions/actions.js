@@ -1,4 +1,4 @@
-/** @format */
+
 
 import * as actionType from "./actionType";
 //TODO: Fetch photos from server, curretly passed hardcoded object

@@ -1,4 +1,4 @@
-/** @format */
+
 
 import * as actionType from "../Actions/actionType";
 

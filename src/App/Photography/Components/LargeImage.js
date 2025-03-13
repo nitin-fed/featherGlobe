@@ -1,4 +1,4 @@
-/** @format */
+
 
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -133,7 +133,7 @@ export const LargeImage = ({ photos, currentIndex }) => {
         {!isLoading ? null : (
           <div
             style={{
-              zIndex: 52
+              zIndex: 52,
             }}
             className='imgNavigator'
           >
@@ -143,7 +143,7 @@ export const LargeImage = ({ photos, currentIndex }) => {
 
         <div
           style={{
-            zIndex: 51
+            zIndex: 51,
           }}
           className='largeImage absolute'
           tabIndex='0'
@@ -152,7 +152,7 @@ export const LargeImage = ({ photos, currentIndex }) => {
           {isLoading ? "" : <Loader />}
           <img
             onLoad={handleLoad}
-            src={largeImgSrc.data().imgUrl.replace("thumbnail", "images")}
+            src={getImageSrc(largeImgSrc["thumbnail"])}
             alt='Home page'
             className={
               isLoading
@@ -167,4 +167,11 @@ export const LargeImage = ({ photos, currentIndex }) => {
   } else {
     return null;
   }
+};
+
+export const getImageSrc = (img) => {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  console.log(isMobile);
+  const str = isMobile ? "_m_" : "_d_";
+  return `gallery/${img.replace("_t_", str)}`;
 };

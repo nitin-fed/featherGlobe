@@ -1,4 +1,4 @@
-/** @format */
+
 
 import React, { useEffect } from "react";
 
@@ -34,6 +34,8 @@ import { Admin } from "./Components/Admin";
 
 import SecHome from "../sec";
 import { UploadPhotos } from "./About/Components/uploadPhotos";
+import StockPhotos from "./StockPhotos/StockPhotos";
+import EATransfers from "./EATransfers/EATransfers";
 
 export const Body = () => {
   const dispatch = useDispatch();
@@ -45,37 +47,51 @@ export const Body = () => {
   }, []);
 
   return (
-    <Routes>
-      {/* <Route exact path='/' element={<Home />} /> */}
-      <Route path='/photography' element={<Photos />} />
-      <Route path='/contact' element={<Contact />} />
-      <Route path='/posts' element={<Posts />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/' element={<About />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/registerUser' element={<Login />} />
-      <Route path='/post' element={<Post />} />
-      <Route path='/uploadPhotos' element={<UploadPhotos />} />
-      <Route path='/secHome' element={<SecHome />} />
+    <>
+      <div
+        class='fb-like'
+        data-href='https://www.featherglobe.com/photography'
+        data-width='40px'
+        data-layout=''
+        data-action=''
+        data-size=''
+        data-share='true'
+      ></div>
 
-      <Route path='/' element={<Protected />}>
-        <Route path='/createPost' element={<Admin />} />
-        <Route path='/demo' element={<Counters />} />
-        <Route path='/guessWord' element={<GuessedWordWrapper />} />
-        <Route path='/jotto' element={<JottoApp />} />
-        <Route path='/demo/Counters' element={<Counters />} />
-        <Route path='/demo/Gallery' element={<Gallery />} />
-        <Route path='/demo/To rtretrtdos' element={<todos />} />
-        <Route path='/demo/Article' element={<Article />} />
-        <Route path='/demo/Support' element={<Support />} />
-        <Route path='/demo/counter' element={<Counters />} />
-        <Route path='/users' element={<Users />} />
-        <Route path='/demo/galaxy' element={<Galaxy />} />
-        <Route path='/profile' element={<Profile />} />
-      </Route>
+      <Routes>
+        {/* <Route exact path='/' element={<Home />} /> */}
+        <Route path='/stockPhotos' element={<StockPhotos />} />
+        <Route path='/eat' element={<EATransfers />} />
+        <Route path='/photography' element={<Photos />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/posts' element={<Posts />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<About />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/registerUser' element={<Login />} />
+        <Route path='/post' element={<Post />} />
+        <Route path='/uploadPhotos' element={<UploadPhotos />} />
+        <Route path='/secHome' element={<SecHome />} />
 
-      <Route path='/signup' element={<PublicRoutes />}></Route>
-      <Route path='/unAuthUser' element={<UnAuthUser />}></Route>
-    </Routes>
+        <Route path='/' element={<Protected />}>
+          <Route path='/createPost' element={<Admin />} />
+          <Route path='/demo' element={<Counters />} />
+          <Route path='/guessWord' element={<GuessedWordWrapper />} />
+          <Route path='/jotto' element={<JottoApp />} />
+          <Route path='/demo/Counters' element={<Counters />} />
+          <Route path='/demo/Gallery' element={<Gallery />} />
+          <Route path='/demo/To rtretrtdos' element={<todos />} />
+          <Route path='/demo/Article' element={<Article />} />
+          <Route path='/demo/Support' element={<Support />} />
+          <Route path='/demo/counter' element={<Counters />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/demo/galaxy' element={<Galaxy />} />
+          <Route path='/profile' element={<Profile />} />
+        </Route>
+
+        <Route path='/signup' element={<PublicRoutes />}></Route>
+        <Route path='/unAuthUser' element={<UnAuthUser />}></Route>
+      </Routes>
+    </>
   );
 };

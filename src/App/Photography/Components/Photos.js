@@ -1,4 +1,4 @@
-/** @format */
+
 
 import React, { useEffect, useState } from "react";
 import { db } from "../../../firebase-config";
@@ -8,20 +8,27 @@ import Thumbnail from "./Thumbnail";
 import { collection, getDocs } from "firebase/firestore";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowLargeImage } from "../../Store/Reducers/gallerySlice";
+import gallery from "./data";
 
 const Photos = () => {
+  console.log("_______________ss");
   const dispatch = useDispatch();
-  const [photos, setphotos] = useState("");
+  const [photos, setphotos] = useState(gallery);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const fetchData = async () => {
-    const querySnapshot = await getDocs(collection(db, "thumbnail"));
-    setphotos(querySnapshot.docs);
-  };
+  // const fetchData = async () => {
+  //   // const querySnapshot = await getDocs(collection(db, "thumbnail"));
+  //   // setphotos(querySnapshot.docs);
+  //   setphotos(gallery);
+  // };
+
   const { showLargeImage } = useSelector((state) => state.gallery);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   // fetchData();
+  //   setphotos(gallery);
+  // }, []);
+
+  console.log(gallery);
 
   const loadLargeImage = (evt, index) => {
     setCurrentIndex(index);
@@ -43,7 +50,7 @@ const Photos = () => {
             return (
               <Thumbnail
                 clickHandler={(event) => loadLargeImage(event, index)}
-                src={photo.data().imgUrl}
+                src={`gallery/${photo["thumbnail"]}`}
                 alt='Decription'
                 id={photo.id}
                 key={index}

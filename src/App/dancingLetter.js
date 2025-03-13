@@ -1,4 +1,4 @@
-/** @format */
+
 
 export const initDancingLetter = () => {
   const canvas = document.querySelector("#dancingLetter");

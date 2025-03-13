@@ -1,4 +1,4 @@
-/** @format */
+
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
@@ -9,60 +9,65 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./build"),
-    filename: "[name].[contenthash].js"
+    filename: "[name].[contenthash].js",
   },
 
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name][contenthash].css",
       chunkFilename: "[id].css",
-      ignoreOrder: false
+      ignoreOrder: false,
     }),
     new htmlWebpackPlugin({ template: "./public/index.html" }),
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, "./src/assets/css"),
-          to: path.resolve(__dirname, "./build/css")
+          to: path.resolve(__dirname, "./build/css"),
         },
         {
           from: path.resolve(__dirname, "./src/assets/fonts"),
-          to: path.resolve(__dirname, "./build/fonts")
+          to: path.resolve(__dirname, "./build/fonts"),
         },
         {
           from: path.resolve(__dirname, "./src/assets/images"),
-          to: path.resolve(__dirname, "./build/images")
+          to: path.resolve(__dirname, "./build/images"),
         },
         {
           from: path.resolve(__dirname, "./src/assets/images/icons"),
-          to: path.resolve(__dirname, "./build/images/icons")
-        }
-      ]
-    })
+          to: path.resolve(__dirname, "./build/images/icons"),
+        },
+
+        {
+          from: path.resolve(__dirname, "./src/assets/gallery"),
+          to: path.resolve(__dirname, "./build/gallery"),
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"]
-          }
+            presets: ["@babel/preset-env"],
+          },
         },
         test: /\.jsx?$/,
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
 
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,
@@ -70,12 +75,12 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
-              limit: 8192
-            }
-          }
+              limit: 8192,
+            },
+          },
         ],
-        type: "javascript/auto"
-      }
-    ]
-  }
+        type: "javascript/auto",
+      },
+    ],
+  },
 };

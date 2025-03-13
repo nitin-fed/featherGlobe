@@ -1,4 +1,4 @@
-/** @format */
+
 
 import React from "react";
 import { useSelector } from "react-redux";
@@ -71,6 +71,17 @@ export const About = () => {
               })}
             </ul>
           </div>
+
+          <div
+            className='text-right'
+            class='fb-like'
+            data-href='https://www.featherglobe.com/photography'
+            data-width='40px'
+            data-layout=''
+            data-action=''
+            data-size=''
+            data-share='true'
+          ></div>
         </div>
       </div>
     </div>

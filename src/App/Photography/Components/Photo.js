@@ -1,4 +1,4 @@
-/** @format */
+
 
 import React, { Component } from "react";
 import "./Photos.css";

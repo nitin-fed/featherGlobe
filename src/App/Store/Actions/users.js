@@ -1,6 +1,6 @@
 import * as actionType from './actionType';
 
-export function fetchUsers(data) {
+export function MockAdapter(data) {
   return {
     data: data,
     type: actionType.FETCH_USERS

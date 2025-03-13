@@ -1,4 +1,4 @@
-/** @format */
+
 
 import moxios from "moxios";
 import { fetchPosts, getSecrateWord } from "./FetchPosts";
@@ -8,19 +8,19 @@ const posts = [
     body: "test post body",
     id: 1,
     title: "test post title",
-    userId: 1
+    userId: 1,
   },
   {
     body: "test post body",
     id: 2,
     title: "test post title",
-    userId: 2
-  }
+    userId: 2,
+  },
 ];
 
 const responseData = {
   status: 200,
-  response: posts
+  response: posts,
 };
 
 describe("FetchPosts", () => {
@@ -38,7 +38,7 @@ describe("FetchPosts", () => {
 
       request.respondWith({
         status: 200,
-        response: "party"
+        response: "party",
       });
     });
 

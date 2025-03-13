@@ -1,7 +1,7 @@
-/** @format */
+
 
 const initialState = {
-  appName: ""
+  appName: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -9,30 +9,42 @@ const reducer = (state = initialState, action) => {
     case "home":
       return {
         ...state,
-        appName: ""
+        appName: "",
       };
 
     case "profile":
       return {
         ...state,
-        appName: "My Profile"
+        appName: "My Profile",
       };
 
     case "photography":
       return {
         ...state,
-        appName: "Photography"
+        appName: "Photography",
       };
 
     case "demo":
       return {
         ...state,
-        appName: "Demos"
+        appName: "Demos",
+      };
+
+    case "stockPhotos":
+      return {
+        ...state,
+        appName: "Stock Photos",
+      };
+
+    case "eat":
+      return {
+        ...state,
+        appName: "EA Transfers",
       };
 
     default:
       return {
-        ...state
+        ...state,
       };
   }
 };

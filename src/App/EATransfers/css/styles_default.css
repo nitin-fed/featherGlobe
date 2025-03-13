@@ -1,0 +1,182 @@
+
+
+@font-face {
+  font-family: landasans;
+  src: url(",,/../../../../../public/Fonts/landasans-font/LandasansUltraLight-qZ080.otf");
+}
+.viaButton {
+  background-color: gray;
+  border: 1px solid rgb(48, 47, 47);
+  margin: 5px;
+  border-radius: 8px;
+  padding: 0 10px;
+  color: white;
+}
+.eatContainer {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.quote {
+  font-size: 30px;
+  color: rgb(0, 0, 130);
+  font-family: landasans;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.pageBody {
+  padding-top: 50px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.eatransfers {
+  color: rgb(41, 41, 41);
+}
+.eatransfers > .main {
+  background-image: url("../../../assets/eat/background.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.eatransfers .header {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100px;
+  line-height: 100px;
+  padding-left: 20px;
+  color: white;
+}
+
+.eatransfers .pageTitle {
+  color: rgb(255, 123, 0);
+}
+.eatransfersBody {
+  margin-top: 50px;
+  background: #fff;
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.tabs {
+  border-radius: 8px;
+  border: 1px solid rgb(192, 192, 192);
+  width: fit-content;
+  padding: 4px 20px;
+}
+.activeTab {
+  background: linear-gradient(
+    0deg,
+    rgb(216, 150, 52) 0%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+.inActiveTab {
+  background: linear-gradient(
+    0deg,
+    rgb(200, 200, 200) 0%,
+
+    rgb(145, 145, 145) 100%
+  );
+}
+.phoneBox {
+  border: 1px solid rgb(180, 180, 180);
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(
+    0deg,
+    rgba(214, 214, 214, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.transferFormComponents div {
+  border: 1px solid gray;
+  padding: 0 7px 0 20px;
+  background: #fff;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.transferFormComponents input {
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.tabsContainer {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+.typography {
+  padding-top: 60px;
+  padding-left: 50px;
+}
+
+.row2 {
+  margin: 20px;
+}
+
+.p1 {
+  font-family: landasans;
+  font-size: 90px;
+  color: rgb(0, 0, 130);
+  font-weight: bold;
+  text-shadow: 0 0 20px #fff;
+}
+
+.p2 {
+  font-family: landasans;
+  font-size: 50px;
+  color: rgb(0, 0, 130);
+  font-weight: bold;
+  text-shadow: 0 0 20px #fff;
+}
+
+.transferFormComponents > .buttonBox {
+  border: unset;
+  background: unset;
+  padding: unset;
+  text-align: right;
+}
+
+.buttonBox > button {
+  border: 1px solid gray;
+  padding: 4px 16px;
+  border-radius: 8px;
+}
+
+.aboutus p {
+  padding-top: 20px;
+  line-height: 1.5;
+  font-size: medium;
+}
+
+.imagesWrapped {
+  float: left;
+  width: 600px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+}
+
+.imagesWrappedRight {
+  float: right;
+  padding-left: 24px;
+  padding-right: unset;
+  padding-bottom: unset;
+}
+.address {
+  padding-top: 20px;
+}
+.address p {
+  padding: 0;
+}
+.footer p {
+  font-size: small;
+  letter-spacing: 0;
+}

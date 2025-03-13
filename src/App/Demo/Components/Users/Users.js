@@ -1,4 +1,4 @@
-
+/** @format */
 
 import React, { useEffect, useRef, useState } from "react";
 
@@ -108,12 +108,14 @@ const Users = () => {
                       value.id
                     )
                   }
-                  className={deleteButton}>
+                  className={deleteButton}
+                >
                   X
                 </button>
                 <button
                   className={deleteButton}
-                  onClick={() => update(value.id, value)}>
+                  onClick={() => update(value.id, value)}
+                >
                   E
                 </button>
               </div>

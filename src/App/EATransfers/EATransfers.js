@@ -11,8 +11,8 @@ import AboutUs from "./AboutUs";
 import Services from "./Services";
 import Footer from "./Footer";
 import { blurBackgroundEAT } from "../Utils/constants";
-import { ReactComponent as Phone } from "./icons/phone.svg";
-import { ReactComponent as Email } from "./icons/email.svg";
+import { ReactComponent as Phone } from "../../assets/icons/phone.svg";
+import { ReactComponent as Email } from "../../assets/icons/email.svg";
 
 export default function EATransfers() {
   const [stylePath, setStylePath] = useState("");

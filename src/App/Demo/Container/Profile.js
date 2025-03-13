@@ -1,4 +1,4 @@
-
+/** @format */
 
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -47,7 +47,6 @@ export const Profile = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-     
 
     handleReset(evt);
     if (isFormEditing) {
@@ -66,8 +65,6 @@ export const Profile = () => {
   };
 
   const createUser = async (evt) => {
-     
-
     await addDoc(userCollectionRef, { ...collectData(evt) });
   };
 
@@ -75,7 +72,6 @@ export const Profile = () => {
     let dataCollection = {};
     allRefs.forEach((item) => {
       Object.entries(item).forEach(([key, value]) => {
-         
         dataCollection = { ...dataCollection, [key]: value.current.getValue() };
       });
     });
@@ -166,12 +162,14 @@ export const Profile = () => {
         <div className='float-right'>
           <button
             onClick={(e) => handleCancel(e)}
-            className={warningButtonStyle}>
+            className={warningButtonStyle}
+          >
             Cancel
           </button>
           <button
             onClick={(e) => handleReset(e)}
-            className={primaryButtonStyle}>
+            className={primaryButtonStyle}
+          >
             Reset
           </button>
           <button type={"submit"} className={primaryButtonStyle}>

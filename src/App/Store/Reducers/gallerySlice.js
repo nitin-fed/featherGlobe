@@ -1,4 +1,4 @@
-
+/** @format */
 
 import { createSlice } from "@reduxjs/toolkit";
 import { collection, getDocs } from "firebase/firestore";

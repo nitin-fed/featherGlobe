@@ -1,4 +1,4 @@
-
+/** @format */
 
 import React, { useEffect, useState } from "react";
 
@@ -56,7 +56,7 @@ export function Posts({ onLoadPostDescription, onDeletePost }) {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
 
   // console.log(Object.keys(posts));
@@ -109,10 +109,10 @@ export function Posts({ onLoadPostDescription, onDeletePost }) {
                             state={{
                               date: _date,
                               title: item["title"],
-                              desc: item["description"]
+                              desc: item["description"],
                             }}
                             to={{
-                              pathname: "/post"
+                              pathname: "/post",
                             }}
                           >
                             {item["title"]}

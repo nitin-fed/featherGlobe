@@ -1,4 +1,4 @@
-
+/** @format */
 
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
@@ -7,12 +7,12 @@ import { TextInputField } from "./Components/TextInputField";
 import {
   primaryButtonStyle,
   warningButtonStyle,
-  secondaryButtonStyle
+  secondaryButtonStyle,
 } from "./Utils/constants";
 import {
   createUserWithEmailAndPassword,
   signOut,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCurrentUser } from "./Store/Reducers/appSlice";

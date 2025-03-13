@@ -1,12 +1,13 @@
-
+/** @format */
 
 @font-face {
   font-family: landasans;
-  src: url(",,/../../../../../public/Fonts/landasans-font/LandasansUltraLight-qZ080.otf");
+  src: url("../fonts/christmas/LastChristmas_PERSONAL_USE_ONLY.otf");
 }
+
 .viaButton {
-  background-color: gray;
-  border: 1px solid rgb(48, 47, 47);
+  background-color: rgba(206, 0, 0, 0.762);
+  border: 1px solid rgb(129, 0, 0);
   margin: 5px;
   border-radius: 8px;
   padding: 0 10px;
@@ -18,8 +19,8 @@
 }
 
 .quote {
-  font-size: 30px;
-  color: rgb(0, 0, 130);
+  font-size: 24px;
+  color: rgb(255, 255, 255);
   font-family: landasans;
   font-weight: bold;
   font-style: italic;
@@ -37,13 +38,12 @@ input:focus {
   color: rgb(41, 41, 41);
 }
 .eatransfers > .main {
-  background-image: url("../../../assets/eat/background.png");
+  background-image: url("../eat/background_christmas.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
 }
 
 .eatransfers .header {
-  background: rgba(0, 0, 0, 0.6);
   height: 100px;
   line-height: 100px;
   padding-left: 20px;
@@ -51,11 +51,13 @@ input:focus {
 }
 
 .eatransfers .pageTitle {
-  color: rgb(255, 123, 0);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 2;
 }
 .eatransfersBody {
   margin-top: 50px;
-  background: #fff;
+  background: #ffffff;
   padding-top: 100px;
   padding-left: 20px;
   padding-right: 20px;
@@ -63,36 +65,30 @@ input:focus {
 
 .tabs {
   border-radius: 8px;
-  border: 1px solid rgb(192, 192, 192);
+  border: 1px solid rgb(255, 255, 255);
   width: fit-content;
   padding: 4px 20px;
+  color: white;
 }
 .activeTab {
-  background: linear-gradient(
-    0deg,
-    rgb(216, 150, 52) 0%,
-    rgb(255, 255, 255) 100%
-  );
+  background: linear-gradient(0deg, rgb(214, 36, 36) 0%, rgb(119, 0, 0) 100%);
 }
 
 .inActiveTab {
   background: linear-gradient(
     0deg,
-    rgb(200, 200, 200) 0%,
+    rgb(255, 179, 85) 0%,
 
-    rgb(145, 145, 145) 100%
+    rgb(237, 225, 60) 100%
   );
 }
 .phoneBox {
-  border: 1px solid rgb(180, 180, 180);
+  color: wheat;
+  border: 1px solid wheat;
   width: fit-content;
   padding: 10px;
   border-radius: 10px;
-  background: linear-gradient(
-    0deg,
-    rgba(214, 214, 214, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  background: linear-gradient(0deg, rgb(214, 36, 36) 0%, rgb(119, 0, 0) 100%);
 }
 
 .transferFormComponents div {
@@ -125,17 +121,16 @@ input:focus {
 .p1 {
   font-family: landasans;
   font-size: 90px;
-  color: rgb(0, 0, 130);
-  font-weight: bold;
+  color: rgb(255, 255, 255);
+
   text-shadow: 0 0 20px #fff;
 }
 
 .p2 {
   font-family: landasans;
   font-size: 50px;
-  color: rgb(0, 0, 130);
-  font-weight: bold;
-  text-shadow: 0 0 20px #fff;
+  color: rgb(255, 244, 125);
+  text-shadow: 0 0 20px #ffffff;
 }
 
 .transferFormComponents > .buttonBox {
@@ -146,9 +141,18 @@ input:focus {
 }
 
 .buttonBox > button {
-  border: 1px solid gray;
+  border: 1px solid rgb(255, 222, 222);
   padding: 4px 16px;
   border-radius: 8px;
+  color: wheat;
+}
+
+.resetButton {
+  background: rgb(255, 166, 0);
+}
+
+.submitButton {
+  background: rgb(188, 0, 0);
 }
 
 .aboutus p {
@@ -179,4 +183,17 @@ input:focus {
 .footer p {
   font-size: small;
   letter-spacing: 0;
+}
+.customHeader {
+  background-color: rgba(170, 0, 0, 0.6);
+}
+
+.topMenu {
+  color: white;
+}
+.topMenu a {
+  color: wheat;
+}
+.topMenu a:hover {
+  color: rgb(255, 255, 255);
 }

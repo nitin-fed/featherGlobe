@@ -28,11 +28,11 @@ export default function EATransfers() {
 
       try {
         if (theme === "christmas") {
-          await import(`./css/styles_xmas.css`);
+          await import(`../../assets/css/styles_xmas.css`);
         } else if (theme === "newyear") {
-          await import(`./styles_newyear.css`);
+          await import(`../../assets/css/styles_newyear.css`);
         } else if (theme === "default") {
-          await import(`./css/styles_default.css`);
+          await import(`../../assets/css/styles_default.css`);
         }
       } catch (error) {
         console.error("Error loading CSS: ", error);
@@ -72,14 +72,13 @@ export default function EATransfers() {
       link.itemprop = "url";
       link.href =
         theme === "default"
-          ? "../../../public/css/styles_default.css"
-          : "../../../public/css/styles_xmas.css";
+          ? "../../assets/css/styles_default.css"
+          : "../../assets/css/styles_xmas.css";
     }
 
     head.appendChild(link);
   }, [theme]);
 
-  const url = theme === "default" ? "styles_default.css" : "styles_xmas.css";
   return (
     <>
       {/* <Helmet
@@ -104,13 +103,13 @@ export default function EATransfers() {
 
       <>
         <div>
-          Select Theme:
+          Select Theme: &nbsp;
           <button kind='primary' onClick={() => setTheme("default")}>
-            Default
+            Default |
           </button>
-          <button kind='primary'>New Year</button>
+          <button kind='primary'> &nbsp;New Year | </button>
           <button kind='primary' onClick={() => setTheme("christmas")}>
-            Christmas
+            &nbsp;Christmas
           </button>
         </div>
         <div className='eatransfers'>

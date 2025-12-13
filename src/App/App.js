@@ -14,7 +14,7 @@ import NestedMenu from "./NestedMenu";
 import { useToggle } from "./CustomHooks/useToggle";
 import useHover from "./CustomHooks/useHover";
 import SearchBar from "./SearchBar";
-import EATransfers from "./EATransfers/EATransfers";
+// import EATransfers from "./EATransfers/EATransfers";
 
 const App = () => {
   const [name, setName, lastnme] = useState("Nitin");

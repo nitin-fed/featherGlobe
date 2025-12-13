@@ -1,4 +1,4 @@
-
+/** @format */
 
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -8,8 +8,8 @@ const initialState = {
 
   menus: [
     { url: "/", displayName: "Home", imgPath: "home.png" },
-    { url: "/stockPhotos", displayName: "Stock Photos", imgPath: "home.png" },
-    { url: "/eat", displayName: "EA Transfers", imgPath: "home.png" },
+    // { url: "/stockPhotos", displayName: "Stock Photos", imgPath: "home.png" },
+    // { url: "/eat", displayName: "EA Transfers", imgPath: "home.png" },
     { url: "/posts", displayName: "Posts", imgPath: "posts.png" },
     {
       url: "/photography",

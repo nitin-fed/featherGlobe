@@ -1,23 +1,42 @@
+/** @format */
 
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 
+let htmlPageNames = ["index", "admin"];
+let multipleHtmlPlugins = htmlPageNames.map((name) => {
+  console.log(name);
+  return new htmlWebpackPlugin({
+    template: `./public/${name}.html`, // relative path to the HTML files
+    filename: `${name}.html`, // output HTML files
+    chunks: [`${name}`], // respective JS files
+  });
+});
+
 module.exports = {
   output: {
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/", // or '/dist/' if your files are in a dist folder
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "./dist"),
+    publicPath: "",
+    clean: true,
   },
-  mode: "development",
-  entry: "./src/index.js",
+  // mode: "development",
+  // entry: {
+  //   app: "./src/index.js",
+  //   adminApp: "./src/admin.js",
+  // },
+  // entry: "./src/index.js",
   devServer: {
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-    compress: true,
+    historyApiFallback: true,
+    // static: {
+    //   directory: path.join(__dirname, "public"),
+    // },
+    // compress: true,
   },
 
-  plugins: [new htmlWebpackPlugin({ template: "./public/index.html" })],
+  // plugins: [new htmlWebpackPlugin({ template: "./public/index.html" })],
+
+  plugins: [...multipleHtmlPlugins],
   module: {
     rules: [
       {

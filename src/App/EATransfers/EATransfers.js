@@ -13,14 +13,17 @@ import Footer from "./Footer";
 import { blurBackgroundEAT } from "../Utils/constants";
 import { ReactComponent as Phone } from "../../assets/icons/phone.svg";
 import { ReactComponent as Email } from "../../assets/icons/email.svg";
+import { useNavigate } from "react-router";
 
-export default function EATransfers() {
+export const EATransfers = () => {
   const [stylePath, setStylePath] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const [theme, setTheme] = useState("default");
 
   useEffect(() => {
+    console.log(theme);
     // const headTag = document.getElementsByTagName("head");
     const loadStyles = async () => {
       // headTag[0].children[headTag.length].remove();
@@ -33,6 +36,9 @@ export default function EATransfers() {
           await import(`../../assets/css/styles_newyear.css`);
         } else if (theme === "default") {
           await import(`../../assets/css/styles_default.css`);
+          console.log("000");
+          navigate("/");
+          window.location.reload(true);
         }
       } catch (error) {
         console.error("Error loading CSS: ", error);
@@ -61,23 +67,23 @@ export default function EATransfers() {
   //   };
   // }, [stylePath]);
 
-  useEffect(() => {
-    const head = document.querySelector("head");
-    let link = document.getElementById("css-link");
-    if (!link) {
-      // for first render and ensuring that the link does not already exist
-      link = document.createElement("link");
-      link.type = "text/html";
-      link.id = "css-link";
-      link.itemprop = "url";
-      link.href =
-        theme === "default"
-          ? "../../assets/css/styles_default.css"
-          : "../../assets/css/styles_xmas.css";
-    }
+  // useEffect(() => {
+  //   const head = document.querySelector("head");
+  //   let link = document.getElementById("css-link");
+  //   if (!link) {
+  //     // for first render and ensuring that the link does not already exist
+  //     link = document.createElement("link");
+  //     link.type = "text/html";
+  //     link.id = "css-link";
+  //     link.itemprop = "url";
+  //     link.href =
+  //       theme === "default"
+  //         ? "../../assets/css/styles_default.css"
+  //         : "../../assets/css/styles_xmas.css";
+  //   }
 
-    head.appendChild(link);
-  }, [theme]);
+  //   head.appendChild(link);
+  // }, [theme]);
 
   return (
     <>
@@ -104,11 +110,11 @@ export default function EATransfers() {
       <>
         <div>
           Select Theme: &nbsp;
-          <button kind='primary' onClick={() => setTheme("default")}>
+          <button kind='primary' onClick={setTheme("default")}>
             Default |
           </button>
           <button kind='primary'> &nbsp;New Year | </button>
-          <button kind='primary' onClick={() => setTheme("christmas")}>
+          <button kind='primary' onClick={setTheme("christmas")}>
             &nbsp;Christmas
           </button>
         </div>
@@ -172,4 +178,4 @@ export default function EATransfers() {
       </>
     </>
   );
-}
+};

@@ -34,8 +34,8 @@ import { Admin } from "./Components/Admin";
 
 import SecHome from "../sec";
 import { UploadPhotos } from "./About/Components/uploadPhotos";
-import StockPhotos from "./StockPhotos/StockPhotos";
-import EATransfers from "./EATransfers/EATransfers";
+// import StockPhotos from "./StockPhotos/StockPhotos";
+// import { EATransfers } from "./EATransfers/EATransfers";
 
 export const Body = () => {
   const dispatch = useDispatch();
@@ -60,8 +60,8 @@ export const Body = () => {
 
       <Routes>
         {/* <Route exact path='/' element={<Home />} /> */}
-        <Route path='/stockPhotos' element={<StockPhotos />} />
-        <Route path='/eat' element={<EATransfers />} />
+        {/* <Route path='/stockPhotos' element={<StockPhotos />} /> */}
+        {/* <Route path='/eat' element={<EATransfers />} /> */}
         <Route path='/photography' element={<Photos />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/posts' element={<Posts />} />

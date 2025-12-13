@@ -71,8 +71,7 @@ const App = () => {
           </header>
           <div className='max-w-screen-xl my-0 mx-auto px-10  '>
             <div className='my-8'>
-              {lastnme}
-
+              My LastName is {lastnme}
               <Body />
             </div>
 

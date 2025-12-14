@@ -66,12 +66,11 @@ const App = () => {
             <nav className='text-sm px-5 md:h-12' id='myHeader'>
               <Navigation />
             </nav>
-
             <hr className='w-full absolute left-0' />
           </header>
           <div className='max-w-screen-xl my-0 mx-auto px-10  '>
             <div className='my-8'>
-              My LastName is {lastnme}
+              {lastnme}
               <Body />
             </div>
 

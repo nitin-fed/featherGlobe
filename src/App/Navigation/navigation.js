@@ -18,7 +18,7 @@ const Navigation = () => {
 
   useEffect(() => {
     window.location.pathname.indexOf("demo") > 0 && updateDemoChildMenu(true);
-  });
+  }, []);
   const toggleMenu = () => {
     setMenuContainer(!toggleMenuContainer);
   };
@@ -79,6 +79,7 @@ const Navigation = () => {
                 className='md:inline-block xs:text-left sm:text-left sm:border-b xs:border-b md:border-none  '
                 key={index}
               >
+                {index > 0 ? "|" : null}
                 <NavLink
                   onClick={(e) => updateChildMenu(e)}
                   activeclassname='active'

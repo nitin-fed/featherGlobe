@@ -15,10 +15,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 14.21.3
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm rebuild node-sass
 
       - name: Build
         run: npm run build
@@ -31,5 +33,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           protocol: ftp
-          local-dir: build/   # change if needed
+          local-dir: build/    
           server-dir: /public_html/

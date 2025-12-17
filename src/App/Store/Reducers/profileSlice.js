@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   profile: {
-    name: "Nitin",
+    name: "NITIN",
     technologies:
       "15+ year of extensive experience as a Front End Developer. Developing and maintaining web applications using various UI tools and technologies. Experience in driving projects forward as the development team leader, facilitating projects from concept to launch. Passionate about learning and development with a desire to apply skills with a larger development team. Eager to tackle more complex  problems and continue to find ways to maximize user efficiency.",
     description: [

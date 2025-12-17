@@ -1,19 +1,29 @@
-name: Deploy to Hostinger via FTP
+name: Build & Deploy to Hostinger via FTP
 
 on:
   push:
     branches:
-      - master   # change to master ONLY if your repo uses master
+      - main
 
 jobs:
-  ftp-deploy:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Deploy to Hostinger (FTP)
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -21,9 +31,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           protocol: ftp
-          local-dir: ./
+          local-dir: dist/   # change if needed
           server-dir: /public_html/
-          exclude: |
-            **/.git*
-            **/.github/**
-            **/node_modules/**

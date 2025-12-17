@@ -31,5 +31,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           protocol: ftp
-          local-dir: dist/   # change if needed
+          local-dir: build/   # change if needed
           server-dir: /public_html/

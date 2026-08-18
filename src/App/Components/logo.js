@@ -19,7 +19,7 @@ export const Logo = () => {
           <div>
             <div
               id='header'
-              className='text-3xl tracking-widest text-gray-500 xs:text-center sm:text-center md:text-left'
+              className='text-3xl tracking-widest text-round-navy font-extrabold xs:text-center sm:text-center md:text-left'
             >
               Featherglobe
             </div>

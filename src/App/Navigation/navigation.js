@@ -41,7 +41,8 @@ const Navigation = () => {
     history("/");
   };
 
-  const linkStyles = "mx-1 px-3 py-2 ";
+  const linkStyles =
+    "relative mx-1 px-3 py-2 text-round-navy/80 transition-colors duration-300 hover:text-round-accent aria-current:text-round-accent aria-current:font-semibold after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-gradient-to-r after:from-round-accent after:to-round-accentDark after:transition-all after:duration-300 hover:after:w-4/5 aria-current:after:w-4/5";
   return (
     <>
       {/* Backdrop */}
@@ -49,8 +50,8 @@ const Navigation = () => {
         onClick={toggleMenu}
         style={{ zIndex: -5 }}
         className={` ${
-          toggleMenuContainer ? "" : "hidden "
-        }  h-screen bg-black w-full xm:block sm:block md:hidden absolute left bg-white/90 top-0 left-0 `}
+          toggleMenuContainer ? "opacity-100 visible" : "opacity-0 invisible"
+        } transition-opacity duration-300  h-screen bg-round-navy/30 backdrop-blur w-full xm:block sm:block md:hidden absolute top-0 left-0 `}
       />
 
       <div
@@ -60,8 +61,11 @@ const Navigation = () => {
         } absolute top-0 left-0 w-full`}
       ></div>
 
-      <div className='sm:hidden relative z-1'>
-        <button onClick={toggleMenu} className='text-5xl'>
+      <div className="sm:hidden relative z-1">
+        <button
+          onClick={toggleMenu}
+          className="text-5xl transition-transform duration-300 hover:text-round-accent hover:scale-110"
+        >
           &#9776;
         </button>
       </div>
@@ -69,20 +73,19 @@ const Navigation = () => {
       <div
         onClick={toggleMenu}
         className={` ${
-          toggleMenuContainer ? "" : "hidden "
-        } sm:block p-2 z-1 text-center sm:absolute sm:w-full xs:absolute xs:w-full sm:left-0 xs:left-0 sm:h-screen  xs:h-screen  md:h-auto ${blurBackground}  `}
+          toggleMenuContainer ? "opacity-100 visible" : "opacity-0 invisible"
+        } sm:opacity-100 sm:visible transition-opacity duration-300 p-2 z-1 text-center sm:absolute sm:w-full xs:absolute xs:w-full sm:left-0 xs:left-0 sm:h-screen  xs:h-screen  md:h-auto ${blurBackground}  `}
       >
         {menus.map((item, index) => {
           return (
             <React.Fragment key={index}>
               <div
-                className='md:inline-block xs:text-left sm:text-left sm:border-b xs:border-b md:border-none  '
+                className=" md:inline-block xs:text-left sm:text-left sm:border-b xs:border-b md:border-none  "
                 key={index}
               >
                 {index > 0 ? "|" : null}
                 <NavLink
                   onClick={(e) => updateChildMenu(e)}
-                  activeclassname='active'
                   key={index}
                   className={`${
                     toggleMenuContainer ? "block" : "inline-block"
@@ -101,7 +104,7 @@ const Navigation = () => {
 
         {isAuthenticated && (
           <button
-            className='xs:float-left sm:float-left md:float-right lg:float-right p-2.5 rounded-lg text-red-500 hover:text-red-800'
+            className="xs:float-left sm:float-left md:float-right lg:float-right p-2.5 rounded-lg text-red-500 hover:text-red-800"
             onClick={handleLogout}
           >
             Logout

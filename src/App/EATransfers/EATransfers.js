@@ -13,12 +13,10 @@ import Footer from "./Footer";
 import { blurBackgroundEAT } from "../Utils/constants";
 import { ReactComponent as Phone } from "../../assets/icons/phone.svg";
 import { ReactComponent as Email } from "../../assets/icons/email.svg";
-import { useNavigate } from "react-router";
 
 export const EATransfers = () => {
   const [stylePath, setStylePath] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
 
   const [theme, setTheme] = useState("default");
 
@@ -34,11 +32,10 @@ export const EATransfers = () => {
           await import(`../../assets/css/styles_xmas.css`);
         } else if (theme === "newyear") {
           await import(`../../assets/css/styles_newyear.css`);
+        } else if (theme === "round") {
+          await import(`../../assets/css/styles_round.css`);
         } else if (theme === "default") {
           await import(`../../assets/css/styles_default.css`);
-          console.log("000");
-          navigate("/");
-          window.location.reload(true);
         }
       } catch (error) {
         console.error("Error loading CSS: ", error);
@@ -110,34 +107,37 @@ export const EATransfers = () => {
       <>
         <div>
           Select Theme: &nbsp;
-          <button kind='primary' onClick={setTheme("default")}>
+          <button kind="primary" onClick={() => setTheme("default")}>
             Default |
           </button>
-          <button kind='primary'> &nbsp;New Year | </button>
-          <button kind='primary' onClick={setTheme("christmas")}>
-            &nbsp;Christmas
+          <button kind="primary"> &nbsp;New Year | </button>
+          <button kind="primary" onClick={() => setTheme("christmas")}>
+            &nbsp;Christmas |
+          </button>
+          <button kind="primary" onClick={() => setTheme("round")}>
+            &nbsp;Round
           </button>
         </div>
-        <div className='eatransfers'>
-          <div className='main'>
+        <div className="eatransfers">
+          <div className="main">
             <header
               className={`customHeader flex px-4 pt-3 sticky top-0 z-40 w-full  ${blurBackgroundEAT}`}
             >
               <div>
-                <h2 className='pageTitle text-4xl '>EA Transfers</h2>
+                <h2 className="pageTitle text-4xl ">EA Transfers</h2>
               </div>
-              <div className='flex-auto text-right topMenu'>
-                <a href='#'>Home</a> | <a href='#'>About Us</a> |{" "}
-                <a href='#'>Services</a> | <a href='#'>Reviw</a> |{" "}
-                <a href='#'>Contact Us</a> | <a href='#'>Login</a>
+              <div className="flex-auto text-right topMenu">
+                <a href="#">Home</a> | <a href="#">About Us</a> |{" "}
+                <a href="#">Services</a> | <a href="#">Reviw</a> |{" "}
+                <a href="#">Contact Us</a> | <a href="#">Login</a>
               </div>
             </header>
-            <hr className='w-full absolute left-0' />
-            <div className='eatContainer'>
-              <div className='px-5 grid grid-cols-2 content-start gap-4 pageBody'>
-                <div className='banner'>
-                  <div className='phoneBox'>
-                    <div className='flex'>
+            <hr className="w-full absolute left-0" />
+            <div className="eatContainer">
+              <div className="px-5 grid grid-cols-2 content-start gap-4 pageBody">
+                <div className="banner">
+                  <div className="phoneBox">
+                    <div className="flex">
                       <Phone width={20} /> &nbsp; +442080049002 &nbsp;
                       <Email width={20} />
                       &nbsp; info@eatransfers.com
@@ -145,27 +145,27 @@ export const EATransfers = () => {
                     <div></div>
                   </div>
                   <div>
-                    <div className='typography'>
-                      <span className='p1'>Fast</span>
-                      <span className='p2'> Convenient</span>
+                    <div className="typography">
+                      <span className="p1">Fast</span>
+                      <span className="p2"> Convenient</span>
 
-                      <div className='row2'>
-                        <span className='p2'>Everywhere</span>
-                        <span className='p1'> Anytime</span>
+                      <div className="row2">
+                        <span className="p2">Everywhere</span>
+                        <span className="p1"> Anytime</span>
                       </div>
                       <br />
-                      <div className='quote'>
+                      <div className="quote">
                         Ride with ease, arrive with style. Order taxi on the go
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className='form'>
+                <div className="form">
                   <BookingForm />
                 </div>
               </div>
 
-              <div className='eatransfersBody'>
+              <div className="eatransfersBody">
                 <AboutUs />
                 <br /> <br />
                 <Services />

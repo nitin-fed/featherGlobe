@@ -12,7 +12,7 @@ export const About = () => {
       <div className='md:flex '>
         <div className='md:basis-1/4 sm:w-full mb-8'>
           <div className=''>
-            <h3 className='text-4xl pb-8 text-gray-500 text-center md:hidden lg:hidden '>
+            <h3 className='text-4xl pb-8 text-round-navy font-extrabold text-center md:hidden lg:hidden '>
               {profile["name"]}
             </h3>
             <img
@@ -45,7 +45,7 @@ export const About = () => {
               })}
             </ul>
             <br />
-            <div className='text-xl text-gray-500'>Expertise in</div>
+            <div className='text-xl text-round-navy font-semibold'>Expertise in</div>
 
             <ul>
               {profile["skills"].map((item, index) => {
@@ -55,7 +55,7 @@ export const About = () => {
           </div>
         </div>
         <div className='md:basis-3/4 md:pl-12 sm:pl-0  sm:w-full'>
-          <h3 className='text-4xl pb-8 text-gray-500  sm:text-center md:text-left  xs:hidden sm:hidden md:block lg:block'>
+          <h3 className='text-4xl pb-8 text-round-navy font-extrabold  sm:text-center md:text-left  xs:hidden sm:hidden md:block lg:block'>
             {profile["name"]}
           </h3>
           <div className=''> {profile["technologies"]}</div>

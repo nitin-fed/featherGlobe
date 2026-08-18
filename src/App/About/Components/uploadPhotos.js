@@ -27,8 +27,6 @@ export const UploadPhotos = () => {
 
   const handleChange = (evt) => {
     const images = evt.target.files;
-    debugger;
-    test = <h1>Nitin</h1>;
 
     // Object.entries(images).forEach((image) => {
     //   return <Thumbnail src={URL.createObjectURL(image[1])} alt='Decription' />;
@@ -119,7 +117,7 @@ export const UploadPhotos = () => {
             imgUrl: downloadURL,
           });
         });
-      }
+      },
     );
   };
 
@@ -146,28 +144,28 @@ export const UploadPhotos = () => {
   return (
     <>
       <form
-        method='POST'
-        action='http://localhost:3001/upload'
-        encType='multipart/form-data'
+        method="POST"
+        action="http://localhost:3001/upload"
+        encType="multipart/form-data"
       >
         <input
-          type='file'
-          name='image'
-          label='Browseeee'
-          placeholder='select Image'
+          type="file"
+          name="image"
+          label="Browseeee"
+          placeholder="select Image"
         />
-        <button type='submit' onClick={(e) => uploadPhotoOnNode(e)}>
+        <button type="submit" onClick={(e) => uploadPhotoOnNode(e)}>
           Submit
         </button>
       </form>
 
       <hr />
 
-      <div className='md:rounded-lg md:bg-gray-100  md:border md:border-gray-300 md:p-6 md:m-auto  '>
-        <img id='output' width='200px' alt='test' />
+      <div className="md:rounded-lg md:bg-gray-100  md:border md:border-gray-300 md:p-6 md:m-auto  ">
+        <img id="output" width="200px" alt="test" />
 
-        <div className='md:flex lg:flex'>
-          <div className='flex-none '>
+        <div className="md:flex lg:flex">
+          <div className="flex-none ">
             {/* <input
           multiple
           type='file'
@@ -180,17 +178,17 @@ export const UploadPhotos = () => {
             <div className={`inputWrapper ${greenButtonStyle} text-center`}>
               Browse Photos
               <input
-                label='Browse'
-                className='fileInput left-0 top-0'
-                name='image'
+                label="Browse"
+                className="fileInput left-0 top-0"
+                name="image"
                 multiple
-                type='file'
-                accept='/image/*'
+                type="file"
+                accept="/image/*"
                 onChange={(e) => handleChange(e)}
               />
             </div>
           </div>
-          <div className='flex-auto  text-right  '>
+          <div className="flex-auto  text-right  ">
             <button
               className={secondaryButtonStyle}
               onClick={() => handleCancel()}
@@ -210,29 +208,29 @@ export const UploadPhotos = () => {
           {Object.entries(fileName).map(([key, value]) => {
             return (
               <>
-                <div className='md:flex border  rounded-lg bg-white  border border-gray-300 p-6 mt-6 '>
-                  <div className=' '>
-                    <div id='loader' className='bg-gray-500 w-0'></div>
+                <div className="md:flex border  rounded-lg bg-white  border border-gray-300 p-6 mt-6 ">
+                  <div className=" ">
+                    <div id="loader" className="bg-gray-500 w-0"></div>
                     <img
                       src={URL.createObjectURL(value)}
-                      alt='Decription'
-                      width='400'
-                      className=' rounded-lg'
+                      alt="Decription"
+                      width="400"
+                      className=" rounded-lg"
                     />
                   </div>
-                  <div className='flex-auto  md:pl-8'>
+                  <div className="flex-auto  md:pl-8">
                     <TextInputField
-                      label='Title'
-                      kind='text'
+                      label="Title"
+                      kind="text"
                       // ref={userNameRef}
-                      value=''
+                      value=""
                       // isRequired={true}
                       validation={["required", "min"]}
                     />
                     <TextArea
-                      label='Description'
-                      kind='text'
-                      value=''
+                      label="Description"
+                      kind="text"
+                      value=""
                       validation={[""]}
                     />
                   </div>

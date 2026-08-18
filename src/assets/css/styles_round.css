@@ -1,0 +1,206 @@
+/** @format */
+
+/* Theme derived from a "Round" style reference image: calm, light, minimal
+   SaaS aesthetic — soft sky-blue gradient background, navy headings, blue
+   accent, pill-shaped controls, no photo background. */
+
+.viaButton {
+  background-color: #f3f6fb;
+  border: 1px solid #e4e9f0;
+  margin: 5px;
+  border-radius: 999px;
+  padding: 0 14px;
+  color: #10182b;
+}
+.eatContainer {
+  width: 1124px;
+  margin: 0 auto;
+}
+
+.quote {
+  font-size: 22px;
+  color: #5b6472;
+  font-family: Nunito_Sans;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.pageBody {
+  padding-top: 50px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.eatransfers {
+  color: #10182b;
+}
+.eatransfers > .main {
+  background: linear-gradient(180deg, #eaf2fb 0%, #ffffff 45%);
+  background-repeat: no-repeat;
+}
+
+.eatransfers .header {
+  height: 100px;
+  line-height: 100px;
+  padding-left: 20px;
+  color: #10182b;
+}
+
+.eatransfers .pageTitle {
+  color: #10182b;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.eatransfersBody {
+  margin-top: 50px;
+  background: #ffffff;
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.customHeader {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e4e9f0;
+}
+
+.topMenu {
+  color: #10182b;
+}
+.topMenu a {
+  color: #5b6472;
+}
+.topMenu a:hover {
+  color: #3b6ff6;
+}
+
+.tabs {
+  border-radius: 999px;
+  border: 1px solid #e4e9f0;
+  width: fit-content;
+  padding: 4px 20px;
+  color: #10182b;
+}
+.activeTab {
+  background: linear-gradient(180deg, #3b6ff6 0%, #1e4fd1 100%);
+  color: #fff;
+}
+
+.inActiveTab {
+  background: linear-gradient(180deg, #f3f6fb 0%, #e4e9f0 100%);
+  color: #5b6472;
+}
+.phoneBox {
+  border: 1px solid #e4e9f0;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f6fb 100%);
+  color: #10182b;
+}
+
+.transferFormComponents div {
+  border: 1px solid #e4e9f0;
+  padding: 0 7px 0 20px;
+  background: #fff;
+  margin: 10px;
+  border-radius: 12px;
+}
+
+.transferFormComponents input {
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.tabsContainer {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #e4e9f0;
+}
+.typography {
+  padding-top: 60px;
+  padding-left: 50px;
+}
+
+.row2 {
+  margin: 20px;
+}
+
+.p1 {
+  font-family: Nunito_Sans;
+  font-size: 70px;
+  color: #10182b;
+  font-weight: 800;
+  text-shadow: none;
+}
+
+.p2 {
+  font-family: Nunito_Sans;
+  font-size: 40px;
+  color: #3b6ff6;
+  font-weight: 700;
+  padding-left: 20px;
+  display: inline-block;
+  text-shadow: none;
+}
+
+.transferFormComponents > .buttonBox {
+  border: unset;
+  background: unset;
+  padding: unset;
+  text-align: right;
+}
+
+.buttonBox > button {
+  border: 1px solid #e4e9f0;
+  padding: 6px 20px;
+  border-radius: 999px;
+  color: #10182b;
+}
+
+.resetButton {
+  background: #f3f6fb;
+}
+
+.submitButton {
+  background: linear-gradient(180deg, #3b6ff6 0%, #1e4fd1 100%);
+  color: #fff;
+  border: none;
+}
+
+.aboutus p {
+  padding-top: 20px;
+  line-height: 1.6;
+  font-size: medium;
+  color: #5b6472;
+}
+
+.imagesWrapped {
+  float: left;
+  width: 600px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+}
+
+.imagesWrappedRight {
+  float: right;
+  padding-left: 24px;
+  padding-right: unset;
+  padding-bottom: unset;
+}
+.address {
+  padding-top: 20px;
+}
+.address p {
+  padding: 0;
+  color: #5b6472;
+}
+.footer p {
+  font-size: small;
+  letter-spacing: 0;
+  color: #5b6472;
+}

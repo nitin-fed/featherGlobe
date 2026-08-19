@@ -2,32 +2,21 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
-import { auth } from "../firebase-config";
 import { TextInputField } from "./Components/TextInputField";
 import {
   primaryButtonStyle,
   warningButtonStyle,
   secondaryButtonStyle,
 } from "./Utils/constants";
-import {
-  createUserWithEmailAndPassword,
-  signOut,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { useDispatch, useSelector } from "react-redux";
-import { updateCurrentUser } from "./Store/Reducers/appSlice";
-import { init } from "./LoginCanvas";
-import { initDancingLetter } from "./dancingLetter";
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const history = useNavigate();
-  const dispatch = useDispatch();
 
   const [isLogin, setIsLogin] = useState();
   const [error, setError] = useState(null);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading] = useState(false);
 
   useEffect(() => {
     console.log(location.pathname);
@@ -48,61 +37,16 @@ const Login = () => {
 
   const allRefs = [{ password: passwordRef }, { userName: userNameRef }];
 
-  const handleSubmit = async (evt) => {
+  const handleSubmit = (evt) => {
     evt.preventDefault();
-    setError("");
-    const email = userNameRef.current.getValue();
-    const password = passwordRef.current.getValue();
-    setLoading(true);
-    if (isLogin) {
-      // Login
-      try {
-        const user = await signInWithEmailAndPassword(
-          auth,
-          email.toString(),
-          password
-        );
-        history("/");
-      } catch (error) {
-        setError(error.message);
-      }
-      setLoading(false);
-    } else {
-      // Signup
-      try {
-        const user = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        dispatch(updateCurrentUser(user.user.email));
-        history("/");
-      } catch (error) {
-        setLoading(false);
-        setError(error.message);
-      }
-    }
-  };
-
-  const handleLogin = async (evt) => {
-    evt.preventDefault();
-    const email = userNameRef.current.getValue();
-    const password = passwordRef.current.getValue();
-    setLoading(true);
-    try {
-      const user = await signInWithEmailAndPassword(auth, email, password);
-      history("/");
-    } catch (error) {
-      setError(error.message);
-    }
-    setLoading(false);
+    setError(
+      isLogin
+        ? "Login is currently unavailable."
+        : "Registration is currently unavailable."
+    );
   };
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      dispatch(updateCurrentUser(user?.email));
-    });
-
     const listener = (event) => {
       if (event.code === "Enter" || event.code === "NumpadEnter") {
         console.log("Enter key was pressed. Run your function.");

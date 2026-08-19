@@ -9,25 +9,15 @@ import {
   deleteButton,
 } from "../../../Utils/constants";
 
-import { db } from "../../../../firebase-config";
-import {
-  collection,
-  getDocs,
-  doc,
-  updateDoc,
-  deleteDoc,
-} from "firebase/firestore";
 import { MessageBox } from "../../../Components/MessageBox";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  const userCollectionRef = collection(db, "user");
   const messageBoxRef = useRef(null);
   const history = useNavigate();
 
   const getUser = async () => {
-    const data = await getDocs(userCollectionRef);
-    setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    setUsers([]);
   };
 
   useEffect(() => {
@@ -44,11 +34,8 @@ const Users = () => {
     }
   };
 
-  const deleteHandler = (id) => {
-    // messageBoxRef.current.showMessageBox();
-    const userDoc = doc(db, "user", id);
-    deleteDoc(userDoc, id);
-    getUser();
+  const deleteHandler = () => {
+    alert("Deleting users is currently unavailable.");
   };
 
   const update = (id, value) => {

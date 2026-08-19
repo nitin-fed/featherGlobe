@@ -4,8 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { TextInputField } from "../../Components/TextInputField";
 import { warningButtonStyle, primaryButtonStyle } from "../../Utils/constants";
-import { db } from "../../../firebase-config";
-import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 
 export const Profile = () => {
   /** Passing  state  (data)  with location object for Edit User */
@@ -20,7 +18,6 @@ export const Profile = () => {
   const passwordRef = useRef(null);
   const confirmPasswordRef = useRef(null);
   const userNameRef = useRef(null);
-  const userCollectionRef = collection(db, "user");
 
   const allRefs = [
     { firstName: firstNameRef },
@@ -57,26 +54,14 @@ export const Profile = () => {
     }
   };
 
-  const updateUser = async (evt) => {
-    const userDoc = doc(db, "user", state.id);
-    await updateDoc(userDoc, { ...collectData(evt) });
+  const updateUser = (evt) => {
+    alert("Updating users is currently unavailable.");
     handleReset(evt);
     history("/users");
   };
 
-  const createUser = async (evt) => {
-    await addDoc(userCollectionRef, { ...collectData(evt) });
-  };
-
-  const collectData = (evt) => {
-    let dataCollection = {};
-    allRefs.forEach((item) => {
-      Object.entries(item).forEach(([key, value]) => {
-        dataCollection = { ...dataCollection, [key]: value.current.getValue() };
-      });
-    });
-
-    return dataCollection;
+  const createUser = () => {
+    alert("Creating users is currently unavailable.");
   };
 
   const handleCancel = (e) => {

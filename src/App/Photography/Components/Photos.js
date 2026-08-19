@@ -1,11 +1,9 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import { db } from "../../../firebase-config";
 import "./Photos.css";
 import { LargeImage } from "./LargeImage";
 import Thumbnail from "./Thumbnail";
-import { collection, getDocs } from "firebase/firestore";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowLargeImage } from "../../Store/Reducers/gallerySlice";
 import gallery from "./data";

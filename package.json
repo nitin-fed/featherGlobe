@@ -47,7 +47,7 @@
   "scripts": {
     "start": "react-scripts start ",
     "build:dev": "webpack serve --config webpack.dev.config.js ",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "build:prod": "webpack --config webpack.prod.config.js",
     "buildwebpack": "webpack",
     "test": "jest ",

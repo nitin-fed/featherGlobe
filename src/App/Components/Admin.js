@@ -13,17 +13,6 @@ import {
   secondaryButtonStyle,
   warningButtonStyle,
 } from "../Utils/constants";
-import { db } from "../../firebase-config";
-
-import {
-  collection,
-  getDocs,
-  doc,
-  updateDoc,
-  deleteDoc,
-  setDoc,
-  addDoc,
-} from "firebase/firestore";
 import ToggleButton from "./ToggleButton";
 
 export const Admin = () => {
@@ -31,8 +20,6 @@ export const Admin = () => {
   const [editorData, setEditorData] = useState("");
   const [title, setTitle] = useState("");
   const languages = ["HTML", "CSS", "JavaScript", "React", "Redux"];
-
-  const userCollectionRef = collection(db, "Posts");
 
   const editorConfiguration = {
     toolbar: ["bold", "italic"],
@@ -50,19 +37,8 @@ export const Admin = () => {
   //   console.log(editorData);
   // };
 
-  const addPost = async () => {
-    console.log("dropdown");
-    const data = {
-      title,
-      description: editorData,
-      tags: ["javascript"],
-      date: Date.now(),
-    };
-    const res = await addDoc(userCollectionRef, data);
-    console.log(res.id);
-    setEditorData("");
-    setTitle("");
-    //TODO: clear ck editor data after successful post
+  const addPost = () => {
+    alert("Posting is currently unavailable.");
   };
   return (
     <>

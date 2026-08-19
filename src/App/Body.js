@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -26,9 +26,6 @@ import Login from "./Login";
 import { Profile } from "./Demo/Container/Profile";
 import { UnAuthUser } from "./Components/UnAuthUser";
 
-import { useDispatch } from "react-redux";
-import { updateCurrentUser } from "./Store/Reducers/appSlice";
-import { auth } from "../firebase-config";
 import { Post } from "./Demo/Components/Post";
 import { Admin } from "./Components/Admin";
 
@@ -37,14 +34,6 @@ import { UploadPhotos } from "./About/Components/uploadPhotos";
 // import StockPhotos from "./StockPhotos/StockPhotos";
 
 export const Body = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      dispatch(updateCurrentUser(user?.email));
-    });
-  }, []);
-
   return (
     <>
       <div

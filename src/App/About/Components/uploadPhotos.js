@@ -3,10 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
-import { storage, db } from "../../../firebase-config";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { doc, setDoc, collection, getDocs } from "firebase/firestore";
-import Compressor from "compressorjs";
 import {
   greenButtonStyle,
   primaryButtonStyle,
@@ -53,72 +49,6 @@ export const UploadPhotos = () => {
 
   const handleCancel = () => {
     history("/");
-  };
-
-  const generateThumbnail = (folderName, file, quality) => {
-    new Compressor(file, {
-      quality: quality,
-      width: 600,
-      success(result) {
-        uploadFileHadler(folderName, result);
-      },
-      error(err) {
-        console.log(err.message);
-      },
-    });
-  };
-
-  const LoadImages = async () => {
-    const querySnapShot = await getDocs(collection(db, "images"));
-
-    querySnapShot.forEach((doc) => {
-      console.log(doc.id, doc.data());
-    });
-  };
-
-  const uploadFiles = () => {
-    if (fileName.length === 0) {
-      alert("Import File");
-    } else {
-      // const thumbnailArr = []
-
-      // forEach()
-      // generateThumbnail()
-      for (let i = 0; i < fileName.length; i++) {
-        uploadFileHadler("images", fileName[i]);
-        generateThumbnail("thumbnail", fileName[i], 1);
-        generateThumbnail("lowres", fileName[i], 0.1);
-      }
-      //uploadFileHadler(fileName);
-    }
-  };
-
-  const uploadFileHadler = (folderLocation, file) => {
-    //    console.log(file);
-    const storageRef = ref(storage, `${folderLocation}/${file.name}`);
-    // console.log(storageRef);
-    const uploadTask = uploadBytesResumable(storageRef, file);
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        setProgress(progress);
-      },
-      (err) => {
-        console.log(err);
-      },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("File available at", downloadURL);
-
-          const imageRef = doc(db, folderLocation, file.name);
-          setDoc(imageRef, {
-            imgUrl: downloadURL,
-          });
-        });
-      },
-    );
   };
 
   const uploadPhotoOnNode = (e) => {

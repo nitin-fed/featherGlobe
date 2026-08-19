@@ -14,8 +14,6 @@ import { Button } from "react-bootstrap";
 import { Modal } from "./Modal/Modal";
 import { showHideModal } from "../../Store/Reducers/modalSlice";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { db } from "../../../firebase-config";
-import { collection, getDocs } from "firebase/firestore";
 
 export function Posts({ onLoadPostDescription, onDeletePost }) {
   // const { posts, isLoading } = useSelector((state) => state.postReducer);
@@ -30,18 +28,7 @@ export function Posts({ onLoadPostDescription, onDeletePost }) {
 
   let html = "";
   const fetchBlogs = async () => {
-    const userCollectionRef = collection(db, "Posts");
-
-    const data = await getDocs(userCollectionRef);
-    // setPosts(data);
-
-    const posts = [];
-
-    data.docs.map((i) => {
-      posts.push(i.data());
-    });
-
-    setPosts(posts);
+    setPosts([]);
   };
 
   const monthArr = [

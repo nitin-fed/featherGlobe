@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { ChildNav } from "../Demo/ChildNav";
 
-import { signOut } from "firebase/auth";
-import { auth } from "../../firebase-config";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { blurBackground } from "../Utils/constants";
 import { updateCurrentUser } from "../Store/Reducers/appSlice";
@@ -35,8 +33,7 @@ const Navigation = () => {
   const appReducer = useSelector((state) => state.appReducer);
   const { menus, isAuthenticated } = appReducer;
 
-  const handleLogout = async () => {
-    await signOut(auth);
+  const handleLogout = () => {
     dispatch(updateCurrentUser());
     history("/");
   };

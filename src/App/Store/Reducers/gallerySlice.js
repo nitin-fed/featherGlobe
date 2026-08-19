@@ -1,8 +1,6 @@
 /** @format */
 
 import { createSlice } from "@reduxjs/toolkit";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase-config";
 
 const initialState = {
   status: "",

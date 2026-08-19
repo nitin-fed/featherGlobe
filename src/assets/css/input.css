@@ -36,22 +36,24 @@
 
 @layer base {
   html {
-    font-family: sans-serif;
-    color: rgb(138, 138, 138);
-    letter-spacing: 1px;
+    font-family: Nunito_Sans, sans-serif;
+    color: #10182b;
+    letter-spacing: normal;
     font-size: 1rem;
-    line-height: 2rem;
-    font-weight: 100;
+    line-height: 1.6rem;
+    font-weight: 400;
+    background: linear-gradient(180deg, #eaf2fb 0%, #ffffff 45%);
+    background-attachment: fixed;
   }
   a {
-    @apply text-blue-500;
+    @apply text-round-accent;
   }
   a:hover {
-    @apply text-blue-700;
+    @apply text-round-accentDark;
     @apply underline;
   }
   .active {
-    @apply text-blue-900;
+    @apply text-round-accentDark;
   }
 }
 

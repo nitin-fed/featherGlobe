@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
-import Editor from "ckeditor5-custom-build/build/ckeditor";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 
 import hljs from "highlight.js";
@@ -66,27 +66,27 @@ export const Admin = () => {
   };
   return (
     <>
-      <h1 className='text-3xl'>Create Post</h1>
+      <h1 className="text-3xl">Create Post</h1>
       <br />
-      <div className='ckeditor'>
-        <label htmlFor='title' className='text-sm'>
+      <div className="ckeditor">
+        <label htmlFor="title" className="text-sm">
           Title
         </label>
         <input
           onChange={(e) => setTitle(e.target.value)}
           value={title}
-          name='title'
-          className='text-3x1 w-full rounded-lg bg-transparent border border-gray-400 p-3'
-          placeholder='Enter title'
+          name="title"
+          className="text-3x1 w-full rounded-lg bg-transparent border border-gray-400 p-3"
+          placeholder="Enter title"
         ></input>
         <br />
         <br />
-        <label htmlFor='desc' className='text-sm'>
+        <label htmlFor="desc" className="text-sm">
           Description
         </label>
 
         <CKEditor
-          id='dddd'
+          id="dddd"
           config={{
             codeBlock: {
               plugins: [],
@@ -104,9 +104,9 @@ export const Admin = () => {
               ],
             },
           }}
-          name='desc'
-          placeholder='Type the content here!'
-          editor={Editor}
+          name="desc"
+          placeholder="Type the content here!"
+          editor={ClassicEditor}
           data={editorData}
           onReady={(editor) => {
             // You can store the "editor" and use when it is needed.
@@ -140,7 +140,7 @@ export const Admin = () => {
           })}
         </fieldset>
 
-        <div className='float-right'>
+        <div className="float-right">
           <button className={secondaryButtonStyle}>Clear</button>
           <button onClick={() => addPost()} className={primaryButtonStyle}>
             Post

@@ -1,6 +1,6 @@
-/*
-! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
-*/
+/** @format */
+
+/*! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -438,28 +438,31 @@ video {
 }
 
 html {
-  font-family: sans-serif;
-  color: rgb(138, 138, 138);
-  letter-spacing:1px;
+  font-family: Nunito_Sans, sans-serif;
+  color: #10182b;
+  letter-spacing: normal;
   font-size: 1rem;
-  line-height: 2rem;
-  font-weight: 100;
+  line-height: 1.6rem;
+  font-weight: 400;
+  background: linear-gradient(180deg, #eaf2fb 0%, #ffffff 45%);
+  background-attachment: fixed;
 }
 
 a {
   --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
+  color: rgb(59 111 246 / var(--tw-text-opacity));
 }
 
 a:hover {
   --tw-text-opacity: 1;
-  color: rgb(29 78 216 / var(--tw-text-opacity));
-  text-decoration-line: underline;
+  color: rgb(30 79 209 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .active {
   --tw-text-opacity: 1;
-  color: rgb(30 58 138 / var(--tw-text-opacity));
+  color: rgb(30 79 209 / var(--tw-text-opacity));
 }
 
 *, ::before, ::after {
@@ -671,10 +674,6 @@ a:hover {
   margin: auto;
 }
 
-.m-3 {
-  margin: 0.75rem;
-}
-
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -797,10 +796,6 @@ a:hover {
   height: 1.25rem;
 }
 
-.h-56 {
-  height: 14rem;
-}
-
 .h-8 {
   height: 2rem;
 }
@@ -823,10 +818,6 @@ a:hover {
 
 .w-10 {
   width: 2.5rem;
-}
-
-.w-14 {
-  width: 3.5rem;
 }
 
 .w-36 {
@@ -973,6 +964,11 @@ a:hover {
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
+.border-round-border {
+  --tw-border-opacity: 1;
+  border-color: rgb(228 233 240 / var(--tw-border-opacity));
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -987,24 +983,9 @@ a:hover {
   background-color: rgb(0 0 0 / 0.75);
 }
 
-.bg-blue-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
-}
-
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
 .bg-gray-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
-
-.bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
 .bg-green-600 {
@@ -1017,6 +998,25 @@ a:hover {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
+.bg-round-accent {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 111 246 / var(--tw-bg-opacity));
+}
+
+.bg-round-bg {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 242 251 / var(--tw-bg-opacity));
+}
+
+.bg-round-border {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 233 240 / var(--tw-bg-opacity));
+}
+
+.bg-round-navy\/30 {
+  background-color: rgb(16 24 43 / 0.3);
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -1026,8 +1026,8 @@ a:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-white\/90 {
-  background-color: rgb(255 255 255 / 0.9);
+.bg-white\/75 {
+  background-color: rgb(255 255 255 / 0.75);
 }
 
 .p-10 {
@@ -1074,14 +1074,19 @@ a:hover {
   padding-right: 0.75rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .py-1 {
@@ -1102,11 +1107,6 @@ a:hover {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .pb-8 {
@@ -1180,6 +1180,14 @@ a:hover {
   line-height: 1rem;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
 .italic {
   font-style: italic;
 }
@@ -1192,19 +1200,9 @@ a:hover {
   letter-spacing: 0.1em;
 }
 
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .text-red-400 {
@@ -1220,6 +1218,11 @@ a:hover {
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-round-navy {
+  --tw-text-opacity: 1;
+  color: rgb(16 24 43 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1243,15 +1246,17 @@ a:hover {
 }
 
 .transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .transition-colors {
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1311,12 +1316,12 @@ a:hover {
   src: url("../fonts/MrDeHaviland-Regular.ttf");
 }
 
-.welcomeUser{
+.welcomeUser {
   font-family: MrDeHaviland-Regular;
   line-height: 20px;
   font-size: 30px;
   letter-spacing: 4px;
-  padding: 0 10px  10px 10px;
+  padding: 0 10px 10px 10px;
 }
 
 .logoFont {
@@ -1325,9 +1330,13 @@ a:hover {
 }
 
 .tile {
-  background: rgb(54,83,20);
-  background: linear-gradient(150deg, rgba(54,83,20,.5) 0%, rgba(63,98,18,.8) 100%);
-  border: 2px solid rgba(54,83,20,.5)
+  background: rgb(54, 83, 20);
+  background: linear-gradient(
+    150deg,
+    rgba(54, 83, 20, 0.5) 0%,
+    rgba(63, 98, 18, 0.8) 100%
+  );
+  border: 2px solid rgba(54, 83, 20, 0.5);
 }
 
 /* GALAXY STYLE ********/
@@ -1356,7 +1365,11 @@ a:hover {
   height: 50px;
   width: 2px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%);
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
 }
 
 .star1 {
@@ -1365,13 +1378,17 @@ a:hover {
   width: 50px;
   height: 2px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%);
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
 }
 
 @keyframes myAnimation {
   0% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
+    transform: scale(1);
+    -webkit-transform: scale(1);
   }
 
   50% {
@@ -1387,8 +1404,8 @@ a:hover {
 
 @keyframes myAnimation1 {
   0% {
-    transform: rotate(90deg) scale(1.0);
-    -webkit-transform: rotate(90deg) scale(1.0);
+    transform: rotate(90deg) scale(1);
+    -webkit-transform: rotate(90deg) scale(1);
   }
 
   30% {
@@ -1448,7 +1465,7 @@ a:hover {
 }
 
 .modalBackground {
-  background-color: rgba(5, 23 ,42, .8);
+  background-color: rgba(5, 23, 42, 0.8);
 }
 
 .links {
@@ -1456,13 +1473,18 @@ a:hover {
   background: none;
 }
 
-.post table, td, tr{
+.post table,
+td,
+tr {
   border: 1px solid gray;
   padding: 10px;
   margin: 0;
 }
 
-.post table, ul, ol, pre {
+.post table,
+ul,
+ol,
+pre {
   margin-top: 20px;
 }
 
@@ -1507,7 +1529,7 @@ a:hover {
 }
 
 pre {
-  border:1px solid #6f6f6f;
+  border: 1px solid #6f6f6f;
   background-color: #161616 !important;
   padding: 10px;
 }
@@ -1525,16 +1547,6 @@ pre {
   border-radius: 0.5rem;
 }
 
-.hover\:bg-blue-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-green-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(22 101 52 / var(--tw-bg-opacity));
@@ -1545,14 +1557,34 @@ pre {
   background-color: rgb(77 124 15 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-red-800:hover {
+.hover\:bg-red-600:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-red-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-round-accentDark:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 79 209 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-round-border:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 233 240 / var(--tw-bg-opacity));
 }
 
 .hover\:text-red-800:hover {
   --tw-text-opacity: 1;
   color: rgb(153 27 27 / var(--tw-text-opacity));
+}
+
+.hover\:text-round-navy:hover {
+  --tw-text-opacity: 1;
+  color: rgb(16 24 43 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {
@@ -1561,7 +1593,8 @@ pre {
 }
 
 .hover\:underline:hover {
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .disabled\:opacity-50:disabled {
@@ -1774,10 +1807,6 @@ pre {
     z-index: 50;
   }
 
-  .lg\:z-10 {
-    z-index: 10;
-  }
-
   .lg\:float-right {
     float: right;
   }
@@ -1804,11 +1833,5 @@ pre {
 
   .lg\:w-auto {
     width: auto;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .dark\:bg-transparent {
-    background-color: transparent;
   }
 }

@@ -18,9 +18,7 @@ jobs:
           node-version: 18.20.8
 
       - name: Install dependencies
-        run: |
-          npm install
-          npm rebuild node-sass
+        run: npm install
 
       - name: Build
         run: npm run build

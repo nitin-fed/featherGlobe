@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 14.21.3
+          node-version: 18.20.8
 
       - name: Install dependencies
         run: |
@@ -33,5 +33,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           protocol: ftp
-          local-dir: build/    
+          local-dir: build/
           server-dir: /public_html/
